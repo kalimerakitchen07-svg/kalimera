@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -270,10 +270,10 @@
     </nav>
 
     <div class="flex items-center gap-2">
-      <div class="hidden md:flex items-center rounded-full bg-cream/70 p-1 text-xs font-semibold uppercase tracking-wider">
-        <button class="lang-btn px-3 py-1.5 rounded-full" data-lang="tr" aria-pressed="true">TR</button>
-        <button class="lang-btn px-3 py-1.5 rounded-full" data-lang="en" aria-pressed="false">EN</button>
-        <button class="lang-btn px-3 py-1.5 rounded-full" data-lang="ru" aria-pressed="false">RU</button>
+      <div class="flex items-center rounded-full bg-cream/70 p-0.5 md:p-1 text-[11px] md:text-xs font-semibold uppercase tracking-wider">
+        <button class="lang-btn px-2 py-1 md:px-3 md:py-1.5 rounded-full" data-lang="tr" aria-pressed="false">TR</button>
+        <button class="lang-btn px-2 py-1 md:px-3 md:py-1.5 rounded-full" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-btn px-2 py-1 md:px-3 md:py-1.5 rounded-full" data-lang="ru" aria-pressed="false">RU</button>
       </div>
       <a href="#reserve" class="btn-primary hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold" data-i18n="nav_cta">
         Rezervasyon
@@ -895,7 +895,7 @@
   // Fallback: if window never scrolls within 1.2s, reveal everything (helps headless screenshots).
   setTimeout(() => { document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in')); }, 600);
 
-  let lang = 'tr';
+  let lang = 'en';
 
   /* ── i18n ── */
   const I18N = {
@@ -1147,12 +1147,12 @@
   document.querySelectorAll('.lang-btn[data-lang]').forEach(b => {
     b.addEventListener('click', () => applyLang(b.dataset.lang));
   });
-  /* Restore previously selected language from localStorage */
+  /* Restore previously selected language from localStorage; default to EN. */
   try {
     const saved = localStorage.getItem('kkLang');
     if (saved && I18N[saved]) applyLang(saved);
-    else updateFab();
-  } catch(e) { updateFab(); }
+    else applyLang('en');
+  } catch(e) { applyLang('en'); }
 
   /* ── WhatsApp fallback: compose message from form fields ── */
   function composeFormWaMessage() {
