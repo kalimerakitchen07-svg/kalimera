@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /temporary screenshots/
+Disallow: /.omc/
+Disallow: /.recon/
+
+Sitemap: https://kalimerakitchen.com/sitemap.xml

@@ -1,0 +1,10 @@
+.omc/
+.recon/
+temporary screenshots/
+*.xlsx
+*.zip
+generate_cost_excel.js
+verify-wa.mjs
+serve.mjs
+.git/
+node_modules/

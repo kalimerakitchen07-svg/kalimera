@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kendi Menünü Tasarla — Kalimera Kitchen</title>
+  <meta name="description" content="Kendi özel catering menünüzü tasarlayın — Kalimera Kitchen Kalkan / Antalya." />
+  <link rel="icon" href="/brand_assets/kalimera-logo.jpeg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest:  '#15342B',
+            forest2: '#1A3D33',
+            forest3: '#22483D',
+            cream:   '#F2EBDA',
+            ivory:   '#FAF6EE',
+            sand:    '#E5D9BE',
+            terra:   '#C5582B',
+            sun:     '#D9923B',
+            muted:   'rgba(242, 235, 218, 0.55)',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+            script:  ['Caveat', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #F2EBDA;
+      background: #15342B;
+      line-height: 1.7;
+    }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; letter-spacing: -0.005em; }
+
+    /* Forest backdrop */
+    .forest-bg {
+      background-color: #15342B;
+      background-image:
+        radial-gradient(at 14% 12%, rgba(34, 72, 61, 0.85) 0px, transparent 45%),
+        radial-gradient(at 86% 18%, rgba(217, 146, 59, 0.06) 0px, transparent 50%),
+        radial-gradient(at 50% 78%, rgba(26, 61, 51, 0.9) 0px, transparent 60%),
+        radial-gradient(at 12% 95%, rgba(34, 72, 61, 0.7) 0px, transparent 55%);
+    }
+    .grain::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.45;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.07 0 0 0 0 0.06 0 0 0 0.32 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      mix-blend-mode: overlay;
+    }
+
+    /* Plate */
+    .plate {
+      position: absolute; border-radius: 9999px; overflow: hidden; background: #0a1f18;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 30px 60px -10px rgba(0,0,0,0.55), 0 70px 120px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(245,235,220,0.04);
+    }
+    .plate img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.05) contrast(1.05); }
+    .plate::after { content: ""; position: absolute; inset: 0; border-radius: 9999px; pointer-events: none; background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.10), transparent 45%); }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 800ms ease, transform 900ms cubic-bezier(0.2,0.8,0.2,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Section divider */
+    .sec-rule {
+      display: flex; align-items: center; gap: 1.25rem;
+      color: rgba(242,235,218,0.55); font-size: 11px; letter-spacing: 0.42em; text-transform: uppercase;
+    }
+    .sec-rule::before, .sec-rule::after {
+      content: ""; height: 1px; flex: 1;
+      background: linear-gradient(90deg, transparent, rgba(217,146,59,0.35), transparent);
+    }
+
+    /* Diamond */
+    .diamond { display: inline-flex; align-items: center; gap: 0.6rem; color: #D9923B; font-size: 10px; }
+    .diamond::before, .diamond::after { content: ""; width: 28px; height: 1px; background: rgba(217,146,59,0.45); }
+
+    /* Nav */
+    .nav-blur {
+      background: rgba(21,52,43,0.78);
+      backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid rgba(242,235,218,0.07);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(180deg, #D9923B 0%, #C97D27 100%);
+      color: #15342B;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 10px 26px -10px rgba(217,146,59,0.55), 0 22px 48px -22px rgba(0,0,0,0.6);
+      transition: transform 220ms cubic-bezier(0.2,0.8,0.2,1), box-shadow 220ms ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid #F2EBDA; outline-offset: 3px; }
+    .btn-primary:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+    .btn-ghost {
+      border: 1px solid rgba(242,235,218,0.25); color: #F2EBDA;
+      transition: background 220ms ease, border-color 220ms ease;
+    }
+    .btn-ghost:hover { background: rgba(242,235,218,0.08); border-color: rgba(242,235,218,0.5); }
+    .btn-ghost:active { background: rgba(242,235,218,0.12); }
+
+    a:focus-visible, button:focus-visible { outline: 2px solid #D9923B; outline-offset: 3px; border-radius: 4px; }
+
+    /* ─── DISH CARD ─── */
+    .dish-card {
+      position: relative;
+      background: rgba(26,61,51,0.55);
+      border: 1px solid rgba(242,235,218,0.08);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem 1.1rem 3.25rem;
+      cursor: pointer;
+      transition: border-color 220ms ease, background 220ms ease, transform 220ms cubic-bezier(0.2,0.8,0.2,1);
+      user-select: none;
+    }
+    .dish-card:hover { border-color: rgba(217,146,59,0.35); background: rgba(26,61,51,0.75); transform: translateY(-1px); }
+    .dish-card:active { transform: translateY(0); }
+    .dish-card:focus-visible { outline: 2px solid #D9923B; outline-offset: 3px; }
+    .dish-card.selected {
+      border-color: #D9923B;
+      background: rgba(217,146,59,0.08);
+    }
+    .dish-card.selected:hover { background: rgba(217,146,59,0.12); }
+
+    /* Custom checkbox */
+    .dish-check {
+      position: absolute; left: 1rem; top: 50%; transform: translateY(-50%);
+      width: 22px; height: 22px; border-radius: 6px;
+      border: 1.5px solid rgba(242,235,218,0.25);
+      background: rgba(21,52,43,0.8);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: border-color 220ms ease, background 220ms ease;
+    }
+    .dish-card.selected .dish-check {
+      border-color: #D9923B;
+      background: #D9923B;
+    }
+    .dish-check-icon {
+      opacity: 0; transform: scale(0.5);
+      transition: opacity 200ms ease, transform 200ms cubic-bezier(0.2,0.8,0.2,1);
+      color: #15342B;
+    }
+    .dish-card.selected .dish-check-icon { opacity: 1; transform: scale(1); }
+
+    .dish-name { font-family: 'Cormorant Garamond', serif; font-weight: 500; color: #F2EBDA; font-size: 1.25rem; letter-spacing: 0.005em; line-height: 1.3; }
+    .dish-desc { font-style: italic; font-size: 0.85rem; color: rgba(242,235,218,0.55); margin-top: 0.25rem; }
+    .dish-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.5rem; }
+    .dish-tag {
+      font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(217,146,59,0.75); border: 1px solid rgba(217,146,59,0.2);
+      border-radius: 4px; padding: 2px 6px;
+    }
+
+    /* ─── SUMMARY PANEL ─── */
+    #summary-panel {
+      background: rgba(26,61,51,0.92);
+      backdrop-filter: saturate(140%) blur(12px);
+      border: 1px solid rgba(217,146,59,0.2);
+    }
+    .summary-item {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      font-size: 0.85rem; color: rgba(242,235,218,0.85); padding: 0.35rem 0;
+      border-bottom: 1px solid rgba(242,235,218,0.06);
+    }
+    .summary-item:last-child { border-bottom: none; }
+    .summary-bullet { color: #D9923B; flex-shrink: 0; margin-top: 2px; }
+
+    /* ─── MOBILE STICKY PANEL ─── */
+    #mobile-bar {
+      background: rgba(21,52,43,0.95);
+      backdrop-filter: saturate(140%) blur(12px);
+      border-top: 1px solid rgba(217,146,59,0.25);
+    }
+
+    /* ─── MODAL ─── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity 280ms ease;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-box {
+      background: #1A3D33;
+      border: 1px solid rgba(217,146,59,0.25);
+      border-radius: 16px; width: 100%; max-width: 560px; max-height: 90vh;
+      overflow-y: auto; padding: 2.5rem 2rem;
+      transform: translateY(24px);
+      transition: transform 300ms cubic-bezier(0.2,0.8,0.2,1);
+      box-shadow: 0 40px 80px -20px rgba(0,0,0,0.7);
+    }
+    .modal-overlay.open .modal-box { transform: translateY(0); }
+
+    .form-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .form-label { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(242,235,218,0.6); }
+    .form-input {
+      background: rgba(21,52,43,0.7); border: 1px solid rgba(242,235,218,0.15);
+      border-radius: 8px; padding: 0.7rem 0.9rem; color: #F2EBDA; font-family: 'Inter', sans-serif;
+      font-size: 0.9rem; outline: none; width: 100%;
+      transition: border-color 200ms ease;
+    }
+    .form-input:focus { border-color: rgba(217,146,59,0.6); }
+    .form-input::placeholder { color: rgba(242,235,218,0.3); }
+    textarea.form-input { resize: vertical; min-height: 110px; }
+
+    /* success */
+    #form-success { display: none; }
+
+    /* btn-wa */
+    .btn-wa {
+      background: #25D366; color: #fff;
+      transition: transform 220ms cubic-bezier(0.2,0.8,0.2,1), opacity 220ms ease;
+    }
+    .btn-wa:hover { transform: translateY(-2px); opacity: 0.92; }
+    .btn-wa:active { transform: translateY(0); }
+    .btn-wa:focus-visible { outline: 2px solid #F2EBDA; outline-offset: 3px; }
+
+    /* Language switcher */
+    .lang-btn { font-size:10px; letter-spacing:.18em; padding:6px 10px; border-radius:9999px; border:1px solid rgba(242,235,218,.18); color:rgba(242,235,218,.7); text-transform:uppercase; cursor:pointer; background:transparent; transition: all .2s ease; }
+    .lang-btn:hover { color:#F2EBDA; border-color:rgba(217,146,59,.6); }
+    .lang-btn[aria-pressed="true"] { background:#D9923B; color:#15342B; border-color:#D9923B; }
+  </style>
+</head>
+
+<body class="forest-bg">
+
+<!-- ───── NAV ───── -->
+<header class="nav-blur fixed top-0 inset-x-0 z-50">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group">
+      <img src="/brand_assets/kalimera-logo.jpeg" alt="Kalimera Kitchen" class="h-11 w-auto rounded-md" />
+      <span class="leading-tight">
+        <span class="block font-display text-lg font-semibold text-cream">Kalimera Kitchen</span>
+        <span class="block text-[10px] uppercase tracking-[0.28em] text-cream/55">Kalkan · Antalya</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-[0.2em] text-cream/70">
+      <a href="/" class="hover:text-cream transition-colors duration-200" data-i18n="nav_home">Anasayfa</a>
+      <a href="/menus.html" class="text-cream" data-i18n="nav_menus">Menüler</a>
+      <a href="/#reserve" class="hover:text-cream transition-colors duration-200" data-i18n="nav_reserve">Rezervasyon</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <div class="hidden sm:flex items-center gap-1">
+        <button class="lang-btn" data-lang="tr" aria-pressed="true">TR</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <a href="/#reserve" class="btn-primary inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-widest" data-i18n="nav_cta">
+        Rezervasyon
+      </a>
+    </div>
+  </div>
+  <div class="sm:hidden flex items-center justify-center gap-1 pb-2">
+    <button class="lang-btn" data-lang="tr" aria-pressed="true">TR</button>
+    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    <button class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+  </div>
+</header>
+
+<!-- ───── HERO ───── -->
+<section class="relative min-h-[58svh] grain overflow-hidden pt-28 pb-16">
+  <div class="absolute inset-0 pointer-events-none hidden md:block" aria-hidden="true">
+    <div class="plate" style="top:7%;left:5%;width:210px;height:210px;">
+      <img src="https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=600&q=80" alt="" onerror="this.src='https://placehold.co/600x600/15342B/D9923B?text=Kalimera'" />
+    </div>
+    <div class="plate" style="top:10%;right:6%;width:240px;height:240px;">
+      <img src="https://images.unsplash.com/photo-1607532941433-304659e8198a?auto=format&fit=crop&w=600&q=80" alt="" onerror="this.src='https://placehold.co/600x600/15342B/D9923B?text=Kalimera'" />
+    </div>
+    <div class="plate" style="top:55%;left:50%;transform:translateX(-50%);width:110px;height:110px;">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80" alt="" onerror="this.src='https://placehold.co/400x400/15342B/D9923B?text=Kalimera'" />
+    </div>
+  </div>
+
+  <div class="relative max-w-3xl mx-auto px-5 lg:px-8 text-center pt-12 md:pt-20">
+    <div class="diamond mb-6 justify-center">◆</div>
+
+    <h1 class="font-display italic font-light text-5xl md:text-6xl lg:text-[80px] text-sun leading-[1]" data-i18n="hero_title">
+      Kendi Menünü Tasarla
+    </h1>
+    <p class="mt-5 text-[11px] md:text-xs uppercase tracking-[0.4em] text-cream/65" data-i18n="hero_sub" data-i18n-html="1">
+      Build Your Own Menu
+      <span class="text-sun mx-2">·</span>
+      Özel Catering Talebi
+    </p>
+
+    <p class="mt-8 text-base text-cream/70 max-w-xl mx-auto leading-relaxed" data-i18n="hero_lead" data-i18n-html="1">
+      Aşağıdaki yemeklerden dilediğinizi seçin, talebinizi gönderin —
+      <span class="text-sun/90">24 saat içinde</span> size özel teklif sunalım.
+    </p>
+
+    <div class="mt-8 diamond justify-center">◆</div>
+  </div>
+</section>
+
+<!-- ───── PICKER LAYOUT ───── -->
+<section class="relative grain pb-40 lg:pb-24">
+
+  <!-- Floating plates (lg+) -->
+  <div class="absolute inset-0 pointer-events-none hidden lg:block" aria-hidden="true">
+    <div class="plate" style="top:4%;right:3%;width:160px;height:160px;">
+      <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=400&q=80" alt="" onerror="this.src='https://placehold.co/400x400/15342B/D9923B?text=Kalimera'" />
+    </div>
+    <div class="plate" style="top:42%;left:2%;width:150px;height:150px;">
+      <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=400&q=80" alt="" onerror="this.src='https://placehold.co/400x400/15342B/D9923B?text=Kalimera'" />
+    </div>
+    <div class="plate" style="top:72%;right:3%;width:175px;height:175px;">
+      <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=400&q=80" alt="" onerror="this.src='https://placehold.co/400x400/15342B/D9923B?text=Kalimera'" />
+    </div>
+  </div>
+
+  <!-- ─── Two-column layout: picker + sticky summary ─── -->
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 lg:grid lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_360px] gap-10 items-start">
+
+    <!-- ── DISH PICKER ── -->
+    <div id="picker" class="pt-2">
+      <!-- JS renders categories here -->
+    </div>
+
+    <!-- ── STICKY SUMMARY (desktop) ── -->
+    <aside class="hidden lg:block sticky top-24 self-start">
+      <div id="summary-panel" class="rounded-2xl p-6">
+        <div class="sec-rule mb-5" data-i18n="sum_selected">Seçili Yemekler</div>
+
+        <div class="flex items-baseline gap-2 mb-4">
+          <span id="count-badge" class="font-display italic text-5xl text-sun leading-none">0</span>
+          <span class="text-xs text-cream/55 uppercase tracking-widest" data-i18n="sum_dishes_label">yemek seçildi</span>
+        </div>
+
+        <div id="summary-list" class="min-h-[60px] max-h-[340px] overflow-y-auto pr-1 mb-4">
+          <p id="summary-empty" class="text-sm italic text-cream/40" data-i18n="sum_empty">Henüz seçim yapılmadı.</p>
+        </div>
+
+        <button id="clear-btn" class="text-xs text-cream/45 hover:text-sun underline underline-offset-4 mb-5 transition-colors duration-200" style="display:none" aria-label="Seçimi temizle" data-i18n="sum_clear">
+          Seçimi Temizle
+        </button>
+
+        <button id="send-btn" class="btn-primary w-full rounded-xl px-5 py-3.5 text-sm font-semibold flex items-center justify-center gap-2" disabled>
+          <span data-i18n="sum_send">Talep Gönder</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+
+        <p class="text-[10px] text-cream/35 text-center mt-3 leading-relaxed" data-i18n="sum_eta">
+          Talebiniz 24 saat içinde yanıtlanır.
+        </p>
+      </div>
+    </aside>
+
+  </div><!-- /grid -->
+</section>
+
+<!-- ───── MOBILE STICKY BAR ───── -->
+<div id="mobile-bar" class="lg:hidden fixed bottom-0 inset-x-0 z-40 px-4 py-3 flex items-center gap-3">
+  <div class="flex-1">
+    <div class="text-xs text-cream/55 uppercase tracking-widest" data-i18n="mob_selected">Seçili</div>
+    <div class="font-display italic text-2xl text-sun leading-none" id="mobile-count">0 yemek</div>
+  </div>
+  <button id="mobile-send-btn" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold flex items-center gap-2" disabled>
+    <span data-i18n="sum_send">Talep Gönder</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </button>
+</div>
+
+<!-- ───── FOOTER ───── -->
+<footer class="border-t border-cream/10 py-10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-cream/50">
+    <div>© <span id="yr"></span> Kalimera Kitchen · Kalkan / Antalya</div>
+    <div class="flex gap-5">
+      <a href="/" class="hover:text-cream transition-colors duration-200" data-i18n="ftr_home">Anasayfa</a>
+      <a href="/menus.html" class="hover:text-cream transition-colors duration-200" data-i18n="ftr_menus">Tüm Menüler</a>
+      <a href="/#reserve" class="hover:text-cream transition-colors duration-200" data-i18n="ftr_contact">İletişim</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ───── MODAL ───── -->
+<div id="modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <!-- Form view -->
+    <div id="form-view">
+      <div class="diamond mb-4 justify-center">◆</div>
+      <h2 id="modal-title" class="font-display italic text-3xl text-sun text-center mb-1" data-i18n="modal_title">Talebinizi Gönderin</h2>
+      <p class="text-xs text-cream/55 text-center mb-7 tracking-wide" data-i18n="modal_sub">24 saat içinde size özel teklif sunacağız.</p>
+
+      <form id="contact-form" novalidate>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4">
+          <div class="form-field">
+            <label class="form-label" for="f-name" data-i18n="lbl_name">Adınız Soyadınız *</label>
+            <input class="form-input" type="text" id="f-name" name="name" placeholder="Ad Soyad" required autocomplete="name" />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="f-email" data-i18n="lbl_email">E-posta *</label>
+            <input class="form-input" type="email" id="f-email" name="email" placeholder="ornek@mail.com" required autocomplete="email" />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="f-phone" data-i18n="lbl_phone">Telefon</label>
+            <input class="form-input" type="tel" id="f-phone" name="phone" placeholder="+90 5xx xxx xx xx" autocomplete="tel" />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="f-guests" data-i18n="lbl_guests">Misafir Sayısı</label>
+            <input class="form-input" type="number" id="f-guests" name="guests" placeholder="10" min="2" />
+          </div>
+          <div class="form-field sm:col-span-2">
+            <label class="form-label" for="f-date" data-i18n="lbl_date">Etkinlik Tarihi</label>
+            <input class="form-input" type="date" id="f-date" name="date" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="f-notes" data-i18n="lbl_notes">Seçili Yemekler & Notlar</label>
+          <textarea class="form-input" id="f-notes" name="notes" rows="6"></textarea>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 mt-2">
+          <button type="submit" class="btn-primary flex-1 rounded-xl px-5 py-3.5 text-sm font-semibold flex items-center justify-center gap-2">
+            <span data-i18n="btn_submit">Talebi Gönder</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <a id="wa-link" href="#" target="_blank" rel="noopener" class="btn-wa flex-1 rounded-xl px-5 py-3.5 text-sm font-semibold flex items-center justify-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span data-i18n="btn_wa">WhatsApp ile Gönder</span>
+          </a>
+        </div>
+
+        <button type="button" id="modal-close" class="mt-5 w-full text-xs text-cream/40 hover:text-cream/70 transition-colors duration-200" data-i18n="btn_cancel">İptal</button>
+      </form>
+    </div>
+
+    <!-- Success view -->
+    <div id="form-success" class="text-center py-8">
+      <div class="text-5xl mb-5">✓</div>
+      <h3 class="font-display italic text-3xl text-sun mb-3" data-i18n="suc_title">Talebiniz Alındı</h3>
+      <p class="text-cream/70 mb-7 leading-relaxed" data-i18n="suc_sub">24 saat içinde dönüş yapacağız.</p>
+      <button type="button" id="success-close" class="btn-primary rounded-xl px-8 py-3 text-sm font-semibold" data-i18n="btn_close">Kapat</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── DISH DATA ─── (deduplicated, tagged with source menus)
+const DISHES = [
+  // MEZELER · STARTERS
+  { id:'m01', cat:'mezeler', name:'Humuslu Karnabahar', desc:'Marine fırın karnabahar, humus ve taze otlarla servis.', menus:['Turkish Night','Mediterranean Night','BBQ Menu','Fish BBQ'] },
+  { id:'m02', cat:'mezeler', name:'Pembe Domates Sarımsaklı Semizotu', desc:'', menus:['Turkish Night'] },
+  { id:'m03', cat:'mezeler', name:'Yoğurtlu Fırın Sarımsak', desc:'', menus:['Turkish Night'] },
+  { id:'m04', cat:'mezeler', name:'Zeytinyağlı Yeşil Elmalı Taze Fasulye', desc:'', menus:['Turkish Night'] },
+  { id:'m05', cat:'mezeler', name:'Saganaki', desc:'Karides, kalamar, midye, domates sosu ve peynir.', menus:['Mediterranean Night'] },
+  { id:'m06', cat:'mezeler', name:'Zeytinyağlı Fırında Biber Dolması', desc:'', menus:['Mediterranean Night'] },
+  { id:'m07', cat:'mezeler', name:'Peynirli Taze Otlu Çıtır Mücver ve Füme Somon', desc:'', menus:['Mediterranean Night'] },
+  { id:'m08', cat:'mezeler', name:'Aşk Mezesi', desc:'Yeşil elma üzerinde çilekli yoğurt sosu.', menus:['Mediterranean Night'] },
+  { id:'m09', cat:'mezeler', name:'Izgara Sebzeler', desc:'Özel marineli kabak, havuç, kırmızı biber, kırmızı lahana.', menus:['Mediterranean Night'] },
+  { id:'m10', cat:'mezeler', name:'Yeşil Elmalı Yoğurtlu Semizotu', desc:'Taze semizotu, yeşil elma ve yoğurt sosu ile.', menus:['BBQ Menu'] },
+  { id:'m11', cat:'mezeler', name:'Havuç Tarator', desc:'Havuç püresi, sarımsak ve cevizli tarator sosu.', menus:['BBQ Menu'] },
+  { id:'m12', cat:'mezeler', name:'Piyaz', desc:'Beyaz fasulye salatası, soğan, maydanoz ve zeytinyağı.', menus:['BBQ Menu'] },
+  { id:'m13', cat:'mezeler', name:'Mücver', desc:'Kabak, havuç ve taze otlarla hazırlanan geleneksel mücver.', menus:['BBQ Menu','Chicken BBQ'] },
+  { id:'m14', cat:'mezeler', name:'Babagannuş', desc:'Közlenmiş patlıcan, tahin, sarımsak ve limonla yapılan geleneksel Levant mezesi.', menus:['Chicken BBQ'] },
+  { id:'m15', cat:'mezeler', name:'Izgara Zeytin', desc:'Izgara siyah ve yeşil zeytinler, taze otlar ile.', menus:['Fish BBQ'] },
+  { id:'m16', cat:'mezeler', name:'Yeşil Elmalı Çilekli Süzme Yoğurt', desc:'Süzme yoğurt, yeşil elma ve çilek sosu.', menus:['Fish BBQ'] },
+
+  // ANA YEMEK · MAINS
+  { id:'a01', cat:'ana-yemek', name:'Özel Soslu Kuzu But', desc:'Körpe patates ve fırında mantar eşliğinde.', menus:['Turkish Night'] },
+  { id:'a02', cat:'ana-yemek', name:'İç Pilav (Garnitür)', desc:'Bademli, taze otlar ve baharatlarla. Ana yemekle servis edilen garnitür.', menus:['Turkish Night'] },
+  { id:'a03', cat:'ana-yemek', name:'Akdeniz Levreği', desc:'Özel soslu levrek fileto, dilimlenmiş zeytin ve kiraz domates ile.', menus:['Mediterranean Night'] },
+  { id:'a04', cat:'ana-yemek', name:'Hünkar Beğendi', desc:'Közlenmiş patlıcan üzerinde domates soslu dana sote.', menus:['Mediterranean Night'] },
+  { id:'a05', cat:'ana-yemek', name:'Adaçaylı Fırın Sebzeler (Garnitür)', desc:'Adaçaylı fırın mevsim sebzeleri. Ana yemekle servis edilen garnitür.', menus:['Mediterranean Night','Fish BBQ'] },
+
+  // IZGARA · GRILLS
+  { id:'g01', cat:'izgara', name:'Özel Marineli Tavuk Pizola', desc:'Özel baharatlarla marine edilmiş tavuk, közde pişirilmiş.', menus:['BBQ Menu'] },
+  { id:'g02', cat:'izgara', name:'Kuzu Şiş', desc:'Taze kuzu eti şiş, Akdeniz otları ve sarımsaklı marine.', menus:['BBQ Menu'] },
+  { id:'g03', cat:'izgara', name:'Köfte', desc:'El yapımı köfte, özel baharat karışımı ile.', menus:['BBQ Menu'] },
+  { id:'g04', cat:'izgara', name:'Özel Marineli Kemikçiz Tavuk But Fileto', desc:'Özel baharatlar ve zeytinyağı ile marine edilmiş, ızgarada pişirilmiş sulu but fileto.', menus:['Chicken BBQ'] },
+  { id:'g05', cat:'izgara', name:'Özel Marineli Tavuk Kanatları', desc:'Sarımsak, limon ve gizli baharatlarla hazırlanmış, çıtır dışı ve sulu içiyle ızgara kanatlar.', menus:['Chicken BBQ'] },
+  { id:'g06', cat:'izgara', name:'Renkli Biberli Tavuk Şiş', desc:'Renkli biberler ve soğanla, özel acıda marine tavuk şiş.', menus:['Chicken BBQ'] },
+  { id:'g07', cat:'izgara', name:'Asma Yaprağında Özel Marineli Levrek', desc:'Asma yaprağında özel marine Akdeniz levreği.', menus:['Fish BBQ'] },
+  { id:'g08', cat:'izgara', name:'Özel Marineli Somon', desc:'Özel baharat ve limonla marine somon fileto.', menus:['Fish BBQ'] },
+
+  // YAN LEZZETLER · SIDES
+  { id:'y01', cat:'yan-lezzetler', name:'Tereyağlı Türk Pilavı', desc:'', menus:['BBQ Menu'] },
+  { id:'y02', cat:'yan-lezzetler', name:'Baharatlı Fırın Sebzeler veya Sade Patates', desc:'', menus:['BBQ Menu'] },
+  { id:'y03', cat:'yan-lezzetler', name:'Tereyağlı Karides', desc:'Tereyağında sote karides.', menus:['BBQ Menu'] },
+
+  // SALATA · SALADS
+  { id:'s01', cat:'salata', name:'Tulum Peynirli Karpuz Roka Salatası', desc:'', menus:['Turkish Night'] },
+  { id:'s02', cat:'salata', name:'Mevsim Yeşillikleri Salatası', desc:'Balkabağı çekirdeği ve kırmızı meyvelerle.', menus:['Mediterranean Night','BBQ Menu'] },
+  { id:'s03', cat:'salata', name:'Avokado Soslu Yeşil Salata', desc:'Karışık yeşillikler, taze avokado ve limonlu zeytinyağı dressing.', menus:['Chicken BBQ'] },
+  { id:'s04', cat:'salata', name:'Roka Tulum Salatası', desc:'Roka ve tulum peyniri salatası.', menus:['Fish BBQ'] },
+
+  // TATLI · DESSERTS
+  { id:'t01', cat:'tatli', name:'Fırında Şeftali Tatlısı (Dondurmalı)', desc:'', menus:['Turkish Night'] },
+  { id:'t02', cat:'tatli', name:'İncir Çiçeği', desc:'Baileys kreması, badem krokan.', menus:['Mediterranean Night'] },
+  { id:'t03', cat:'tatli', name:'Şefin Özel Tatlısı', desc:'', menus:['BBQ Menu'] },
+
+  // SOSLAR · SAUCES
+  { id:'so01', cat:'soslar', name:'Taze Otlu Sarımsaklı Sos', desc:'Taze maydanoz, dereotu ve sarımsakla yapılan kremamsı beyaz sos.', menus:['Chicken BBQ','Fish BBQ'] },
+  { id:'so02', cat:'soslar', name:'Peri Peri Sos', desc:'Ateşli Afrika biberi, sarımsak ve limonla hazırlanmış ev yapımı acı sos.', menus:['Chicken BBQ'] },
+  { id:'so03', cat:'soslar', name:'Barbekü Sosu', desc:'Domates, bal ve baharatlarla pişirilen, tütsülü aromalı ev yapımı barbekü sosu.', menus:['Chicken BBQ'] },
+  { id:'so04', cat:'soslar', name:'Limonlu Tereyağı Sosu', desc:'', menus:['Fish BBQ'] },
+  { id:'so05', cat:'soslar', name:'Acı Tatlı Özel Sos', desc:'', menus:['Fish BBQ'] },
+
+  // EKMEK · BREAD
+  { id:'e01', cat:'ekmek', name:'Türk Ekmekleri', desc:'Lavaş, bazlama ve ekşi mayalı ekmek.', menus:['Chicken BBQ','Fish BBQ'] },
+
+  // KAHVALTI · BREAKFAST
+  { id:'k01', cat:'kahvalti', name:'Sucuklu Yumurta', desc:'Taze sucuk ile sahanda ya da istenen şekilde pişirilmiş köy yumurtası.', menus:['Breakfast'] },
+  { id:'k02', cat:'kahvalti', name:'Patates Kızartması', desc:'Çıtır altın sarısı patates kızartması, taze yağda hazırlanmış.', menus:['Breakfast'] },
+  { id:'k03', cat:'kahvalti', name:'Beyaz Peynirli Sigara Böreği', desc:'Beyaz peynir ve taze maydanozla doldurulmuş, çıtır yufkaya sarılmış.', menus:['Breakfast'] },
+  { id:'k04', cat:'kahvalti', name:'Şarküteri Tabağı', desc:'Domates, salatalık, roka, maydanoz ve limon dilimleriyle birlikte.', menus:['Breakfast'] },
+  { id:'k05', cat:'kahvalti', name:'Dört Çeşit Peynir', desc:'Beyaz peynir, Ezine peyniri, eski kaşar, köy peyniri ve bergama tulum.', menus:['Breakfast'] },
+  { id:'k06', cat:'kahvalti', name:'Yeşil ve Siyah Zeytin', desc:'Zeytinyağı ve kekikle marine edilmiş yerli bahçe zeytinleri.', menus:['Breakfast'] },
+  { id:'k07', cat:'kahvalti', name:'Üç Çeşit Reçel · Tahin · Pekmez · Bal', desc:'Ev yapımı çilek, kayısı ve incir reçeli; tahin, üzüm pekmezi ve çiçek balı.', menus:['Breakfast'] },
+  { id:'k08', cat:'kahvalti', name:'Kaymak ve Yoğurt', desc:'Taze kaymak ve köy sütünden hazırlanmış tam yağlı süzme yoğurt.', menus:['Breakfast'] },
+  { id:'k09', cat:'kahvalti', name:'Mevsim Meyveleri', desc:'Günlük taze mevsim meyveleri; karpuz, kavun, şeftali ve üzüm.', menus:['Breakfast'] },
+  { id:'k10', cat:'kahvalti', name:'Mevsim Ekmeği ve Simit', desc:'Fırından çıkmış taze ekmek çeşitleri; simit, kepekli ve beyaz ekmek.', menus:['Breakfast'] },
+
+  // IÇECEK · DRINKS
+  { id:'i01', cat:'icecek', name:'Portakal Suyu', desc:'Taze sıkılmış portakal suyu, katkısız ve soğuk servis.', menus:['Breakfast'] },
+  { id:'i02', cat:'icecek', name:'Kahve ve Çay', desc:'Türk kahvesi, filtre kahve veya nescafé — taze demleme çay eşliğinde.', menus:['Breakfast'] },
+];
+
+const CATEGORIES = [
+  { id:'mezeler',       label:'Mezeler · Starters' },
+  { id:'ana-yemek',    label:'Ana Yemek · Mains' },
+  { id:'izgara',       label:'Izgara · Grills' },
+  { id:'yan-lezzetler',label:'Yan Lezzetler · Sides' },
+  { id:'salata',       label:'Salata · Salads' },
+  { id:'tatli',        label:'Tatlı · Desserts' },
+  { id:'soslar',       label:'Soslar · Sauces' },
+  { id:'ekmek',        label:'Ekmek · Bread' },
+  { id:'kahvalti',     label:'Kahvaltı · Breakfast' },
+  { id:'icecek',       label:'İçecek · Drinks' },
+];
+
+// Localized category labels (used by applyLang)
+const CAT_LABELS_I18N = {
+  tr: {
+    'mezeler':'Mezeler · Starters', 'ana-yemek':'Ana Yemek · Mains', 'izgara':'Izgara · Grills',
+    'yan-lezzetler':'Yan Lezzetler · Sides', 'salata':'Salata · Salads', 'tatli':'Tatlı · Desserts',
+    'soslar':'Soslar · Sauces', 'ekmek':'Ekmek · Bread', 'kahvalti':'Kahvaltı · Breakfast', 'icecek':'İçecek · Drinks',
+  },
+  en: {
+    'mezeler':'Starters · Mezeler', 'ana-yemek':'Main Courses · Ana Yemek', 'izgara':'Grills · Izgara',
+    'yan-lezzetler':'Sides', 'salata':'Salads', 'tatli':'Desserts',
+    'soslar':'Sauces', 'ekmek':'Bread', 'kahvalti':'Breakfast · Kahvaltı', 'icecek':'Drinks',
+  },
+  ru: {
+    'mezeler':'Закуски · Mezeler', 'ana-yemek':'Основные блюда · Ana Yemek', 'izgara':'Гриль · Izgara',
+    'yan-lezzetler':'Гарниры', 'salata':'Салаты', 'tatli':'Десерты',
+    'soslar':'Соусы', 'ekmek':'Хлеб', 'kahvalti':'Завтрак · Kahvaltı', 'icecek':'Напитки',
+  },
+};
+
+// Localized mobile count suffix
+const MOB_COUNT_I18N = { tr: 'yemek', en: 'dishes', ru: 'блюд' };
+function currentLang() {
+  try { const l = localStorage.getItem('kkLang'); if (l && CAT_LABELS_I18N[l]) return l; } catch(e){}
+  return 'tr';
+}
+
+// ─── STATE ───
+const selectedIds = new Set();
+
+// ─── RENDER ───
+function buildPicker() {
+  const container = document.getElementById('picker');
+  CATEGORIES.forEach((cat, ci) => {
+    const dishes = DISHES.filter(d => d.cat === cat.id);
+    if (!dishes.length) return;
+
+    const section = document.createElement('div');
+    section.className = ci === 0 ? 'reveal in' : 'reveal';
+    const lang0 = currentLang();
+    const label0 = (CAT_LABELS_I18N[lang0] && CAT_LABELS_I18N[lang0][cat.id]) || cat.label;
+    section.innerHTML = `
+      <div class="sec-rule my-10" data-cat-label="${cat.id}">${label0}</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3" id="cat-${cat.id}"></div>
+    `;
+    container.appendChild(section);
+
+    const grid = section.querySelector(`#cat-${cat.id}`);
+    dishes.forEach(dish => {
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'dish-card text-left';
+      card.dataset.id = dish.id;
+      card.setAttribute('aria-pressed', 'false');
+      card.setAttribute('aria-label', `${dish.name} seç`);
+
+      const tags = dish.menus.map(m =>
+        `<span class="dish-tag">${m}</span>`
+      ).join('');
+
+      card.innerHTML = `
+        <div class="dish-check" aria-hidden="true">
+          <svg class="dish-check-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="dish-name">${dish.name}</div>
+        ${dish.desc ? `<div class="dish-desc">${dish.desc}</div>` : ''}
+        <div class="dish-tags">${tags}</div>
+      `;
+
+      card.addEventListener('click', () => toggleDish(dish.id));
+      grid.appendChild(card);
+    });
+  });
+}
+
+function toggleDish(id) {
+  if (selectedIds.has(id)) {
+    selectedIds.delete(id);
+  } else {
+    selectedIds.add(id);
+  }
+  // Update card visual
+  const card = document.querySelector(`.dish-card[data-id="${id}"]`);
+  if (card) {
+    const selected = selectedIds.has(id);
+    card.classList.toggle('selected', selected);
+    card.setAttribute('aria-pressed', selected ? 'true' : 'false');
+    card.setAttribute('aria-label', `${DISHES.find(d=>d.id===id).name} ${selected?'seçildi — kaldırmak için tıkla':'seç'}`);
+  }
+  updateSummary();
+}
+
+function updateSummary() {
+  const count = selectedIds.size;
+  const selected = DISHES.filter(d => selectedIds.has(d.id));
+
+  // Desktop
+  document.getElementById('count-badge').textContent = count;
+  const list = document.getElementById('summary-list');
+  const empty = document.getElementById('summary-empty');
+  const clearBtn = document.getElementById('clear-btn');
+  const sendBtn = document.getElementById('send-btn');
+
+  if (count === 0) {
+    empty.style.display = '';
+    list.querySelectorAll('.summary-item').forEach(el => el.remove());
+    clearBtn.style.display = 'none';
+    sendBtn.disabled = true;
+  } else {
+    empty.style.display = 'none';
+    clearBtn.style.display = '';
+    sendBtn.disabled = false;
+    // Rebuild list
+    list.querySelectorAll('.summary-item').forEach(el => el.remove());
+    selected.forEach(d => {
+      const item = document.createElement('div');
+      item.className = 'summary-item';
+      item.innerHTML = `<span class="summary-bullet">◆</span><span>${d.name}</span>`;
+      list.appendChild(item);
+    });
+  }
+
+  // Mobile
+  const mobSuffix = MOB_COUNT_I18N[currentLang()] || MOB_COUNT_I18N.tr;
+  document.getElementById('mobile-count').textContent = count + ' ' + mobSuffix;
+  document.getElementById('mobile-send-btn').disabled = count === 0;
+}
+
+function clearAll() {
+  selectedIds.clear();
+  document.querySelectorAll('.dish-card.selected').forEach(c => {
+    c.classList.remove('selected');
+    c.setAttribute('aria-pressed', 'false');
+  });
+  updateSummary();
+}
+
+// ─── MODAL ───
+const WA_LOCALES = {
+  tr: { selected: 'Seçili yemekler:', intro: 'Merhaba, Kalimera Kitchen için özel menü talebim var:' },
+  en: { selected: 'Selected dishes:', intro: 'Hello, I would like to request a custom menu from Kalimera Kitchen:' },
+  ru: { selected: 'Выбранные блюда:', intro: 'Здравствуйте, я хотел бы заказать индивидуальное меню в Kalimera Kitchen:' },
+};
+
+function getCurrentLang() {
+  try {
+    const l = localStorage.getItem('kkLang');
+    if (l && WA_LOCALES[l]) return l;
+  } catch (e) {}
+  return 'tr';
+}
+
+function openModal() {
+  const L = WA_LOCALES[getCurrentLang()] || WA_LOCALES.tr;
+  const selected = DISHES.filter(d => selectedIds.has(d.id));
+  const notesPre = `${L.selected}\n` + selected.map(d => '• ' + d.name).join('\n');
+  document.getElementById('f-notes').value = notesPre;
+
+  // WA link
+  const waText = encodeURIComponent(
+    `${L.intro}\n\n` + notesPre
+  );
+  document.getElementById('wa-link').href = `https://wa.me/?text=${waText}`;
+
+  // Reset form view
+  document.getElementById('form-view').style.display = '';
+  document.getElementById('form-success').style.display = 'none';
+
+  const modal = document.getElementById('modal');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('f-name').focus(), 50);
+}
+
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('send-btn').addEventListener('click', openModal);
+document.getElementById('mobile-send-btn').addEventListener('click', openModal);
+document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('success-close').addEventListener('click', closeModal);
+document.getElementById('clear-btn').addEventListener('click', clearAll);
+
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  if (!name || !email) {
+    document.getElementById('f-name').focus();
+    return;
+  }
+  // Show success
+  document.getElementById('form-view').style.display = 'none';
+  document.getElementById('form-success').style.display = '';
+  document.getElementById('form-success').querySelector('button').focus();
+});
+
+// ─── INIT ───
+document.getElementById('yr').textContent = new Date().getFullYear();
+buildPicker();
+
+// Reveal observer
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: 0.05 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+setTimeout(() => document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in')), 700);
+</script>
+
+<script>
+  // ─── I18N (static UI strings) ───
+  const I18N = {
+    tr: {
+      nav_home:'Anasayfa', nav_menus:'Menüler', nav_reserve:'Rezervasyon', nav_cta:'Rezervasyon',
+      hero_title:'Kendi Menünü Tasarla',
+      hero_sub:'Build Your Own Menu <span class="text-sun mx-2">·</span> Özel Catering Talebi',
+      hero_lead:'Aşağıdaki yemeklerden dilediğinizi seçin, talebinizi gönderin — <span class="text-sun/90">24 saat içinde</span> size özel teklif sunalım.',
+      sum_selected:'Seçili Yemekler', sum_dishes_label:'yemek seçildi', sum_empty:'Henüz seçim yapılmadı.',
+      sum_clear:'Seçimi Temizle', sum_send:'Talep Gönder', sum_eta:'Talebiniz 24 saat içinde yanıtlanır.',
+      mob_selected:'Seçili',
+      ftr_home:'Anasayfa', ftr_menus:'Tüm Menüler', ftr_contact:'İletişim',
+      modal_title:'Talebinizi Gönderin',
+      modal_sub:'24 saat içinde size özel teklif sunacağız.',
+      lbl_name:'Adınız Soyadınız *', lbl_email:'E-posta *', lbl_phone:'Telefon',
+      lbl_guests:'Misafir Sayısı', lbl_date:'Etkinlik Tarihi', lbl_notes:'Seçili Yemekler & Notlar',
+      btn_submit:'Talebi Gönder', btn_wa:'WhatsApp ile Gönder', btn_cancel:'İptal',
+      suc_title:'Talebiniz Alındı', suc_sub:'24 saat içinde dönüş yapacağız.', btn_close:'Kapat',
+    },
+    en: {
+      nav_home:'Home', nav_menus:'Menus', nav_reserve:'Reservation', nav_cta:'Reserve',
+      hero_title:'Build Your Own Menu',
+      hero_sub:'Kendi Menünü Tasarla <span class="text-sun mx-2">·</span> Custom Catering Request',
+      hero_lead:'Pick any dishes below and send your request — we will reply with a tailored quote <span class="text-sun/90">within 24 hours</span>.',
+      sum_selected:'Selected Dishes', sum_dishes_label:'dishes selected', sum_empty:'No selection yet.',
+      sum_clear:'Clear Selection', sum_send:'Send Request', sum_eta:'Your request will be answered within 24 hours.',
+      mob_selected:'Selected',
+      ftr_home:'Home', ftr_menus:'All Menus', ftr_contact:'Contact',
+      modal_title:'Send Your Request',
+      modal_sub:'We will reply with a tailored quote within 24 hours.',
+      lbl_name:'Your Full Name *', lbl_email:'Email *', lbl_phone:'Phone',
+      lbl_guests:'Number of Guests', lbl_date:'Event Date', lbl_notes:'Selected Dishes & Notes',
+      btn_submit:'Submit Request', btn_wa:'Send via WhatsApp', btn_cancel:'Cancel',
+      suc_title:'Request Received', suc_sub:'We will get back to you within 24 hours.', btn_close:'Close',
+    },
+    ru: {
+      nav_home:'Главная', nav_menus:'Меню', nav_reserve:'Бронь', nav_cta:'Бронь',
+      hero_title:'Соберите своё меню',
+      hero_sub:'Build Your Own Menu <span class="text-sun mx-2">·</span> Индивидуальный кейтеринг',
+      hero_lead:'Выберите блюда ниже и отправьте запрос — мы вышлем индивидуальное предложение <span class="text-sun/90">в течение 24 часов</span>.',
+      sum_selected:'Выбранные блюда', sum_dishes_label:'блюд выбрано', sum_empty:'Пока ничего не выбрано.',
+      sum_clear:'Очистить выбор', sum_send:'Отправить запрос', sum_eta:'Ответ в течение 24 часов.',
+      mob_selected:'Выбрано',
+      ftr_home:'Главная', ftr_menus:'Все меню', ftr_contact:'Контакты',
+      modal_title:'Отправьте запрос',
+      modal_sub:'Мы пришлём индивидуальное предложение в течение 24 часов.',
+      lbl_name:'Имя и фамилия *', lbl_email:'E-mail *', lbl_phone:'Телефон',
+      lbl_guests:'Число гостей', lbl_date:'Дата мероприятия', lbl_notes:'Выбранные блюда и комментарии',
+      btn_submit:'Отправить запрос', btn_wa:'Отправить через WhatsApp', btn_cancel:'Отмена',
+      suc_title:'Запрос принят', suc_sub:'Мы свяжемся с вами в течение 24 часов.', btn_close:'Закрыть',
+    },
+  };
+
+  function applyLang(l) {
+    if (!I18N[l]) l = 'tr';
+    document.documentElement.lang = l;
+    try { localStorage.setItem('kkLang', l); } catch(e) {}
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.dataset.i18n;
+      const v = I18N[l][k];
+      if (v == null) return;
+      if (el.dataset.i18nHtml === '1') el.innerHTML = v;
+      else el.textContent = v;
+    });
+    document.querySelectorAll('[data-cat-label]').forEach(el => {
+      const id = el.dataset.catLabel;
+      const v = (CAT_LABELS_I18N[l] && CAT_LABELS_I18N[l][id]);
+      if (v) el.textContent = v;
+    });
+    document.querySelectorAll('.lang-btn[data-lang]').forEach(b => {
+      b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false');
+    });
+    // Refresh dynamic count text on mobile
+    if (typeof updateSummary === 'function') updateSummary();
+  }
+  document.querySelectorAll('.lang-btn[data-lang]').forEach(b => {
+    b.addEventListener('click', () => applyLang(b.dataset.lang));
+  });
+  try {
+    const saved = localStorage.getItem('kkLang');
+    if (saved && I18N[saved]) applyLang(saved);
+  } catch(e) {}
+</script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicken BBQ — Kalimera Kitchen</title>
+  <meta name="description" content="Özel marineli ızgara tavuk menüsü — Kalimera Kitchen Kalkan / Antalya catering." />
+  <link rel="canonical" href="https://kalimerakitchen.com/menu/chicken-bbq.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://kalimerakitchen.com/menu/chicken-bbq.html" />
+  <meta property="og:title" content="Chicken BBQ — Kalimera Kitchen" />
+  <meta property="og:description" content="Marine edilmiş tavuk mangal menüsü — Kalkan / Antalya catering. 26€/kişi." />
+  <meta property="og:image" content="https://kalimerakitchen.com/brand_assets/chicken-bbq.jpg" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chicken BBQ — Kalimera Kitchen" />
+  <meta name="twitter:description" content="Marine edilmiş tavuk mangal menüsü." />
+  <meta name="twitter:image" content="https://kalimerakitchen.com/brand_assets/chicken-bbq.jpg" />
+  <link rel="icon" type="image/jpeg" href="/brand_assets/kalimera-logo.jpeg" />
+  <link rel="apple-touch-icon" href="/brand_assets/kalimera-logo.jpeg" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Menu","name":"Chicken BBQ","inLanguage":"tr-TR","provider":{"@type":"Restaurant","name":"Kalimera Kitchen","address":{"@type":"PostalAddress","addressLocality":"Kalkan","addressRegion":"Antalya","addressCountry":"TR"},"telephone":"+905397430781","url":"https://kalimerakitchen.com"}}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: '#15342B',
+            forest2:'#1A3D33',
+            forest3:'#22483D',
+            cream:  '#F2EBDA',
+            ivory:  '#FAF6EE',
+            sand:   '#E5D9BE',
+            terra:  '#C5582B',
+            sun:    '#D9923B',
+            muted:  'rgba(242, 235, 218, 0.55)',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+            script:  ['Caveat', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #F2EBDA;
+      background: #15342B;
+      line-height: 1.7;
+    }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; letter-spacing: -0.005em; }
+
+    /* Forest backdrop with radial highlights */
+    .forest-bg {
+      background-color: #15342B;
+      background-image:
+        radial-gradient(at 14% 12%, rgba(34, 72, 61, 0.85) 0px, transparent 45%),
+        radial-gradient(at 86% 18%, rgba(217, 146, 59, 0.06) 0px, transparent 50%),
+        radial-gradient(at 50% 78%, rgba(26, 61, 51, 0.9) 0px, transparent 60%),
+        radial-gradient(at 12% 95%, rgba(34, 72, 61, 0.7) 0px, transparent 55%);
+    }
+    .grain::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.45;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.07 0 0 0 0 0.06 0 0 0 0.32 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      mix-blend-mode: overlay;
+    }
+
+    /* Plate — round image with deep shadow + soft outer ring */
+    .plate {
+      position: absolute;
+      border-radius: 9999px;
+      overflow: hidden;
+      background: #0a1f18;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.06) inset,
+        0 30px 60px -10px rgba(0, 0, 0, 0.55),
+        0 70px 120px -20px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(245, 235, 220, 0.04);
+    }
+    .plate img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.05) contrast(1.05); }
+    .plate::after {
+      content: ""; position: absolute; inset: 0; border-radius: 9999px; pointer-events: none;
+      background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.10), transparent 45%);
+    }
+
+    /* Floating reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 800ms ease, transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Section divider */
+    .sec-rule {
+      display: flex; align-items: center; gap: 1.25rem;
+      color: rgba(242, 235, 218, 0.55);
+      font-size: 11px; letter-spacing: 0.42em; text-transform: uppercase;
+    }
+    .sec-rule::before, .sec-rule::after {
+      content: ""; height: 1px; flex: 1;
+      background: linear-gradient(90deg, transparent, rgba(217, 146, 59, 0.35), transparent);
+    }
+
+    /* Decorative diamond divider */
+    .diamond {
+      display: inline-flex; align-items: center; gap: 0.6rem; color: #D9923B; font-size: 10px;
+    }
+    .diamond::before, .diamond::after {
+      content: ""; width: 28px; height: 1px; background: rgba(217, 146, 59, 0.45);
+    }
+
+    /* Sticky top nav */
+    .nav-blur {
+      background: rgba(21, 52, 43, 0.78);
+      backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid rgba(242, 235, 218, 0.07);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(180deg, #D9923B 0%, #C97D27 100%);
+      color: #15342B;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.4) inset,
+        0 10px 26px -10px rgba(217, 146, 59, 0.55),
+        0 22px 48px -22px rgba(0, 0, 0, 0.6);
+      transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 220ms ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-primary:focus-visible { outline: 2px solid #F2EBDA; outline-offset: 3px; }
+
+    .btn-ghost {
+      border: 1px solid rgba(242, 235, 218, 0.25);
+      color: #F2EBDA;
+      transition: background 220ms ease, border-color 220ms ease;
+    }
+    .btn-ghost:hover { background: rgba(242, 235, 218, 0.08); border-color: rgba(242, 235, 218, 0.5); }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #D9923B; outline-offset: 3px; border-radius: 4px;
+    }
+
+    /* Scroll-snap menus list */
+    .menu-line { position: relative; padding-left: 0; }
+    .menu-line .name { font-family: 'Cormorant Garamond', serif; font-weight: 500; color: #F2EBDA; font-size: 1.45rem; letter-spacing: 0.005em; }
+    .menu-line .desc { font-style: italic; font-size: 0.92rem; color: rgba(242, 235, 218, 0.6); margin-top: 0.35rem; max-width: 56ch; }
+
+    /* Optional small parsley sprig at bottom right */
+    .sprig {
+      position: absolute; right: 1.5rem; bottom: 1rem; width: 110px; height: 110px;
+      transform: rotate(-12deg); opacity: 0.85;
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.45));
+    }
+
+    /* Language switcher */
+    .lang-btn { font-size:10px; letter-spacing:.18em; padding:6px 10px; border-radius:9999px; border:1px solid rgba(242,235,218,.18); color:rgba(242,235,218,.7); text-transform:uppercase; cursor:pointer; background:transparent; transition: all .2s ease; }
+    .lang-btn:hover { color:#F2EBDA; border-color:rgba(217,146,59,.6); }
+    .lang-btn[aria-pressed="true"] { background:#D9923B; color:#15342B; border-color:#D9923B; }
+  </style>
+</head>
+
+<body class="forest-bg">
+
+<!-- ───── NAV ───── -->
+<header class="nav-blur fixed top-0 inset-x-0 z-50">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group">
+      <img src="/brand_assets/kalimera-logo.jpeg" alt="Kalimera Kitchen" class="h-11 w-auto rounded-md" />
+      <span class="leading-tight">
+        <span class="block font-display text-lg font-semibold text-cream">Kalimera Kitchen</span>
+        <span class="block text-[10px] uppercase tracking-[0.28em] text-cream/55">Kalkan · Antalya</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-[0.2em] text-cream/70">
+      <a href="/" class="hover:text-cream" data-i18n="nav_home">Anasayfa</a>
+      <a href="/menus.html" class="text-cream" data-i18n="nav_menus">Menüler</a>
+      <a href="/#reserve" class="hover:text-cream" data-i18n="nav_reserve">Rezervasyon</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <div class="hidden sm:flex items-center gap-1">
+        <button class="lang-btn" data-lang="tr" aria-pressed="true">TR</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <a href="/#reserve" class="btn-primary inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-widest" data-i18n="nav_cta">
+        Rezervasyon
+      </a>
+    </div>
+  </div>
+  <div class="sm:hidden flex items-center justify-center gap-1 pb-2">
+    <button class="lang-btn" data-lang="tr" aria-pressed="true">TR</button>
+    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    <button class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+  </div>
+</header>
+
+<!-- ───── HERO ───── -->
+<section class="relative min-h-[100svh] grain overflow-hidden pt-28 pb-20">
+  <!-- Plates: top arrangement (decorative, hidden on small screens) -->
+  <div class="absolute inset-0 pointer-events-none hidden md:block" aria-hidden="true">
+    <!-- top-left plate -->
+    <div class="plate" style="top: 7%; left: 6%; width: 230px; height: 230px;">
+      <img src="/brand_assets/chicken-bbq.jpg" alt="" onerror="this.src='https://placehold.co/600x600/15342B/D9923B?text=Kalimera'" />
+    </div>
+    <!-- top-right plate -->
+    <div class="plate" style="top: 9%; right: 7%; width: 250px; height: 250px;">
+      <img src="/brand_assets/turkish-spread.jpeg" alt="" onerror="this.src='https://placehold.co/600x600/15342B/D9923B?text=Kalimera'" />
+    </div>
+    <!-- mid-center small bowl -->
+    <div class="plate" style="top: 56%; left: 50%; transform: translateX(-50%); width: 120px; height: 120px;">
+      <img src="/brand_assets/chicken-bbq.jpg" alt="" onerror="this.src='https://placehold.co/400x400/15342B/D9923B?text=Kalimera'" />
+    </div>
+  </div>
+
+  <div class="relative max-w-3xl mx-auto px-5 lg:px-8 text-center pt-16 md:pt-24">
+    <div class="diamond mb-6 justify-center">◆</div>
+
+    <h1 class="font-display italic font-light text-6xl md:text-7xl lg:text-[88px] text-sun leading-[1]">
+      Chicken BBQ
+    </h1>
+
+    <p class="mt-7 text-[11px] md:text-xs uppercase tracking-[0.4em] text-cream/65" data-i18n="hero_sub" data-i18n-html="1">
+      Özel Marineli Izgara Tavuk Menüsü
+      <span class="text-sun mx-2">·</span>
+      Special Marinated Chicken Grill
+    </p>
+
+    <div class="mt-8 diamond justify-center">◆</div>
+  </div>
+</section>
+
+<!-- ───── MENU SECTIONS ───── -->
+<section class="relative grain pb-32">
+
+  <!-- floating side plates (decorative) -->
+  <div class="absolute inset-0 pointer-events-none hidden lg:block" aria-hidden="true">
+    <div class="plate" style="top: 6%; right: 4%; width: 180px; height: 180px;">
+      <img src="/brand_assets/turkish-spread.jpeg" alt="" onerror="this.src='https://placehold.co/500x500/15342B/D9923B?text=Kalimera'" />
+    </div>
+    <div class="plate" style="top: 38%; left: 3%; width: 180px; height: 180px;">
+      <img src="/brand_assets/chicken-bbq.jpg" alt="" onerror="this.src='https://placehold.co/500x500/15342B/D9923B?text=Kalimera'" />
+    </div>
+    <div class="plate" style="top: 70%; right: 4%; width: 200px; height: 200px;">
+      <img src="/brand_assets/turkish-spread.jpeg" alt="" onerror="this.src='https://placehold.co/500x500/15342B/D9923B?text=Kalimera'" />
+    </div>
+  </div>
+
+  <div class="relative max-w-2xl mx-auto px-5">
+
+    <!-- ─── IZGARA TAVUK ─── -->
+    <div class="reveal">
+      <div class="sec-rule mb-10" data-i18n="sec_grill">Izgara Tavuk · Grilled Chicken</div>
+      <div class="space-y-7">
+        <div class="menu-line">
+          <div class="name" data-i18n="d1_n">Özel Marineli Kemikçiz Tavuk But Fileto</div>
+          <div class="desc" data-i18n="d1_d">Özel baharatlar ve zeytinyağı ile marine edilmiş, ızgarada pişirilmiş sulu but fileto.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d2_n">Özel Marineli Tavuk Kanatları</div>
+          <div class="desc" data-i18n="d2_d">Sarımsak, limon ve gizli baharatlarla hazırlanmış, çıtır dışı ve sulu içiyle ızgara kanatlar.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d3_n">Renkli Biberli Tavuk Şiş</div>
+          <div class="desc" data-i18n="d3_d">Renkli biberler ve soğanla, özel acıda marine tavuk şiş.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── MEZELER & SOSLAR ─── -->
+    <div class="mt-20 reveal">
+      <div class="sec-rule mb-10" data-i18n="sec_sides">Mezeler & Soslar · Sides &amp; Sauces</div>
+      <div class="space-y-7">
+        <div class="menu-line">
+          <div class="name" data-i18n="d4_n">Mücver</div>
+          <div class="desc" data-i18n="d4_d">Kabak, havuç, patates ve taze otlarla hazırlanmış çıtır mücver köftecikleri.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d5_n">Babagannuş</div>
+          <div class="desc" data-i18n="d5_d">Közlenmiş patlıcan, tahin, sarımsak ve limonla yapılan geleneksel Levant mezesi.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d6_n">Peri Peri Sos</div>
+          <div class="desc" data-i18n="d6_d">Ateşli Afrika biberi, sarımsak ve limonla hazırlanmış ev yapımı acı sos.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d7_n">Taze Otlu Sarımsaklı Sos</div>
+          <div class="desc" data-i18n="d7_d">Taze maydanoz, dereotu ve sarımsakla yapılan kremamsı beyaz sos.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d8_n">Barbekü Sosu</div>
+          <div class="desc" data-i18n="d8_d">Domates, bal ve baharatlarla pişirilen, tütsülü aromalı ev yapımı barbekü sosu.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SALATA & EKMEK ─── -->
+    <div class="mt-20 reveal">
+      <div class="sec-rule mb-10" data-i18n="sec_bread">Salata & Ekmek · Salad &amp; Bread</div>
+      <div class="space-y-7">
+        <div class="menu-line">
+          <div class="name" data-i18n="d9_n">Avokado Soslu Yeşil Salata</div>
+          <div class="desc" data-i18n="d9_d">Karışık yeşillikler, taze avokado ve limonlu zeytinyağı dressing.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d10_n">Türk Ekmekleri</div>
+          <div class="desc" data-i18n="d10_d">Lavaş, bazlama ve etişi maşalı ekmek.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PRICE ─── -->
+    <div class="mt-24 text-center reveal">
+      <div class="sec-rule mb-8" data-i18n="sec_price">Kişi Başı Fiyat · Price Per Person</div>
+      <div class="font-display italic text-7xl md:text-8xl text-sun leading-none">26<span class="text-5xl md:text-6xl align-top ml-1">£</span></div>
+      <p class="mt-7 text-xs italic text-cream/55 max-w-md mx-auto" data-i18n="price_caption" data-i18n-html="1">
+        Tüm ızgara lezzetleri açık ateşte taze pişirilir
+        <span class="text-sun mx-2">·</span>
+        All grills freshly cooked over open fire
+      </p>
+    </div>
+
+    <!-- ─── CTA ─── -->
+    <div class="mt-20 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+      <a id="menu-reserve-wa" target="_blank" rel="noopener" href="https://wa.me/905397430781" class="btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold">
+        <span id="menu-reserve-label" data-menu="Chicken BBQ">Bu Menüyü Rezerve Et</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="/menus.html" class="btn-ghost inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold" data-i18n="cta_other">
+        Diğer Menüler
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer class="border-t border-cream/10 py-10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-cream/50">
+    <div>© <span id="yr"></span> Kalimera Kitchen · Kalkan / Antalya</div>
+    <div class="flex gap-5">
+      <a href="/" class="hover:text-cream transition" data-i18n="ftr_home">Anasayfa</a>
+      <a href="/menus.html" class="hover:text-cream transition" data-i18n="ftr_menus">Tüm Menüler</a>
+      <a href="/#reserve" class="hover:text-cream transition" data-i18n="ftr_contact">İletişim</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }}), { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  setTimeout(() => document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in')), 600);
+</script>
+
+<script>
+  // ─── Menu Reserve CTA (WhatsApp) ───
+  function updateMenuReserveCta() {
+    const labelEl = document.getElementById('menu-reserve-label');
+    const linkEl  = document.getElementById('menu-reserve-wa');
+    if (!labelEl || !linkEl) return;
+    const MENU = labelEl.dataset.menu || '';
+    const TEXTS = {
+      tr: { label: 'Bu Menüyü Rezerve Et',   msg: 'Merhaba, Kalimera Kitchen — ' + MENU + ' menüsünü rezerve etmek istiyorum. Detaylar için dönebilir misiniz?' },
+      en: { label: 'Reserve This Menu',      msg: 'Hello, Kalimera Kitchen — I would like to reserve the ' + MENU + ' menu. Could you get back to me with details?' },
+      ru: { label: 'Забронировать это меню', msg: 'Здравствуйте, Kalimera Kitchen — я хотел(а) бы забронировать меню ' + MENU + '. Не могли бы вы связаться со мной?' },
+    };
+    let l = 'tr';
+    try { const s = localStorage.getItem('kkLang'); if (s && TEXTS[s]) l = s; } catch(e){}
+    const t = TEXTS[l];
+    linkEl.href = 'https://wa.me/905397430781?text=' + encodeURIComponent(t.msg);
+    labelEl.textContent = t.label;
+  }
+
+  // ─── I18N ───
+  const I18N = {
+    tr: {
+      nav_home:'Anasayfa', nav_menus:'Menüler', nav_reserve:'Rezervasyon', nav_cta:'Rezervasyon',
+      hero_sub:'Özel Marineli Izgara Tavuk Menüsü <span class="text-sun mx-2">·</span> Special Marinated Chicken Grill',
+      sec_grill:'Izgara Tavuk · Grilled Chicken',
+      sec_sides:'Mezeler & Soslar · Sides & Sauces',
+      sec_bread:'Salata & Ekmek · Salad & Bread',
+      sec_price:'Kişi Başı Fiyat · Price Per Person',
+      d1_n:'Özel Marineli Kemikçiz Tavuk But Fileto', d1_d:'Özel baharatlar ve zeytinyağı ile marine edilmiş, ızgarada pişirilmiş sulu but fileto.',
+      d2_n:'Özel Marineli Tavuk Kanatları', d2_d:'Sarımsak, limon ve gizli baharatlarla hazırlanmış, çıtır dışı ve sulu içiyle ızgara kanatlar.',
+      d3_n:'Renkli Biberli Tavuk Şiş', d3_d:'Renkli biberler ve soğanla, özel acıda marine tavuk şiş.',
+      d4_n:'Mücver', d4_d:'Kabak, havuç, patates ve taze otlarla hazırlanmış çıtır mücver köftecikleri.',
+      d5_n:'Babagannuş', d5_d:'Közlenmiş patlıcan, tahin, sarımsak ve limonla yapılan geleneksel Levant mezesi.',
+      d6_n:'Peri Peri Sos', d6_d:'Ateşli Afrika biberi, sarımsak ve limonla hazırlanmış ev yapımı acı sos.',
+      d7_n:'Taze Otlu Sarımsaklı Sos', d7_d:'Taze maydanoz, dereotu ve sarımsakla yapılan kremamsı beyaz sos.',
+      d8_n:'Barbekü Sosu', d8_d:'Domates, bal ve baharatlarla pişirilen, tütsülü aromalı ev yapımı barbekü sosu.',
+      d9_n:'Avokado Soslu Yeşil Salata', d9_d:'Karışık yeşillikler, taze avokado ve limonlu zeytinyağı dressing.',
+      d10_n:'Türk Ekmekleri', d10_d:'Lavaş, bazlama ve etişi maşalı ekmek.',
+      price_caption:'Tüm ızgara lezzetleri açık ateşte taze pişirilir <span class="text-sun mx-2">·</span> All grills freshly cooked over open fire',
+      cta_other:'Diğer Menüler',
+      ftr_home:'Anasayfa', ftr_menus:'Tüm Menüler', ftr_contact:'İletişim',
+    },
+    en: {
+      nav_home:'Home', nav_menus:'Menus', nav_reserve:'Reservation', nav_cta:'Reserve',
+      hero_sub:'Special Marinated Chicken Grill <span class="text-sun mx-2">·</span> Özel Marineli Izgara Tavuk',
+      sec_grill:'Grilled Chicken · Izgara Tavuk',
+      sec_sides:'Sides & Sauces',
+      sec_bread:'Salad & Bread',
+      sec_price:'Price Per Person',
+      d1_n:'Boneless Chicken Thigh Fillet, Marinated', d1_d:'Boneless thigh fillet marinated in our spice blend and olive oil, char-grilled until juicy.',
+      d2_n:'Marinated Chicken Wings', d2_d:'Wings marinated with garlic, lemon and our secret spices — crispy outside, juicy inside.',
+      d3_n:'Chicken Shish with Bell Peppers', d3_d:'Chicken skewers in our special spicy marinade with colourful bell peppers and onions.',
+      d4_n:'Mücver (Zucchini Fritters)', d4_d:'Crispy fritters of zucchini, carrot, potato and fresh herbs.',
+      d5_n:'Babaganoush', d5_d:'Traditional Levantine meze of smoked eggplant, tahini, garlic and lemon.',
+      d6_n:'Peri Peri Sauce', d6_d:'House-made hot sauce with African chillies, garlic and lemon.',
+      d7_n:'Garlic & Herb Sauce', d7_d:'Creamy white sauce with fresh parsley, dill and garlic.',
+      d8_n:'BBQ Sauce', d8_d:'House-made smoky BBQ sauce simmered with tomato, honey and spices.',
+      d9_n:'Green Salad with Avocado Dressing', d9_d:'Mixed greens, fresh avocado and lemon-olive-oil dressing.',
+      d10_n:'Turkish Breads', d10_d:'Lavash, bazlama and tongue-shaped flatbread.',
+      price_caption:'All grills freshly cooked over open fire <span class="text-sun mx-2">·</span> Tüm ızgara lezzetleri açık ateşte taze pişirilir',
+      cta_other:'Other Menus',
+      ftr_home:'Home', ftr_menus:'All Menus', ftr_contact:'Contact',
+    },
+    ru: {
+      nav_home:'Главная', nav_menus:'Меню', nav_reserve:'Бронь', nav_cta:'Бронь',
+      hero_sub:'Курица на гриле в фирменном маринаде <span class="text-sun mx-2">·</span> Special Marinated Chicken Grill',
+      sec_grill:'Курица на гриле · Izgara Tavuk',
+      sec_sides:'Гарниры и соусы · Mezeler & Soslar',
+      sec_bread:'Салат и хлеб',
+      sec_price:'Цена за персону',
+      d1_n:'Куриное филе бедра в маринаде (без кости)', d1_d:'Филе бедра, маринованное в фирменных специях и оливковом масле, сочно приготовленное на гриле.',
+      d2_n:'Куриные крылышки в маринаде', d2_d:'Крылышки с чесноком, лимоном и фирменными специями — хрустящие снаружи, сочные внутри.',
+      d3_n:'Шашлык из курицы с цветным перцем (Tavuk Şiş)', d3_d:'Куриные шашлычки в остром фирменном маринаде с разноцветным перцем и луком.',
+      d4_n:'Мюджвер (оладьи из кабачка)', d4_d:'Хрустящие котлетки из кабачка, моркови, картофеля и свежих трав.',
+      d5_n:'Бабагануш', d5_d:'Традиционная левантийская закуска из запечённого баклажана, тахини, чеснока и лимона.',
+      d6_n:'Соус пери-пери', d6_d:'Домашний острый соус с африканским перцем, чесноком и лимоном.',
+      d7_n:'Чесночно-травяной соус', d7_d:'Кремовый белый соус со свежей петрушкой, укропом и чесноком.',
+      d8_n:'Соус барбекю', d8_d:'Домашний дымный соус барбекю на томате, мёде и специях.',
+      d9_n:'Зелёный салат с соусом из авокадо', d9_d:'Микс зелени, свежий авокадо и заправка из оливкового масла и лимона.',
+      d10_n:'Турецкий хлеб', d10_d:'Лаваш, базлама и плоский турецкий хлеб «этиши».',
+      price_caption:'Все блюда на гриле готовятся свежими на открытом огне <span class="text-sun mx-2">·</span> All grills freshly cooked over open fire',
+      cta_other:'Другие меню',
+      ftr_home:'Главная', ftr_menus:'Все меню', ftr_contact:'Контакты',
+    }
+  };
+
+  function applyLang(l) {
+    if (!I18N[l]) l = 'tr';
+    document.documentElement.lang = l;
+    try { localStorage.setItem('kkLang', l); } catch(e) {}
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.dataset.i18n;
+      const v = I18N[l][k];
+      if (v == null) return;
+      if (el.dataset.i18nHtml === '1') el.innerHTML = v;
+      else el.textContent = v;
+    });
+    document.querySelectorAll('.lang-btn[data-lang]').forEach(b => {
+      b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false');
+    });
+    updateMenuReserveCta();
+  }
+  document.querySelectorAll('.lang-btn[data-lang]').forEach(b => {
+    b.addEventListener('click', () => applyLang(b.dataset.lang));
+  });
+  try {
+    const saved = localStorage.getItem('kkLang');
+    if (saved && I18N[saved]) applyLang(saved);
+    else updateMenuReserveCta();
+  } catch(e) { updateMenuReserveCta(); }
+</script>
+</body>
+</html>

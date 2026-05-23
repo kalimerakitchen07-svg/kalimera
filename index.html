@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalimera Kitchen — Kalkan / Antalya Catering & Akdeniz Mutfağı</title>
+  <meta name="description" content="Kalkan'da ev yapımı Akdeniz lezzetleri. Villa catering, özel yemek servisleri, taze meze, deniz ürünleri ve sıcak Türk-Yunan misafirperverliği." />
+  <link rel="canonical" href="https://kalimerakitchen.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kalimerakitchen.com/" />
+  <meta property="og:title" content="Kalimera Kitchen — Kalkan / Antalya Catering & Akdeniz Mutfağı" />
+  <meta property="og:description" content="Villa catering, özel yemek servisleri, taze meze ve deniz ürünleri. Kalkan kıyısının zeytinyağıyla, ev yapımı tariflerle Akdeniz mutfağı." />
+  <meta property="og:image" content="https://kalimerakitchen.com/brand_assets/hero.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="ru_RU" />
+  <meta property="og:site_name" content="Kalimera Kitchen" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kalimera Kitchen — Kalkan / Antalya Catering" />
+  <meta name="twitter:description" content="Villa catering, özel yemek servisleri, taze meze ve deniz ürünleri." />
+  <meta name="twitter:image" content="https://kalimerakitchen.com/brand_assets/hero.jpg" />
+  <meta name="theme-color" content="#0F2236" />
+  <link rel="icon" type="image/jpeg" href="/brand_assets/kalimera-logo.jpeg" />
+  <link rel="apple-touch-icon" href="/brand_assets/kalimera-logo.jpeg" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Restaurant","name":"Kalimera Kitchen","description":"Kalkan / Antalya catering atölyesi — Akdeniz mutfağı, villa ve tekne servisleri.","url":"https://kalimerakitchen.com","telephone":"+905397430781","image":"https://kalimerakitchen.com/brand_assets/hero.jpg","logo":"https://kalimerakitchen.com/brand_assets/kalimera-logo.jpeg","priceRange":"€€","servesCuisine":["Mediterranean","Turkish","Greek","Catering"],"acceptsReservations":true,"address":{"@type":"PostalAddress","streetAddress":"Kalkan Mahallesi","addressLocality":"Kaş","addressRegion":"Antalya","postalCode":"07960","addressCountry":"TR"},"sameAs":["https://instagram.com/kalimerakitchen","https://wa.me/905397430781"]}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FAF6EE',
+            cream: '#F2EBDA',
+            sand:  '#E5D9BE',
+            olive: '#6B7C42',
+            sage:  '#8FA563',
+            aegean:'#1B3A5B',
+            deep:  '#0F2236',
+            terra: '#C5582B',
+            sun:   '#D9923B',
+            ink:   '#1A1814',
+            stone: '#5C5648',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+            script: ['Caveat', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1A1814;
+      background: #FAF6EE;
+      line-height: 1.7;
+    }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; letter-spacing: -0.01em; }
+    .font-script { font-family: 'Caveat', cursive; }
+
+    /* Layered grain + radial gradients */
+    .bg-mediterranean {
+      background-color: #FAF6EE;
+      background-image:
+        radial-gradient(at 12% 8%, rgba(217, 146, 59, 0.10) 0px, transparent 45%),
+        radial-gradient(at 88% 22%, rgba(27, 58, 91, 0.08) 0px, transparent 50%),
+        radial-gradient(at 70% 90%, rgba(107, 124, 66, 0.10) 0px, transparent 50%);
+    }
+    .grain::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.35;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      mix-blend-mode: multiply;
+    }
+
+    /* Hero photo overlay */
+    .hero-img {
+      background-image:
+        linear-gradient(180deg, rgba(15, 34, 54, 0.20) 0%, rgba(15, 34, 54, 0.55) 60%, rgba(15, 34, 54, 0.92) 100%),
+        url('/brand_assets/hero.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Catering section dedicated background — Mediterranean banquet spread */
+    .catering-bg {
+      background-color: #0F2236;
+      background-image:
+        linear-gradient(135deg, rgba(15, 34, 54, 0.86) 0%, rgba(15, 34, 54, 0.64) 45%, rgba(27, 58, 91, 0.78) 100%),
+        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=85');
+      background-size: cover, cover;
+      background-position: center, center;
+      background-repeat: no-repeat, no-repeat;
+    }
+    .catering-bg::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.25;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 0.95 0 0 0 0 0.85 0 0 0 0.4 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      mix-blend-mode: overlay;
+    }
+    .catering-card {
+      background: rgba(15, 34, 54, 0.55);
+      backdrop-filter: blur(14px) saturate(120%);
+      border: 1px solid rgba(217, 146, 59, 0.18);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.08) inset, 0 30px 60px -30px rgba(0, 0, 0, 0.6);
+    }
+    .catering-card:hover { border-color: rgba(217, 146, 59, 0.55); }
+    .img-treatment { position: relative; overflow: hidden; }
+    .img-treatment img { transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .img-treatment:hover img { transform: scale(1.04); }
+    .img-treatment::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(15, 34, 54, 0.45) 100%);
+      pointer-events: none;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(180deg, #D9923B 0%, #C97D27 100%);
+      color: #1A1814;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.35) inset,
+        0 8px 22px -10px rgba(217, 146, 59, 0.55),
+        0 18px 40px -22px rgba(27, 58, 91, 0.35);
+      transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 220ms ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 14px 30px -10px rgba(217, 146, 59, 0.7), 0 22px 44px -22px rgba(27, 58, 91, 0.45); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid #1B3A5B; outline-offset: 3px; }
+
+    .btn-ghost {
+      border: 1px solid rgba(27, 58, 91, 0.25);
+      color: #1B3A5B;
+      transition: background 220ms ease, border-color 220ms ease, color 220ms ease;
+    }
+    .btn-ghost:hover { background: rgba(27, 58, 91, 0.06); border-color: rgba(27, 58, 91, 0.5); }
+    .btn-ghost:focus-visible { outline: 2px solid #D9923B; outline-offset: 3px; }
+
+    /* Decorative divider */
+    .divider {
+      display: flex; align-items: center; gap: 1rem; color: #6B7C42;
+    }
+    .divider::before, .divider::after {
+      content: ""; height: 1px; flex: 1;
+      background: linear-gradient(90deg, transparent, rgba(107, 124, 66, 0.4), transparent);
+    }
+
+    /* Menu card */
+    .menu-card {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(229, 217, 190, 0.7);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.7) inset,
+        0 12px 30px -22px rgba(27, 58, 91, 0.35);
+    }
+
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 700ms ease, transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Marquee */
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { animation: marquee 38s linear infinite; }
+
+    /* Lang switcher */
+    .lang-btn[aria-pressed="true"] { background: #1B3A5B; color: #FAF6EE; }
+
+    /* Menu category filter — distinct active state for clarity */
+    .cat-btn { transition: background 220ms ease, color 220ms ease, transform 220ms ease; }
+    .cat-btn[aria-pressed="true"] {
+      background: linear-gradient(180deg, #D9923B, #C97D27);
+      color: #1A1814;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 8px 22px -10px rgba(217, 146, 59, 0.6);
+    }
+    .cat-btn[aria-pressed="false"]:hover { background: #F2EBDA; transform: translateY(-1px); }
+
+    /* Floating WhatsApp action — always visible */
+    .fab-whatsapp {
+      position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 60;
+      width: 58px; height: 58px; border-radius: 9999px;
+      background: linear-gradient(180deg, #25D366 0%, #1FAD52 100%);
+      color: #FFFFFF;
+      display: grid; place-items: center;
+      box-shadow:
+        0 12px 28px -8px rgba(37, 211, 102, 0.55),
+        0 22px 48px -22px rgba(0, 0, 0, 0.45),
+        0 1px 0 rgba(255, 255, 255, 0.35) inset;
+      transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 220ms ease;
+    }
+    .fab-whatsapp:hover { transform: translateY(-3px) scale(1.04); }
+    .fab-whatsapp:focus-visible { outline: 2px solid #1A1814; outline-offset: 3px; }
+    .fab-whatsapp .pulse {
+      position: absolute; inset: -4px; border-radius: 9999px;
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+      animation: wa-pulse 2.4s ease-out infinite;
+    }
+    @keyframes wa-pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+      80%  { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* Mobile sticky reserve bar */
+    .mobile-cta {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 55;
+      padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+      background: rgba(250, 246, 238, 0.95);
+      backdrop-filter: saturate(140%) blur(10px);
+      border-top: 1px solid rgba(229, 217, 190, 0.9);
+      transform: translateY(120%); transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .mobile-cta.show { transform: translateY(0); }
+    @media (min-width: 768px) { .mobile-cta { display: none; } }
+
+    /* Smooth focus */
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+      outline: 2px solid #D9923B; outline-offset: 3px; border-radius: 4px;
+    }
+
+    /* Header blur */
+    .nav-blur {
+      background: rgba(250, 246, 238, 0.85);
+      backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid rgba(229, 217, 190, 0.7);
+    }
+
+    /* Plate icon ring */
+    .plate {
+      width: 64px; height: 64px; border-radius: 9999px;
+      background: radial-gradient(circle at 35% 30%, #FAF6EE 0%, #F2EBDA 60%, #E5D9BE 100%);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.7) inset,
+        0 0 0 1px rgba(27, 58, 91, 0.08),
+        0 18px 30px -22px rgba(27, 58, 91, 0.4);
+      display: grid; place-items: center; font-size: 28px;
+    }
+  </style>
+</head>
+
+<body class="bg-mediterranean">
+
+<!-- ═════════════════════ NAV ═════════════════════ -->
+<header class="nav-blur fixed top-0 inset-x-0 z-50">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3 group">
+      <img src="/brand_assets/kalimera-logo.jpeg" alt="Kalimera Kitchen" class="h-14 w-auto rounded-md" />
+      <span class="leading-tight">
+        <span class="block font-display text-2xl font-semibold text-deep tracking-tight">Kalimera</span>
+        <span class="block text-[11px] uppercase tracking-[0.28em] text-stone">Kitchen · Kalkan</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-9 text-sm font-medium text-deep/80">
+      <a href="#about"   class="hover:text-deep transition" data-i18n="nav_about">Hikayemiz</a>
+      <a href="#menu"    class="hover:text-deep transition" data-i18n="nav_menu">Menü</a>
+      <a href="#catering" class="hover:text-deep transition" data-i18n="nav_catering">Catering</a>
+      <a href="#refs"    class="hover:text-deep transition" data-i18n="nav_refs">Referanslar</a>
+      <a href="#contact" class="hover:text-deep transition" data-i18n="nav_contact">İletişim</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <div class="hidden md:flex items-center rounded-full bg-cream/70 p-1 text-xs font-semibold uppercase tracking-wider">
+        <button class="lang-btn px-3 py-1.5 rounded-full" data-lang="tr" aria-pressed="true">TR</button>
+        <button class="lang-btn px-3 py-1.5 rounded-full" data-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-btn px-3 py-1.5 rounded-full" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <a href="#reserve" class="btn-primary hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold" data-i18n="nav_cta">
+        Rezervasyon
+      </a>
+      <button id="menu-toggle" class="lg:hidden grid place-items-center w-11 h-11 rounded-full border border-sand text-deep" aria-label="Menüyü aç">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-ivory border-t border-sand">
+    <nav class="max-w-7xl mx-auto px-5 py-5 flex flex-col gap-4 text-deep">
+      <a href="#about"   data-i18n="nav_about">Hikayemiz</a>
+      <a href="#menu"    data-i18n="nav_menu">Menü</a>
+      <a href="#catering" data-i18n="nav_catering">Catering</a>
+      <a href="#refs"    data-i18n="nav_refs">Referanslar</a>
+      <a href="#contact" data-i18n="nav_contact">İletişim</a>
+      <div class="flex items-center gap-2 pt-2">
+        <button class="lang-btn px-3 py-1.5 rounded-full bg-cream text-xs font-semibold" data-lang="tr" aria-pressed="true">TR</button>
+        <button class="lang-btn px-3 py-1.5 rounded-full bg-cream text-xs font-semibold" data-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-btn px-3 py-1.5 rounded-full bg-cream text-xs font-semibold" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ═════════════════════ HERO ═════════════════════ -->
+<section id="top" class="hero-img relative min-h-[100svh] flex items-end pt-24 pb-16">
+  <div class="absolute inset-0 grain pointer-events-none"></div>
+
+  <!-- subtle ornament -->
+  <div class="absolute top-28 right-8 md:right-16 text-sun/60 text-xs uppercase tracking-[0.5em] rotate-90 origin-top-right hidden md:block">Est · 2014 · Kalkan</div>
+
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 w-full text-ivory">
+    <span class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.4em] text-sun mb-6">
+      <span class="w-8 h-px bg-sun"></span>
+      <span data-i18n="hero_kicker">Kalkan / Antalya · Catering Atölyesi</span>
+    </span>
+
+    <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[88px] font-medium leading-[1.02] tracking-tight max-w-5xl">
+      <span data-i18n="hero_title_1">Akdeniz'in en taze</span><br/>
+      <span class="font-script text-sun text-6xl md:text-7xl lg:text-8xl" data-i18n="hero_title_2">günaydın</span>
+      <span data-i18n="hero_title_3">tabağı, sofranızda.</span>
+    </h1>
+
+    <p class="mt-8 max-w-2xl text-base md:text-lg text-ivory/85 leading-relaxed" data-i18n="hero_sub">
+      Villanızda, teknenizde ya da özel davetinizde — Kalkan kıyısının zeytinyağıyla,
+      sabah pazarından gelen sebzelerle ve ev yapımı tariflerle hazırlanan Akdeniz mutfağı.
+    </p>
+
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <a href="#reserve" class="btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold">
+        <span data-i18n="hero_cta_1">Rezervasyon Yap</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#menu" class="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-ivory border border-ivory/30 hover:border-ivory transition">
+        <span data-i18n="hero_cta_2">Menüyü Keşfet</span>
+      </a>
+    </div>
+
+    <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl border-t border-ivory/15 pt-8 text-ivory/85">
+      <div>
+        <div class="font-display text-3xl text-sun">12+</div>
+        <div class="text-xs uppercase tracking-widest mt-1" data-i18n="hero_stat_1">Yıl deneyim</div>
+      </div>
+      <div>
+        <div class="font-display text-3xl text-sun">800+</div>
+        <div class="text-xs uppercase tracking-widest mt-1" data-i18n="hero_stat_2">Mutlu davet</div>
+      </div>
+      <div>
+        <div class="font-display text-3xl text-sun">40+</div>
+        <div class="text-xs uppercase tracking-widest mt-1" data-i18n="hero_stat_3">Villa partneri</div>
+      </div>
+      <div>
+        <div class="font-display text-3xl text-sun">100%</div>
+        <div class="text-xs uppercase tracking-widest mt-1" data-i18n="hero_stat_4">Ev yapımı</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════ MARQUEE ═════════════════════ -->
+<section class="bg-deep text-ivory py-5 overflow-hidden border-y border-aegean/40">
+  <div class="marquee-track flex gap-12 whitespace-nowrap font-display text-2xl md:text-3xl text-ivory/80">
+    <span data-i18n="bar_olive">🫒 Soğuk sıkım Kalkan zeytinyağı</span>
+    <span>·</span>
+    <span data-i18n="bar_veg">🍋 Sabah pazarı taze sebze</span>
+    <span>·</span>
+    <span data-i18n="bar_fish">🐟 Günlük yakalanan deniz mahsulü</span>
+    <span>·</span>
+    <span data-i18n="bar_herbs">🌿 Bahçeden taze otlar</span>
+    <span>·</span>
+    <span data-i18n="bar_wine">🍇 Antalya bağlarından şarap</span>
+    <span>·</span>
+    <span data-i18n="bar_olive">🫒 Soğuk sıkım Kalkan zeytinyağı</span>
+    <span>·</span>
+    <span data-i18n="bar_veg">🍋 Sabah pazarı taze sebze</span>
+    <span>·</span>
+    <span data-i18n="bar_fish">🐟 Günlük yakalanan deniz mahsulü</span>
+    <span>·</span>
+    <span data-i18n="bar_herbs">🌿 Bahçeden taze otlar</span>
+    <span>·</span>
+    <span data-i18n="bar_wine">🍇 Antalya bağlarından şarap</span>
+    <span>·</span>
+  </div>
+</section>
+
+<!-- ═════════════════════ ABOUT ═════════════════════ -->
+<section id="about" class="relative py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+    <div class="lg:col-span-5 reveal">
+      <div class="relative">
+        <div class="img-treatment rounded-[3rem] overflow-hidden aspect-[4/5] shadow-[0_40px_80px_-30px_rgba(27,58,91,0.45)]">
+          <img src="/brand_assets/turkish-spread.jpeg" alt="Türk sofrası — içli köfte, mezeler ve salata" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute -bottom-8 -right-6 md:-right-12 bg-ivory rounded-2xl px-6 py-5 shadow-[0_30px_60px_-20px_rgba(27,58,91,0.4)] border border-sand">
+          <div class="font-script text-3xl text-terra leading-none">Kalimera!</div>
+          <div class="text-xs uppercase tracking-widest text-stone mt-1" data-i18n="about_badge">Günaydın, sofraya buyurun</div>
+        </div>
+        <div class="absolute -top-6 -left-4 md:-left-10 bg-olive text-ivory rounded-2xl px-5 py-4 shadow-xl">
+          <div class="text-3xl">🌿</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 reveal">
+      <span class="text-xs uppercase tracking-[0.4em] text-terra font-semibold" data-i18n="about_kicker">Ben Kimim?</span>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-deep mt-3 leading-[1.05]" data-i18n="about_title">
+        Kalkan'ın Kalbinden<br/>Gerçek Lezzet
+      </h2>
+      <p class="mt-7 text-lg text-stone leading-relaxed" data-i18n="about_p1">
+        Beykent Üniversitesi'nde Mutfak Sanatları eğitimi aldım ve son 15 yılı yiyecek sektöründe
+        tutku ve keyifle geçirdim.
+      </p>
+      <p class="mt-5 text-lg text-stone leading-relaxed" data-i18n="about_p2">
+        Profesyonel deneyimim Hilton Hotel ve havalimanı catering'inde çalışmayı kapsıyor; bu süreçte
+        kalite, detay ve tutarlılığın değerini öğrendim.
+      </p>
+      <p class="mt-5 text-lg text-stone leading-relaxed" data-i18n="about_p3">
+        Yolculuğum beni sonunda Kalkan'a getirdi; doğaya duyduğum derin sevgi ve zanaatımla daha kişisel
+        bir bağ kurma isteğiyle. Bu kadar güzel, doğal bir ortamda yemek pişirmek son derece tatmin
+        ediciydi — ama beni en çok heyecanlandıran, Türk mutfağının zenginliğini başkalarıyla paylaşma
+        fırsatıydı.
+      </p>
+      <p class="mt-5 text-lg text-stone leading-relaxed" data-i18n="about_p4">
+        Kalkan'da Türk Evi'nde özel akşam yemekleri düzenlemeye başladım; bu, bu sevimli kıyı kasabasında
+        profesyonel yolculuğumun başlangıcı oldu. Son dört yılda Kalkan hem evim hem de mutfağımın kalbi
+        haline geldi.
+      </p>
+
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="rounded-2xl bg-cream/60 border border-sand p-5">
+          <div class="text-3xl">🌱</div>
+          <div class="font-display text-xl text-deep mt-3" data-i18n="about_card1_t">Yerel & Taze</div>
+          <p class="text-sm text-stone mt-1" data-i18n="about_card1_p">Günlük temin edilen taze malzemeler.</p>
+        </div>
+        <div class="rounded-2xl bg-cream/60 border border-sand p-5">
+          <div class="text-3xl">👨‍🍳</div>
+          <div class="font-display text-xl text-deep mt-3" data-i18n="about_card2_t">Uzman Şefler</div>
+          <p class="text-sm text-stone mt-1" data-i18n="about_card2_p">Uluslararası deneyimli ekip.</p>
+        </div>
+        <div class="rounded-2xl bg-cream/60 border border-sand p-5">
+          <div class="text-3xl">✨</div>
+          <div class="font-display text-xl text-deep mt-3" data-i18n="about_card3_t">Özel Sunum</div>
+          <p class="text-sm text-stone mt-1" data-i18n="about_card3_p">Her etkinliğe özgü tasarım.</p>
+        </div>
+        <div class="rounded-2xl bg-cream/60 border border-sand p-5">
+          <div class="text-3xl">🚚</div>
+          <div class="font-display text-xl text-deep mt-3" data-i18n="about_card4_t">Uçtan Uca Servis</div>
+          <p class="text-sm text-stone mt-1" data-i18n="about_card4_p">Kurulum ve temizlik dahil.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════ MENU ═════════════════════ -->
+<section id="menu" class="relative py-24 md:py-32 bg-ivory">
+  <div class="absolute inset-0 grain pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="text-xs uppercase tracking-[0.4em] text-terra font-semibold" data-i18n="menu_kicker">Menü</span>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-deep mt-3" data-i18n="menu_title">
+        Mevsimlik tatlar,<br/>günlük tarifler.
+      </h2>
+      <p class="mt-5 text-stone" data-i18n="menu_sub">
+        Menümüz haftalık değişir; aşağıda en sevilenler. Her etkinlik için size özel menü kurgulamaktan mutluluk duyarız.
+      </p>
+    </div>
+
+    <!-- Menu packages grid -->
+    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+
+      <a href="/menu/turkish-night.html" class="menu-card rounded-3xl overflow-hidden block group">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/brand_assets/turkish-night.jpg"
+               alt="Turkish Night — kuzu but, iç pilav" loading="lazy"
+               onerror="this.src='https://placehold.co/600x600/15342B/D9923B?text=Kalimera'"
+               class="w-full h-full object-cover transition duration-700 group-hover:scale-105" />
+        </div>
+        <div class="p-6">
+          <div class="text-[10px] uppercase tracking-[0.36em] text-terra font-semibold">Anadolu · Anatolian</div>
+          <h3 class="font-display text-2xl text-deep mt-2">Turkish Night</h3>
+          <p class="text-stone text-sm mt-2 leading-relaxed">
+            Özel soslu kuzu but, iç pilav, humuslu karnabahar ve dondurmalı şeftali tatlısı. Kişi başı 40£.
+          </p>
+          <span class="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-terra font-semibold">
+            Menüyü Gör
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="/menu/mediterranean-night.html" class="menu-card rounded-3xl overflow-hidden block group">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=800&q=80"
+               alt="Mediterranean Night — Akdeniz levreği" loading="lazy"
+               onerror="this.src='https://placehold.co/600x600/15342B/D9923B?text=Kalimera'"
+               class="w-full h-full object-cover transition duration-700 group-hover:scale-105" />
+        </div>
+        <div class="p-6">
+          <div class="text-[10px] uppercase tracking-[0.36em] text-terra font-semibold">Akdeniz · Mediterranean</div>
+          <h3 class="font-display text-2xl text-deep mt-2">Mediterranean Night</h3>
+          <p class="text-stone text-sm mt-2 leading-relaxed">
+            Akdeniz levreği, hünkar beğendi, saganaki ve incir çiçeği tatlısı. Kişi başı 45£.
+          </p>
+          <span class="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-terra font-semibold">
+            Menüyü Gör
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="/menu/bbq-menu.html" class="menu-card rounded-3xl overflow-hidden block group">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80"
+               alt="BBQ Menu — kuzu şiş, köfte, tavuk" loading="lazy"
+               onerror="this.src='https://placehold.co/600x600/15342B/D9923B?text=Kalimera'"
+               class="w-full h-full object-cover transition duration-700 group-hover:scale-105" />
+        </div>
+        <div class="p-6">
+          <div class="text-[10px] uppercase tracking-[0.36em] text-terra font-semibold">Izgara · Grill</div>
+          <h3 class="font-display text-2xl text-deep mt-2">BBQ Menu</h3>
+          <p class="text-stone text-sm mt-2 leading-relaxed">
+            Kuzu şiş, köfte, tavuk pizola, 5 meze ve tereyağlı Türk pilavı. Kişi başı 35£.
+          </p>
+          <span class="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-terra font-semibold">
+            Menüyü Gör
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="/menu/chicken-bbq.html" class="menu-card rounded-3xl overflow-hidden block group">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/brand_assets/chicken-bbq.jpg"
+               alt="Chicken BBQ — marineli ızgara tavuk" loading="lazy"
+               onerror="this.src='https://placehold.co/600x600/15342B/D9923B?text=Kalimera'"
+               class="w-full h-full object-cover transition duration-700 group-hover:scale-105" />
+        </div>
+        <div class="p-6">
+          <div class="text-[10px] uppercase tracking-[0.36em] text-terra font-semibold">Izgara · Grill</div>
+          <h3 class="font-display text-2xl text-deep mt-2">Chicken BBQ</h3>
+          <p class="text-stone text-sm mt-2 leading-relaxed">
+            Özel marineli ızgara tavuk, 5 ev yapımı sos, mücver ve mevsim salata. Kişi başı 26£.
+          </p>
+          <span class="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-terra font-semibold">
+            Menüyü Gör
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="/menu/fish-bbq.html" class="menu-card rounded-3xl overflow-hidden block group">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/brand_assets/fish-bbq.jpg"
+               alt="Fish BBQ — asma yaprağında levrek" loading="lazy"
+               onerror="this.src='https://placehold.co/600x600/15342B/D9923B?text=Kalimera'"
+               class="w-full h-full object-cover transition duration-700 group-hover:scale-105" />
+        </div>
+        <div class="p-6">
+          <div class="text-[10px] uppercase tracking-[0.36em] text-terra font-semibold">Deniz · Seafood</div>
+          <h3 class="font-display text-2xl text-deep mt-2">Fish BBQ</h3>
+          <p class="text-stone text-sm mt-2 leading-relaxed">
+            Asma yaprağında levrek, marine somon, roka tulum salatası ve taze Türk ekmekleri. Kişi başı 45£.
+          </p>
+          <span class="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-terra font-semibold">
+            Menüyü Gör
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="/menu/breakfast.html" class="menu-card rounded-3xl overflow-hidden block group">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/brand_assets/breakfast.jpg"
+               alt="Breakfast — geleneksel Türk kahvaltısı" loading="lazy"
+               onerror="this.src='https://placehold.co/600x600/15342B/D9923B?text=Kalimera'"
+               class="w-full h-full object-cover transition duration-700 group-hover:scale-105" />
+        </div>
+        <div class="p-6">
+          <div class="text-[10px] uppercase tracking-[0.36em] text-terra font-semibold">Kahvaltı · Breakfast</div>
+          <h3 class="font-display text-2xl text-deep mt-2">Breakfast</h3>
+          <p class="text-stone text-sm mt-2 leading-relaxed">
+            Geleneksel Türk kahvaltı sofrası; sucuklu yumurta, 4 peynir, reçel, bal, kaymak ve taze meyve. Kişi başı 20£.
+          </p>
+          <span class="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-terra font-semibold">
+            Menüyü Gör
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="mt-14 text-center reveal">
+      <p class="text-sm text-stone mb-4" data-i18n="menu_note">* Fiyatlar kişi başıdır. Özel menü için bize ulaşın.</p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a href="/menus.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold">
+          <span data-i18n="menu_premium">Premium Menüleri Gör</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="/menu/build.html" class="btn-ghost inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold">
+          <span data-i18n="menu_cta">Özel Menü Talep Et</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════ CATERING ═════════════════════ -->
+<section id="catering" class="catering-bg relative py-24 md:py-32 text-ivory overflow-hidden">
+  <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-aegean/40 blur-3xl"></div>
+  <div class="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-terra/20 blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 items-start">
+    <div class="lg:col-span-5 reveal">
+      <span class="text-xs uppercase tracking-[0.4em] text-sun font-semibold" data-i18n="cat_kicker">Catering Hizmetleri</span>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl mt-3 leading-[1.05]" data-i18n="cat_title">
+        Sofranızı<br/>biz kuralım.
+      </h2>
+      <p class="mt-6 text-ivory/75 leading-relaxed" data-i18n="cat_p">
+        Düğün, doğum günü, kurumsal etkinlik, butik akşam yemeği ya da tekne turu — her ölçek
+        için ekibimiz, ekipmanımız ve menü esnekliğimiz var. Kalkan, Kaş, Patara ve Antalya
+        boyunca hizmet veriyoruz.
+      </p>
+    </div>
+
+    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5 reveal">
+      <article class="catering-card rounded-2xl p-7 transition">
+        <div class="text-4xl">💒</div>
+        <h3 class="font-display text-2xl mt-5" data-i18n="srv1_t">Düğün & Nişan</h3>
+        <p class="text-ivory/70 text-sm mt-2 leading-relaxed" data-i18n="srv1_p">
+          50–250 kişilik açık hava davetleri. Şef istasyonlu büfe, izlemeli pişirme, canlı meze tezgâhı.
+        </p>
+      </article>
+      <article class="catering-card rounded-2xl p-7 transition">
+        <div class="text-4xl">🛥️</div>
+        <h3 class="font-display text-2xl mt-5" data-i18n="srv2_t">Tekne Catering</h3>
+        <p class="text-ivory/70 text-sm mt-2 leading-relaxed" data-i18n="srv2_p">
+          Günlük tekne turları için soğuk meze platformu, ızgara seti, taze meyve ve buz kovasında şarap.
+        </p>
+      </article>
+      <article class="catering-card rounded-2xl p-7 transition">
+        <div class="text-4xl">🏛️</div>
+        <h3 class="font-display text-2xl mt-5" data-i18n="srv3_t">Villa Şefi</h3>
+        <p class="text-ivory/70 text-sm mt-2 leading-relaxed" data-i18n="srv3_p">
+          Kahvaltı, öğle, akşam — tatiliniz boyunca özel şef. Pazar alışverişinden bulaşığa kadar.
+        </p>
+      </article>
+      <article class="catering-card rounded-2xl p-7 transition">
+        <div class="text-4xl">🥂</div>
+        <h3 class="font-display text-2xl mt-5" data-i18n="srv4_t">Özel Davet</h3>
+        <p class="text-ivory/70 text-sm mt-2 leading-relaxed" data-i18n="srv4_p">
+          8–30 kişilik kapalı, butik akşam yemekleri. Şarap eşleştirmesi ve mum ışığı sofraları dahil.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════ REFERENCES ═════════════════════ -->
+<section id="refs" class="relative py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="text-xs uppercase tracking-[0.4em] text-terra font-semibold" data-i18n="ref_kicker">Referanslar</span>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-deep mt-3" data-i18n="ref_title">
+        Misafirlerimiz ne diyor?
+      </h2>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-6">
+      <article class="rounded-3xl bg-ivory border border-sand p-7 reveal shadow-[0_20px_50px_-30px_rgba(27,58,91,0.5)]">
+        <div class="flex items-center gap-1 text-sun text-lg">★★★★★</div>
+        <p class="mt-4 text-stone leading-relaxed" data-i18n="ref1_p">
+          "Villamızda 15 kişilik aile yemeği için Kalimera ekibini çağırdık. Mezelerin tazeliği
+          ve şefin sıcaklığı bizi büyüledi. Bir hafta boyunca her gün geldiler — her öğün başka
+          bir keşif."
+        </p>
+        <div class="mt-5 flex items-center gap-3">
+          <div class="w-12 h-12 rounded-full bg-cream grid place-items-center font-display text-deep text-xl">A</div>
+          <div>
+            <div class="font-semibold text-deep">Anna Petrova</div>
+            <div class="text-xs text-stone">Moskova · Villa misafiri</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rounded-3xl bg-ivory border border-sand p-7 reveal shadow-[0_20px_50px_-30px_rgba(27,58,91,0.5)]">
+        <div class="flex items-center gap-1 text-sun text-lg">★★★★★</div>
+        <p class="mt-4 text-stone leading-relaxed" data-i18n="ref2_p">
+          "50 kişilik nişan organizasyonumuzda her detay düşünülmüştü. Sunum, lezzet, servis...
+          Konuklarımız hâlâ köfte ve kalamar tariflerini soruyor. Kesinlikle tekrar."
+        </p>
+        <div class="mt-5 flex items-center gap-3">
+          <div class="w-12 h-12 rounded-full bg-cream grid place-items-center font-display text-deep text-xl">M</div>
+          <div>
+            <div class="font-semibold text-deep">Mehmet & Selin</div>
+            <div class="text-xs text-stone">İstanbul · Nişan</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rounded-3xl bg-ivory border border-sand p-7 reveal shadow-[0_20px_50px_-30px_rgba(27,58,91,0.5)]">
+        <div class="flex items-center gap-1 text-sun text-lg">★★★★★</div>
+        <p class="mt-4 text-stone leading-relaxed" data-i18n="ref3_p">
+          "We chartered a yacht for a week and Kalimera prepared a different menu every day.
+          Octopus carpaccio and lemon-garlic prawns were unforgettable. Highly recommend."
+        </p>
+        <div class="mt-5 flex items-center gap-3">
+          <div class="w-12 h-12 rounded-full bg-cream grid place-items-center font-display text-deep text-xl">J</div>
+          <div>
+            <div class="font-semibold text-deep">James Whittaker</div>
+            <div class="text-xs text-stone">London · Yacht charter</div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-5 gap-6 items-center opacity-70 reveal">
+      <div class="text-center font-display text-xl text-stone">Likya Villas</div>
+      <div class="text-center font-display text-xl text-stone">Kalkan Marina</div>
+      <div class="text-center font-display text-xl text-stone">Patara Beach</div>
+      <div class="text-center font-display text-xl text-stone">Antalya Yacht Co.</div>
+      <div class="text-center font-display text-xl text-stone">Olive Estate</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════ RESERVATION ═════════════════════ -->
+<section id="reserve" class="relative py-24 md:py-32 bg-cream">
+  <div class="absolute inset-0 grain pointer-events-none"></div>
+  <div class="relative max-w-5xl mx-auto px-5 lg:px-8">
+
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="text-xs uppercase tracking-[0.4em] text-terra font-semibold" data-i18n="rsv_kicker">Rezervasyon</span>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-deep mt-3" data-i18n="rsv_title">
+        Sofranızı planlayalım.
+      </h2>
+      <p class="mt-5 text-stone" data-i18n="rsv_sub">
+        Formu doldurun — 24 saat içinde size özel menü ve fiyat teklifiyle dönüş yapalım.
+      </p>
+    </div>
+
+    <form id="reserve-form" class="mt-12 grid sm:grid-cols-2 gap-5 reveal" novalidate>
+      <label class="grid gap-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-stone" data-i18n="f_name">Ad Soyad</span>
+        <input required name="name" type="text" class="rounded-xl border border-sand bg-ivory px-4 py-3 text-deep" />
+      </label>
+      <label class="grid gap-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-stone" data-i18n="f_phone">Telefon</span>
+        <input required name="phone" type="tel" class="rounded-xl border border-sand bg-ivory px-4 py-3 text-deep" />
+      </label>
+      <label class="grid gap-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-stone" data-i18n="f_email">E-posta</span>
+        <input required name="email" type="email" class="rounded-xl border border-sand bg-ivory px-4 py-3 text-deep" />
+      </label>
+      <label class="grid gap-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-stone" data-i18n="f_date">Tarih</span>
+        <input required name="date" type="date" class="rounded-xl border border-sand bg-ivory px-4 py-3 text-deep" />
+      </label>
+      <label class="grid gap-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-stone" data-i18n="f_people">Kişi Sayısı</span>
+        <input required name="people" type="number" min="2" max="500" class="rounded-xl border border-sand bg-ivory px-4 py-3 text-deep" />
+      </label>
+      <label class="grid gap-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-stone" data-i18n="f_type">Etkinlik Türü</span>
+        <select required name="type" class="rounded-xl border border-sand bg-ivory px-4 py-3 text-deep">
+          <option value=""    data-i18n="f_type_0">Seçiniz</option>
+          <option value="villa" data-i18n="f_type_1">Villa Yemeği</option>
+          <option value="boat"  data-i18n="f_type_2">Tekne Catering</option>
+          <option value="event" data-i18n="f_type_3">Düğün / Nişan</option>
+          <option value="corp"  data-i18n="f_type_4">Kurumsal</option>
+          <option value="other" data-i18n="f_type_5">Diğer</option>
+        </select>
+      </label>
+      <label class="grid gap-2 sm:col-span-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-stone" data-i18n="f_menu">Menü Seçimi</span>
+        <select name="menu" class="rounded-xl border border-sand bg-ivory px-4 py-3 text-deep">
+          <option value=""                    data-i18n="f_menu_0">Henüz karar vermedim</option>
+          <option value="turkish-night"        data-i18n="f_menu_1">Turkish Night — Anadolu (40£)</option>
+          <option value="mediterranean-night"  data-i18n="f_menu_2">Mediterranean Night — Akdeniz (45£)</option>
+          <option value="fish-bbq"             data-i18n="f_menu_3">Fish BBQ — Deniz Mahsulleri (45£)</option>
+          <option value="bbq-menu"             data-i18n="f_menu_4">BBQ Menu — Karışık Izgara (35£)</option>
+          <option value="chicken-bbq"          data-i18n="f_menu_5">Chicken BBQ — Tavuk (26£)</option>
+          <option value="breakfast"            data-i18n="f_menu_6">Breakfast — Türk Kahvaltısı (20£)</option>
+          <option value="custom"               data-i18n="f_menu_7">Özel Menü Tasarımı</option>
+          <option value="chef"                 data-i18n="f_menu_8">Şef Seçsin</option>
+        </select>
+      </label>
+      <label class="grid gap-2 sm:col-span-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-stone" data-i18n="f_msg">Mesajınız</span>
+        <textarea name="message" rows="4" class="rounded-xl border border-sand bg-ivory px-4 py-3 text-deep"></textarea>
+      </label>
+      <div class="sm:col-span-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
+        <p class="text-xs text-stone" data-i18n="f_priv">
+          Bilgileriniz yalnızca rezervasyon için kullanılır.
+        </p>
+        <div class="flex flex-col sm:flex-row items-stretch gap-3 w-full sm:w-auto">
+          <button type="button" id="form-wa-fallback" class="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold bg-deep text-ivory hover:bg-deep/90 transition">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 1.64 6L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52Z"/></svg>
+            <span data-i18n="f_wa">WhatsApp ile gönder</span>
+          </button>
+          <button type="submit" class="btn-primary inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold">
+            <span data-i18n="f_submit">Rezervasyon Gönder</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="form-status" class="sm:col-span-2 hidden rounded-xl bg-olive/10 border border-olive/30 px-4 py-3 text-olive font-semibold text-sm"></div>
+    </form>
+
+  </div>
+</section>
+
+<!-- ═════════════════════ FOOTER / CONTACT ═════════════════════ -->
+<footer id="contact" class="bg-deep text-ivory pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <div class="flex items-center gap-3">
+        <img src="/brand_assets/kalimera-logo.jpeg" alt="Kalimera Kitchen" class="h-14 w-auto rounded-md" />
+        <div class="leading-tight">
+          <div class="font-display text-2xl">Kalimera Kitchen</div>
+          <div class="text-[11px] uppercase tracking-[0.28em] text-ivory/60">Kalkan · Antalya</div>
+        </div>
+      </div>
+      <p class="mt-5 text-ivory/70 leading-relaxed max-w-md" data-i18n="ftr_about">
+        Akdeniz'in en taze tatlarını sofranıza taşıyan butik catering atölyesi.
+        Villa, tekne ve özel etkinlikler için 12 yıldır hizmetinizdeyiz.
+      </p>
+      <div class="mt-6 flex gap-3">
+        <a href="https://instagram.com/kalimerakitchen" target="_blank" rel="noopener" class="w-10 h-10 grid place-items-center rounded-full bg-ivory/10 hover:bg-sun hover:text-deep transition" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://wa.me/905397430781" target="_blank" rel="noopener" class="w-10 h-10 grid place-items-center rounded-full bg-ivory/10 hover:bg-sun hover:text-deep transition" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 1.64 6L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52ZM12 21.8a9.78 9.78 0 0 1-5-1.37l-.36-.21-3.66.96.98-3.57-.24-.37A9.79 9.79 0 1 1 21.8 12 9.79 9.79 0 0 1 12 21.8Zm5.36-7.34c-.29-.15-1.74-.86-2-.96-.27-.1-.46-.15-.66.15s-.76.96-.93 1.16c-.17.2-.34.22-.63.07a8.05 8.05 0 0 1-2.36-1.46 8.86 8.86 0 0 1-1.64-2.04c-.17-.29 0-.45.13-.6.13-.13.29-.34.44-.51a2 2 0 0 0 .29-.49.54.54 0 0 0 0-.51c-.07-.15-.66-1.6-.91-2.18-.24-.57-.48-.5-.66-.51h-.56a1.08 1.08 0 0 0-.78.36 3.27 3.27 0 0 0-1 2.43 5.69 5.69 0 0 0 1.18 3 13 13 0 0 0 4.95 4.34 16.6 16.6 0 0 0 1.65.61 3.95 3.95 0 0 0 1.82.12 3 3 0 0 0 1.95-1.37 2.4 2.4 0 0 0 .17-1.37c-.07-.13-.27-.21-.56-.36Z"/></svg>
+        </a>
+        <a href="mailto:kalimerakitchen07@gmail.com" class="w-10 h-10 grid place-items-center rounded-full bg-ivory/10 hover:bg-sun hover:text-deep transition" aria-label="E-posta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="md:col-span-3">
+      <div class="text-xs uppercase tracking-[0.3em] text-ivory/50 font-semibold" data-i18n="ftr_visit">Bizi Bulun</div>
+      <p class="mt-4 text-ivory/80 leading-relaxed">
+        Kalkan Mahallesi<br/>
+        07960 Kaş / Antalya
+      </p>
+      <p class="mt-4 text-ivory/80">
+        <a href="tel:+905397430781" class="hover:text-sun transition">+90 539 743 07 81</a><br/>
+        <a href="mailto:kalimerakitchen07@gmail.com" class="hover:text-sun transition">kalimerakitchen07@gmail.com</a>
+      </p>
+      <div class="mt-5 overflow-hidden rounded-2xl ring-1 ring-ivory/10">
+        <iframe
+          src="https://www.google.com/maps?q=Kalimera+Kitchen+Kalkan+Antalya&output=embed"
+          width="100%" height="200" style="border:0; display:block;"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Kalimera Kitchen — Kalkan / Antalya"></iframe>
+      </div>
+    </div>
+
+    <div class="md:col-span-4">
+      <div class="text-xs uppercase tracking-[0.3em] text-ivory/50 font-semibold" data-i18n="ftr_hours">Çalışma Saatleri</div>
+      <ul class="mt-4 space-y-2 text-ivory/80">
+        <li class="flex justify-between"><span data-i18n="ftr_d1">Pazartesi – Cuma</span><span>09:00 – 23:00</span></li>
+        <li class="flex justify-between"><span data-i18n="ftr_d2">Cumartesi</span><span>10:00 – 24:00</span></li>
+        <li class="flex justify-between"><span data-i18n="ftr_d3">Pazar</span><span>10:00 – 22:00</span></li>
+      </ul>
+      <p class="mt-5 text-xs text-ivory/50" data-i18n="ftr_note">* Catering rezervasyonları 7 gün, 24 saat alınır.</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 mt-16 pt-6 border-t border-ivory/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-ivory/50">
+    <div>© <span id="yr"></span> Kalimera Kitchen. <span data-i18n="ftr_rights">Tüm hakları saklıdır.</span></div>
+    <div class="flex gap-5">
+      <a href="/privacy.html" class="hover:text-ivory transition" data-i18n="ftr_priv">Gizlilik</a>
+      <a href="/terms.html" class="hover:text-ivory transition" data-i18n="ftr_terms">Kullanım Koşulları</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═════════════════════ DATA + SCRIPTS ═════════════════════ -->
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ── Mobile menu ── */
+  const mt = document.getElementById('menu-toggle');
+  const mm = document.getElementById('mobile-menu');
+  mt.addEventListener('click', () => mm.classList.toggle('hidden'));
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mm.classList.add('hidden')));
+
+  /* ── Reveal on scroll (with fallback for screenshot/no-scroll contexts) ── */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.05, rootMargin: '0px 0px -5% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // Fallback: if window never scrolls within 1.2s, reveal everything (helps headless screenshots).
+  setTimeout(() => { document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in')); }, 600);
+
+  let lang = 'tr';
+
+  /* ── i18n ── */
+  const I18N = {
+    tr: {
+      nav_about:'Hikayemiz', nav_menu:'Menü', nav_catering:'Catering', nav_refs:'Referanslar', nav_contact:'İletişim', nav_cta:'Rezervasyon',
+      hero_kicker:'Kalkan / Antalya · Catering Atölyesi',
+      hero_title_1:"Akdeniz'in en taze", hero_title_2:'günaydın', hero_title_3:'tabağı, sofranızda.',
+      hero_sub:'Villanızda, teknenizde ya da özel davetinizde — Kalkan kıyısının zeytinyağıyla, sabah pazarından gelen sebzelerle ve ev yapımı tariflerle hazırlanan Akdeniz mutfağı.',
+      hero_cta_1:'Rezervasyon Yap', hero_cta_2:'Menüyü Keşfet',
+      hero_stat_1:'Yıl deneyim', hero_stat_2:'Mutlu davet', hero_stat_3:'Villa partneri', hero_stat_4:'Ev yapımı',
+      bar_olive:'🫒 Soğuk sıkım Kalkan zeytinyağı', bar_veg:'🍋 Sabah pazarı taze sebze', bar_fish:'🐟 Günlük yakalanan deniz mahsulü', bar_herbs:'🌿 Bahçeden taze otlar', bar_wine:'🍇 Antalya bağlarından şarap',
+      about_kicker:'Ben Kimim?', about_title:'Kalkan\'ın Kalbinden<br/>Gerçek Lezzet',
+      about_p1:'Beykent Üniversitesi\'nde Mutfak Sanatları eğitimi aldım ve son 15 yılı yiyecek sektöründe tutku ve keyifle geçirdim.',
+      about_p2:'Profesyonel deneyimim Hilton Hotel ve havalimanı catering\'inde çalışmayı kapsıyor; bu süreçte kalite, detay ve tutarlılığın değerini öğrendim.',
+      about_p3:'Yolculuğum beni sonunda Kalkan\'a getirdi; doğaya duyduğum derin sevgi ve zanaatımla daha kişisel bir bağ kurma isteğiyle. Bu kadar güzel, doğal bir ortamda yemek pişirmek son derece tatmin ediciydi — ama beni en çok heyecanlandıran, Türk mutfağının zenginliğini başkalarıyla paylaşma fırsatıydı.',
+      about_p4:'Kalkan\'da Türk Evi\'nde özel akşam yemekleri düzenlemeye başladım; bu, bu sevimli kıyı kasabasında profesyonel yolculuğumun başlangıcı oldu. Son dört yılda Kalkan hem evim hem de mutfağımın kalbi haline geldi.',
+      about_badge:'Günaydın, sofraya buyurun',
+      about_card1_t:'Yerel & Taze', about_card1_p:'Günlük temin edilen taze malzemeler.',
+      about_card2_t:'Uzman Şefler', about_card2_p:'Uluslararası deneyimli ekip.',
+      about_card3_t:'Özel Sunum', about_card3_p:'Her etkinliğe özgü tasarım.',
+      about_card4_t:'Uçtan Uca Servis', about_card4_p:'Kurulum ve temizlik dahil.',
+      menu_kicker:'Menü', menu_title:'Mevsimlik tatlar,<br/>günlük tarifler.',
+      menu_sub:'Menümüz haftalık değişir; aşağıda en sevilenler. Her etkinlik için size özel menü kurgulamaktan mutluluk duyarız.',
+      menu_note:'* Fiyatlar kişi başıdır. Özel menü için bize ulaşın.', menu_cta:'Özel Menü Talep Et', menu_premium:'Premium Menüleri Gör',
+      cat_all:'Tümü', cat_meze:'Mezeler', cat_main:'Ana Yemek', cat_sea:'Deniz', cat_dessert:'Tatlı', cat_drink:'İçecek',
+      cat_kicker:'Catering Hizmetleri', cat_title:'Sofranızı<br/>biz kuralım.',
+      cat_p:'Düğün, doğum günü, kurumsal etkinlik, butik akşam yemeği ya da tekne turu — her ölçek için ekibimiz, ekipmanımız ve menü esnekliğimiz var. Kalkan, Kaş, Patara ve Antalya boyunca hizmet veriyoruz.',
+      srv1_t:'Düğün & Nişan', srv1_p:'50–250 kişilik açık hava davetleri. Şef istasyonlu büfe, izlemeli pişirme, canlı meze tezgâhı.',
+      srv2_t:'Tekne Catering', srv2_p:'Günlük tekne turları için soğuk meze platformu, ızgara seti, taze meyve ve buz kovasında şarap.',
+      srv3_t:'Villa Şefi', srv3_p:'Kahvaltı, öğle, akşam — tatiliniz boyunca özel şef. Pazar alışverişinden bulaşığa kadar.',
+      srv4_t:'Özel Davet', srv4_p:'8–30 kişilik kapalı, butik akşam yemekleri. Şarap eşleştirmesi ve mum ışığı sofraları dahil.',
+      ref_kicker:'Referanslar', ref_title:'Misafirlerimiz ne diyor?',
+      ref1_p:'"Villamızda 15 kişilik aile yemeği için Kalimera ekibini çağırdık. Mezelerin tazeliği ve şefin sıcaklığı bizi büyüledi. Bir hafta boyunca her gün geldiler — her öğün başka bir keşif."',
+      ref2_p:'"50 kişilik nişan organizasyonumuzda her detay düşünülmüştü. Sunum, lezzet, servis... Konuklarımız hâlâ köfte ve kalamar tariflerini soruyor. Kesinlikle tekrar."',
+      ref3_p:'"Bir hafta boyunca tekne kiraladık ve Kalimera her gün farklı bir menü hazırladı. Ahtapot karpaçço ve limon-sarımsaklı karidesler unutulmazdı. Şiddetle tavsiye."',
+      rsv_kicker:'Rezervasyon', rsv_title:'Sofranızı planlayalım.',
+      rsv_sub:'Formu doldurun — 24 saat içinde size özel menü ve fiyat teklifiyle dönüş yapalım.',
+      f_name:'Ad Soyad', f_phone:'Telefon', f_email:'E-posta', f_date:'Tarih', f_people:'Kişi Sayısı', f_type:'Etkinlik Türü',
+      f_type_0:'Seçiniz', f_type_1:'Villa Yemeği', f_type_2:'Tekne Catering', f_type_3:'Düğün / Nişan', f_type_4:'Kurumsal', f_type_5:'Diğer',
+      f_menu:'Menü Seçimi',
+      f_menu_0:'Henüz karar vermedim',
+      f_menu_1:'Turkish Night — Anadolu (40£)',
+      f_menu_2:'Mediterranean Night — Akdeniz (45£)',
+      f_menu_3:'Fish BBQ — Deniz Mahsulleri (45£)',
+      f_menu_4:'BBQ Menu — Karışık Izgara (35£)',
+      f_menu_5:'Chicken BBQ — Tavuk (26£)',
+      f_menu_6:'Breakfast — Türk Kahvaltısı (20£)',
+      f_menu_7:'Özel Menü Tasarımı',
+      f_menu_8:'Şef Seçsin',
+      f_msg:'Mesajınız', f_priv:'Bilgileriniz yalnızca rezervasyon için kullanılır.', f_submit:'Rezervasyon Gönder',
+      f_ok:'Teşekkürler! Talebiniz alındı, 24 saat içinde dönüş yapacağız.',
+      f_err:'Bir hata oluştu. Lütfen WhatsApp üzerinden de ulaşabilirsiniz.',
+      f_sending:'Gönderiliyor…',
+      f_wa:'WhatsApp ile gönder',
+      f_wa_intro:'🍽️ *Kalimera Kitchen — Rezervasyon Talebi*',
+      form_lbl_name:'👤 *Ad Soyad*', form_lbl_phone:'📞 *Telefon*', form_lbl_email:'✉️ *E-posta*', form_lbl_date:'📅 *Etkinlik Tarihi*',
+      form_lbl_people:'👥 *Misafir Sayısı*', form_lbl_type:'🎉 *Etkinlik Türü*', form_lbl_menu:'🍴 *Menü Seçimi*', form_lbl_msg:'📝 *Notlar*',
+      mob_cta_reserve:'Rezervasyon Yap',
+      mob_cta_call:'Hemen ara',
+      fab_aria:'WhatsApp ile iletişime geç',
+      fab_msg:'Merhaba Kalimera Kitchen, catering rezervasyonu yapmak istiyorum. Tarih / kişi sayısı / lokasyon: ',
+      ftr_about:'Akdeniz\'in en taze tatlarını sofranıza taşıyan butik catering atölyesi. Villa, tekne ve özel etkinlikler için 12 yıldır hizmetinizdeyiz.',
+      ftr_visit:'Bizi Bulun', ftr_hours:'Çalışma Saatleri',
+      ftr_d1:'Pazartesi – Cuma', ftr_d2:'Cumartesi', ftr_d3:'Pazar',
+      ftr_note:'* Catering rezervasyonları 7 gün, 24 saat alınır.',
+      ftr_rights:'Tüm hakları saklıdır.', ftr_priv:'Gizlilik', ftr_terms:'Kullanım Koşulları',
+    },
+    en: {
+      nav_about:'Story', nav_menu:'Menu', nav_catering:'Catering', nav_refs:'References', nav_contact:'Contact', nav_cta:'Reserve',
+      hero_kicker:'Kalkan / Antalya · Catering Atelier',
+      hero_title_1:"The Mediterranean's freshest", hero_title_2:'good morning', hero_title_3:'plate, on your table.',
+      hero_sub:'In your villa, on your boat, or at your private event — Mediterranean cuisine prepared with Kalkan coast olive oil, morning-market vegetables, and home recipes.',
+      hero_cta_1:'Make Reservation', hero_cta_2:'Explore Menu',
+      hero_stat_1:'Years experience', hero_stat_2:'Happy events', hero_stat_3:'Villa partners', hero_stat_4:'Homemade',
+      bar_olive:'🫒 Cold-pressed Kalkan olive oil', bar_veg:'🍋 Morning-market vegetables', bar_fish:'🐟 Day-caught seafood', bar_herbs:'🌿 Garden-fresh herbs', bar_wine:'🍇 Wine from Antalya vineyards',
+      about_kicker:'Our Story', about_title:'A recipe that begins<br/>with a Mediterranean morning.',
+      about_p1:'Kalimera Kitchen is the modern incarnation of a hospitality that begins with "good morning" on the cobbled streets of Kalkan. We blend Aegean recipes I learned from my mother with produce from Antalya\'s tropical gardens, setting personal tables in your villa, on your yacht, or in your garden.',
+      about_p2:'Every plate has a story: olive oil from Kaş\'s old mills, cheese from Korkuteli highlands, fish from the morning\'s first boat. Nothing comes pre-packaged — everything is made that day, just for you.',
+      about_p3:'My journey eventually brought me to Kalkan, drawn by my deep love of nature and a desire for a more personal connection with my craft. Cooking in such a beautiful, natural setting was incredibly fulfilling — but what excited me most was the opportunity to share the richness of Turkish cuisine with others.',
+      about_p4:'I began hosting private dinners at Türk Evi in Kalkan; that became the starting point of my professional journey in this charming coastal town. Over the last four years, Kalkan has become both my home and the heart of my kitchen.',
+      about_badge:'Good morning, come to the table',
+      about_card1_t:'Villa & Yacht', about_card1_p:'Mobile kitchen and chef team at your location.',
+      about_card2_t:'Bespoke Chef Menu', about_card2_p:'Tailored to your diet, allergies and preferences.',
+      about_card3_t:'Morning – Evening', about_card3_p:'Full service from breakfast to late dinner.',
+      about_card4_t:'End-to-End Service', about_card4_p:'Setup and clean-up included.',
+      menu_kicker:'Menu', menu_title:'Seasonal tastes,<br/>daily recipes.',
+      menu_sub:'Our menu changes weekly; favourites are below. Happy to design a custom menu for your event.',
+      menu_note:'* Prices are per person. Contact us for custom menus.', menu_cta:'Request Custom Menu', menu_premium:'View Premium Menus',
+      cat_all:'All', cat_meze:'Meze', cat_main:'Mains', cat_sea:'Seafood', cat_dessert:'Dessert', cat_drink:'Drinks',
+      cat_kicker:'Catering Services', cat_title:'Let us set<br/>your table.',
+      cat_p:'Wedding, birthday, corporate event, intimate dinner or boat trip — we have the team, equipment and menu flexibility for every scale. We serve Kalkan, Kaş, Patara and across Antalya.',
+      srv1_t:'Wedding & Engagement', srv1_p:'Outdoor events for 50–250 guests. Chef-station buffet, live cooking, fresh meze counter.',
+      srv2_t:'Yacht Catering', srv2_p:'Cold meze platters, grill kit, fresh fruit and ice-bucket wine for day cruises.',
+      srv3_t:'Villa Chef', srv3_p:'Breakfast, lunch, dinner — your private chef throughout your stay. From market shopping to the dishes.',
+      srv4_t:'Private Dining', srv4_p:'Intimate dinners for 8–30. Wine pairing and candle-lit table setting included.',
+      ref_kicker:'References', ref_title:'What our guests say.',
+      ref1_p:'"We invited the Kalimera team for a 15-person family dinner at our villa. The freshness of the meze and the warmth of the chef won us over. They came every day for a week — every meal another discovery."',
+      ref2_p:'"Every detail of our 50-person engagement was thought through. Presentation, taste, service... Our guests still ask about the köfte and calamari. Definitely again."',
+      ref3_p:'"We chartered a yacht for a week and Kalimera prepared a different menu every day. Octopus carpaccio and lemon-garlic prawns were unforgettable. Highly recommend."',
+      rsv_kicker:'Reservation', rsv_title:"Let's plan your table.",
+      rsv_sub:'Fill in the form — within 24 hours we\'ll come back with a custom menu and quote.',
+      f_name:'Full Name', f_phone:'Phone', f_email:'Email', f_date:'Date', f_people:'Guests', f_type:'Event Type',
+      f_type_0:'Select', f_type_1:'Villa Dinner', f_type_2:'Yacht Catering', f_type_3:'Wedding / Engagement', f_type_4:'Corporate', f_type_5:'Other',
+      f_menu:'Menu Selection',
+      f_menu_0:"Haven't decided yet",
+      f_menu_1:'Turkish Night — Anatolian (£40)',
+      f_menu_2:'Mediterranean Night (£45)',
+      f_menu_3:'Fish BBQ — Seafood (£45)',
+      f_menu_4:'BBQ Menu — Mixed Grill (£35)',
+      f_menu_5:'Chicken BBQ (£26)',
+      f_menu_6:'Breakfast — Turkish Spread (£20)',
+      f_menu_7:'Custom Menu Design',
+      f_menu_8:"Chef's Choice",
+      f_msg:'Message', f_priv:'Your information is used only for reservation.', f_submit:'Send Reservation',
+      f_ok:'Thank you! Your request is received, we\'ll be in touch within 24 hours.',
+      f_err:'Something went wrong. You can also reach us via WhatsApp.',
+      f_sending:'Sending…',
+      f_wa:'Send via WhatsApp',
+      f_wa_intro:'🍽️ *Kalimera Kitchen — Reservation Request*',
+      form_lbl_name:'👤 *Full Name*', form_lbl_phone:'📞 *Phone*', form_lbl_email:'✉️ *Email*', form_lbl_date:'📅 *Event Date*',
+      form_lbl_people:'👥 *Number of Guests*', form_lbl_type:'🎉 *Event Type*', form_lbl_menu:'🍴 *Menu Selection*', form_lbl_msg:'📝 *Notes*',
+      mob_cta_reserve:'Make Reservation',
+      mob_cta_call:'Call now',
+      fab_aria:'Contact via WhatsApp',
+      fab_msg:'Hello Kalimera Kitchen, I\'d like to book catering. Date / guests / location: ',
+      ftr_about:'A boutique catering atelier bringing the Mediterranean\'s freshest tastes to your table. 12 years of villa, yacht and private event service.',
+      ftr_visit:'Find Us', ftr_hours:'Opening Hours',
+      ftr_d1:'Monday – Friday', ftr_d2:'Saturday', ftr_d3:'Sunday',
+      ftr_note:'* Catering reservations accepted 7 days, 24 hours.',
+      ftr_rights:'All rights reserved.', ftr_priv:'Privacy', ftr_terms:'Terms',
+    },
+    ru: {
+      nav_about:'История', nav_menu:'Меню', nav_catering:'Кейтеринг', nav_refs:'Отзывы', nav_contact:'Контакты', nav_cta:'Бронь',
+      hero_kicker:'Калкан / Анталия · Кейтеринг-ателье',
+      hero_title_1:'Самая свежая', hero_title_2:'доброе утро', hero_title_3:'тарелка Средиземноморья.',
+      hero_sub:'В вашей вилле, на яхте или на частном мероприятии — средиземноморская кухня с оливковым маслом побережья Калкана, овощами с утреннего рынка и домашними рецептами.',
+      hero_cta_1:'Забронировать', hero_cta_2:'Открыть Меню',
+      hero_stat_1:'Лет опыта', hero_stat_2:'Счастливых событий', hero_stat_3:'Партнёров-вилл', hero_stat_4:'Домашнее',
+      bar_olive:'🫒 Оливковое масло холодного отжима из Калкана', bar_veg:'🍋 Свежие овощи с утреннего рынка', bar_fish:'🐟 Морепродукты дневного улова', bar_herbs:'🌿 Свежие травы из сада', bar_wine:'🍇 Вино с виноградников Анталии',
+      about_kicker:'Наша История', about_title:'Рецепт, что начинается<br/>средиземноморским утром.',
+      about_p1:'Kalimera Kitchen — современное воплощение гостеприимства, начинающегося со слова "доброе утро" на мощёных улицах Калкана. Мы соединяем эгейские рецепты моей мамы с продуктами с тропических садов Анталии, накрывая столы лично у вас на вилле, на яхте или в саду.',
+      about_p2:'У каждой тарелки своя история: оливковое масло — со старых мельниц Каша, сыр — с плато Коркутели, рыба — с первой утренней лодки. Ничего из упаковки — всё готовится в этот же день, специально для вас.',
+      about_p3:'Мой путь в итоге привёл меня в Калкан — благодаря глубокой любви к природе и желанию ближе соединиться со своим ремеслом. Готовить в таком прекрасном природном окружении было невероятно приятно, но больше всего меня вдохновляла возможность делиться богатством турецкой кухни с другими.',
+      about_p4:'Я начала устраивать частные ужины в Türk Evi в Калкане — именно так начался мой профессиональный путь в этом очаровательном прибрежном городке. За последние четыре года Калкан стал и моим домом, и сердцем моей кухни.',
+      about_badge:'Доброе утро, к столу',
+      about_card1_t:'Вилла и Яхта', about_card1_p:'Мобильная кухня и шеф-команда у вас.',
+      about_card2_t:'Авторское Меню', about_card2_p:'Учитываем диету, аллергии и предпочтения.',
+      about_card3_t:'Утро – Вечер', about_card3_p:'Полный сервис от завтрака до позднего ужина.',
+      about_card4_t:'Полный Сервис', about_card4_p:'Установка и уборка включены.',
+      menu_kicker:'Меню', menu_title:'Сезонные вкусы,<br/>ежедневные рецепты.',
+      menu_sub:'Меню обновляется еженедельно; ниже — любимые позиции. С удовольствием составим меню под ваше событие.',
+      menu_note:'* Цены за персону. Для индивидуального меню свяжитесь с нами.', menu_cta:'Запросить Меню', menu_premium:'Премиум Меню',
+      cat_all:'Всё', cat_meze:'Мезе', cat_main:'Горячее', cat_sea:'Морское', cat_dessert:'Десерт', cat_drink:'Напитки',
+      cat_kicker:'Кейтеринг', cat_title:'Накроем стол<br/>для вас.',
+      cat_p:'Свадьба, день рождения, корпоратив, интимный ужин или яхт-тур — у нас есть команда, оборудование и гибкость меню для любого масштаба. Калкан, Каш, Патара и вся Анталия.',
+      srv1_t:'Свадьба & Помолвка', srv1_p:'Открытые мероприятия 50–250 гостей. Шеф-станции, живая кухня, свежие мезе.',
+      srv2_t:'Кейтеринг на Яхте', srv2_p:'Холодные мезе, гриль, свежие фрукты и вино во льду на дневные круизы.',
+      srv3_t:'Шеф на Вилле', srv3_p:'Завтрак, обед, ужин — шеф на весь ваш отдых. От рынка до посуды.',
+      srv4_t:'Частный Ужин', srv4_p:'Интимные ужины 8–30 человек. Подбор вин и сервировка при свечах включены.',
+      ref_kicker:'Отзывы', ref_title:'Что говорят гости.',
+      ref1_p:'"Мы пригласили команду Kalimera на семейный ужин на 15 человек. Свежесть мезе и теплота шефа покорили нас. Они приходили каждый день неделю — каждое блюдо открытие."',
+      ref2_p:'"Каждая деталь нашей помолвки на 50 человек была продумана. Подача, вкус, сервис... Гости до сих пор спрашивают рецепт кёфте. Однозначно ещё."',
+      ref3_p:'"Мы зафрахтовали яхту на неделю, и Kalimera готовил разное меню каждый день. Карпаччо из осьминога и креветки в лимоне — незабываемо. Очень рекомендуем."',
+      rsv_kicker:'Бронирование', rsv_title:'Спланируем ваш стол.',
+      rsv_sub:'Заполните форму — в течение 24 часов вернёмся с меню и расчётом.',
+      f_name:'ФИО', f_phone:'Телефон', f_email:'E-mail', f_date:'Дата', f_people:'Гостей', f_type:'Тип мероприятия',
+      f_type_0:'Выберите', f_type_1:'Ужин на вилле', f_type_2:'Яхта', f_type_3:'Свадьба / Помолвка', f_type_4:'Корпоратив', f_type_5:'Другое',
+      f_menu:'Выбор меню',
+      f_menu_0:'Ещё не решил(а)',
+      f_menu_1:'Turkish Night — Анатолийское (40£)',
+      f_menu_2:'Mediterranean Night (45£)',
+      f_menu_3:'Fish BBQ — Морское (45£)',
+      f_menu_4:'BBQ Menu — Микс-гриль (35£)',
+      f_menu_5:'Chicken BBQ — Курица (26£)',
+      f_menu_6:'Breakfast — Турецкий завтрак (20£)',
+      f_menu_7:'Индивидуальное меню',
+      f_menu_8:'На выбор шефа',
+      f_msg:'Сообщение', f_priv:'Данные используются только для брони.', f_submit:'Отправить Бронь',
+      f_ok:'Спасибо! Заявка получена, ответим в течение 24 часов.',
+      f_err:'Что-то пошло не так. Вы также можете написать нам в WhatsApp.',
+      f_sending:'Отправка…',
+      f_wa:'Отправить через WhatsApp',
+      f_wa_intro:'🍽️ *Kalimera Kitchen — Запрос на бронирование*',
+      form_lbl_name:'👤 *ФИО*', form_lbl_phone:'📞 *Телефон*', form_lbl_email:'✉️ *E-mail*', form_lbl_date:'📅 *Дата мероприятия*',
+      form_lbl_people:'👥 *Количество гостей*', form_lbl_type:'🎉 *Тип мероприятия*', form_lbl_menu:'🍴 *Выбор меню*', form_lbl_msg:'📝 *Заметки*',
+      mob_cta_reserve:'Забронировать',
+      mob_cta_call:'Позвонить',
+      fab_aria:'Написать в WhatsApp',
+      fab_msg:'Здравствуйте, Kalimera Kitchen! Хочу заказать кейтеринг. Дата / гостей / локация: ',
+      ftr_about:'Бутик-ателье кейтеринга, приносящее самые свежие средиземноморские вкусы на ваш стол. 12 лет сервиса для вилл, яхт и частных событий.',
+      ftr_visit:'Найти Нас', ftr_hours:'Часы Работы',
+      ftr_d1:'Понедельник – Пятница', ftr_d2:'Суббота', ftr_d3:'Воскресенье',
+      ftr_note:'* Кейтеринг-брони принимаются 7 дней, 24 часа.',
+      ftr_rights:'Все права защищены.', ftr_priv:'Конфиденциальность', ftr_terms:'Условия',
+    }
+  };
+
+  const WA_PHONE = '905397430781';
+  /* Form submit → opens WhatsApp with pre-filled reservation message.
+     Owner receives the message on +905397430781. No backend required. */
+
+  function updateFab() {
+    const fab = document.getElementById('fab-whatsapp');
+    if (!fab) return;
+    const msg = I18N[lang].fab_msg || I18N.tr.fab_msg;
+    fab.href = 'https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent(msg);
+    fab.setAttribute('aria-label', I18N[lang].fab_aria || I18N.tr.fab_aria);
+  }
+
+  function applyLang(l) {
+    if (!I18N[l]) l = 'tr';
+    lang = l;
+    document.documentElement.lang = l;
+    try { localStorage.setItem('kkLang', l); } catch(e) {}
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.dataset.i18n;
+      if (I18N[l][k]) el.innerHTML = I18N[l][k];
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const k = el.dataset.i18nAria;
+      if (I18N[l][k]) el.setAttribute('aria-label', I18N[l][k]);
+    });
+    document.querySelectorAll('.lang-btn[data-lang]').forEach(b => {
+      b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false');
+    });
+    updateFab();
+  }
+  document.querySelectorAll('.lang-btn[data-lang]').forEach(b => {
+    b.addEventListener('click', () => applyLang(b.dataset.lang));
+  });
+  /* Restore previously selected language from localStorage */
+  try {
+    const saved = localStorage.getItem('kkLang');
+    if (saved && I18N[saved]) applyLang(saved);
+    else updateFab();
+  } catch(e) { updateFab(); }
+
+  /* ── WhatsApp fallback: compose message from form fields ── */
+  function composeFormWaMessage() {
+    const form = document.getElementById('reserve-form');
+    const fd = new FormData(form);
+    const T = I18N[lang];
+    const lines = [T.f_wa_intro, ''];
+    const fields = [
+      ['name', T.form_lbl_name],
+      ['phone', T.form_lbl_phone],
+      ['email', T.form_lbl_email],
+      ['date', T.form_lbl_date],
+      ['people', T.form_lbl_people],
+      ['type', T.form_lbl_type],
+      ['menu', T.form_lbl_menu],
+      ['message', T.form_lbl_msg],
+    ];
+    fields.forEach(([k, label]) => {
+      const el = form.elements[k];
+      let v = '';
+      if (el && el.tagName === 'SELECT') {
+        v = (el.selectedOptions[0]?.textContent || '').trim();
+      } else {
+        v = (fd.get(k) || '').toString().trim();
+      }
+      if (v) lines.push(label + ': ' + v);
+    });
+    return lines.join('\n');
+  }
+  document.getElementById('form-wa-fallback').addEventListener('click', () => {
+    const text = composeFormWaMessage();
+    window.open('https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  });
+
+  /* ── Form submit: open WhatsApp with pre-filled reservation message ── */
+  document.getElementById('reserve-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('form-status');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    submitBtn.disabled = true;
+    status.classList.remove('hidden');
+    status.textContent = I18N[lang].f_ok || 'WhatsApp ile gönderildi ✓';
+    window.open('https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent(composeFormWaMessage()), '_blank', 'noopener');
+    setTimeout(() => { submitBtn.disabled = false; status.classList.add('hidden'); }, 6000);
+  });
+
+  /* ── Mobile sticky CTA: show after scrolling past hero, hide near footer/form ── */
+  const mobileCta = document.getElementById('mobile-cta');
+  const reserveSection = document.getElementById('reserve');
+  function updateMobileCta() {
+    if (!mobileCta) return;
+    const scrolled = window.scrollY > window.innerHeight * 0.6;
+    const reserveTop = reserveSection?.getBoundingClientRect().top ?? 9999;
+    const nearReserve = reserveTop < window.innerHeight * 0.9;
+    mobileCta.classList.toggle('show', scrolled && !nearReserve);
+  }
+  window.addEventListener('scroll', updateMobileCta, { passive: true });
+  updateMobileCta();
+</script>
+
+<!-- ───── Floating WhatsApp ───── -->
+<a id="fab-whatsapp" class="fab-whatsapp" href="https://wa.me/905397430781" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geç">
+  <span class="pulse" aria-hidden="true"></span>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 1.64 6L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52ZM12 21.8a9.78 9.78 0 0 1-5-1.37l-.36-.21-3.66.96.98-3.57-.24-.37A9.79 9.79 0 1 1 21.8 12 9.79 9.79 0 0 1 12 21.8Zm5.36-7.34c-.29-.15-1.74-.86-2-.96-.27-.1-.46-.15-.66.15s-.76.96-.93 1.16c-.17.2-.34.22-.63.07a8.05 8.05 0 0 1-2.36-1.46 8.86 8.86 0 0 1-1.64-2.04c-.17-.29 0-.45.13-.6.13-.13.29-.34.44-.51a2 2 0 0 0 .29-.49.54.54 0 0 0 0-.51c-.07-.15-.66-1.6-.91-2.18-.24-.57-.48-.5-.66-.51h-.56a1.08 1.08 0 0 0-.78.36 3.27 3.27 0 0 0-1 2.43 5.69 5.69 0 0 0 1.18 3 13 13 0 0 0 4.95 4.34 16.6 16.6 0 0 0 1.65.61 3.95 3.95 0 0 0 1.82.12 3 3 0 0 0 1.95-1.37 2.4 2.4 0 0 0 .17-1.37c-.07-.13-.27-.21-.56-.36Z"/></svg>
+</a>
+
+<!-- ───── Mobile sticky CTA ───── -->
+<div id="mobile-cta" class="mobile-cta">
+  <div class="flex items-center gap-3">
+    <a href="tel:+905397430781" data-i18n-aria="mob_cta_call" class="flex-shrink-0 grid place-items-center w-12 h-12 rounded-full bg-deep text-ivory" aria-label="Hemen ara">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+    </a>
+    <a href="#reserve" class="btn-primary flex-1 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold">
+      <span data-i18n="mob_cta_reserve">Rezervasyon Yap</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

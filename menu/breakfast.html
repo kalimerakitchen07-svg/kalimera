@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breakfast — Kalimera Kitchen</title>
+  <meta name="description" content="Geleneksel Türk kahvaltısı spreadi ile güne mükemmel başlangıç — Kalimera Kitchen Kalkan / Antalya catering." />
+  <link rel="canonical" href="https://kalimerakitchen.com/menu/breakfast.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://kalimerakitchen.com/menu/breakfast.html" />
+  <meta property="og:title" content="Breakfast — Kalimera Kitchen" />
+  <meta property="og:description" content="Geleneksel Türk kahvaltı menüsü — Kalkan / Antalya catering. 20€/kişi." />
+  <meta property="og:image" content="https://kalimerakitchen.com/brand_assets/breakfast.jpg" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Breakfast — Kalimera Kitchen" />
+  <meta name="twitter:description" content="Geleneksel Türk kahvaltı menüsü." />
+  <meta name="twitter:image" content="https://kalimerakitchen.com/brand_assets/breakfast.jpg" />
+  <link rel="icon" type="image/jpeg" href="/brand_assets/kalimera-logo.jpeg" />
+  <link rel="apple-touch-icon" href="/brand_assets/kalimera-logo.jpeg" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Menu","name":"Breakfast","inLanguage":"tr-TR","provider":{"@type":"Restaurant","name":"Kalimera Kitchen","address":{"@type":"PostalAddress","addressLocality":"Kalkan","addressRegion":"Antalya","addressCountry":"TR"},"telephone":"+905397430781","url":"https://kalimerakitchen.com"}}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: '#15342B',
+            forest2:'#1A3D33',
+            forest3:'#22483D',
+            cream:  '#F2EBDA',
+            ivory:  '#FAF6EE',
+            sand:   '#E5D9BE',
+            terra:  '#C5582B',
+            sun:    '#D9923B',
+            muted:  'rgba(242, 235, 218, 0.55)',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+            script:  ['Caveat', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #F2EBDA;
+      background: #15342B;
+      line-height: 1.7;
+    }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; letter-spacing: -0.005em; }
+
+    .forest-bg {
+      background-color: #15342B;
+      background-image:
+        radial-gradient(at 14% 12%, rgba(34, 72, 61, 0.85) 0px, transparent 45%),
+        radial-gradient(at 86% 18%, rgba(217, 146, 59, 0.06) 0px, transparent 50%),
+        radial-gradient(at 50% 78%, rgba(26, 61, 51, 0.9) 0px, transparent 60%),
+        radial-gradient(at 12% 95%, rgba(34, 72, 61, 0.7) 0px, transparent 55%);
+    }
+    .grain::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.45;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.07 0 0 0 0 0.06 0 0 0 0.32 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      mix-blend-mode: overlay;
+    }
+
+    .plate {
+      position: absolute;
+      border-radius: 9999px;
+      overflow: hidden;
+      background: #0a1f18;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.06) inset,
+        0 30px 60px -10px rgba(0, 0, 0, 0.55),
+        0 70px 120px -20px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(245, 235, 220, 0.04);
+    }
+    .plate img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.05) contrast(1.05); }
+    .plate::after {
+      content: ""; position: absolute; inset: 0; border-radius: 9999px; pointer-events: none;
+      background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.10), transparent 45%);
+    }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 800ms ease, transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    .sec-rule {
+      display: flex; align-items: center; gap: 1.25rem;
+      color: rgba(242, 235, 218, 0.55);
+      font-size: 11px; letter-spacing: 0.42em; text-transform: uppercase;
+    }
+    .sec-rule::before, .sec-rule::after {
+      content: ""; height: 1px; flex: 1;
+      background: linear-gradient(90deg, transparent, rgba(217, 146, 59, 0.35), transparent);
+    }
+
+    .diamond {
+      display: inline-flex; align-items: center; gap: 0.6rem; color: #D9923B; font-size: 10px;
+    }
+    .diamond::before, .diamond::after {
+      content: ""; width: 28px; height: 1px; background: rgba(217, 146, 59, 0.45);
+    }
+
+    .nav-blur {
+      background: rgba(21, 52, 43, 0.78);
+      backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid rgba(242, 235, 218, 0.07);
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #D9923B 0%, #C97D27 100%);
+      color: #15342B;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.4) inset,
+        0 10px 26px -10px rgba(217, 146, 59, 0.55),
+        0 22px 48px -22px rgba(0, 0, 0, 0.6);
+      transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 220ms ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-primary:focus-visible { outline: 2px solid #F2EBDA; outline-offset: 3px; }
+
+    .btn-ghost {
+      border: 1px solid rgba(242, 235, 218, 0.25);
+      color: #F2EBDA;
+      transition: background 220ms ease, border-color 220ms ease;
+    }
+    .btn-ghost:hover { background: rgba(242, 235, 218, 0.08); border-color: rgba(242, 235, 218, 0.5); }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #D9923B; outline-offset: 3px; border-radius: 4px;
+    }
+
+    .menu-line { position: relative; padding-left: 0; }
+    .menu-line .name { font-family: 'Cormorant Garamond', serif; font-weight: 500; color: #F2EBDA; font-size: 1.45rem; letter-spacing: 0.005em; }
+    .menu-line .desc { font-style: italic; font-size: 0.92rem; color: rgba(242, 235, 218, 0.6); margin-top: 0.35rem; max-width: 56ch; }
+
+    .sprig {
+      position: absolute; right: 1.5rem; bottom: 1rem; width: 110px; height: 110px;
+      transform: rotate(-12deg); opacity: 0.85;
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.45));
+    }
+
+    /* Language switcher */
+    .lang-btn { font-size:10px; letter-spacing:.18em; padding:6px 10px; border-radius:9999px; border:1px solid rgba(242,235,218,.18); color:rgba(242,235,218,.7); text-transform:uppercase; cursor:pointer; background:transparent; transition: all .2s ease; }
+    .lang-btn:hover { color:#F2EBDA; border-color:rgba(217,146,59,.6); }
+    .lang-btn[aria-pressed="true"] { background:#D9923B; color:#15342B; border-color:#D9923B; }
+  </style>
+</head>
+
+<body class="forest-bg">
+
+<!-- ───── NAV ───── -->
+<header class="nav-blur fixed top-0 inset-x-0 z-50">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group">
+      <img src="/brand_assets/kalimera-logo.jpeg" alt="Kalimera Kitchen" class="h-11 w-auto rounded-md" />
+      <span class="leading-tight">
+        <span class="block font-display text-lg font-semibold text-cream">Kalimera Kitchen</span>
+        <span class="block text-[10px] uppercase tracking-[0.28em] text-cream/55">Kalkan · Antalya</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-[0.2em] text-cream/70">
+      <a href="/" class="hover:text-cream" data-i18n="nav_home">Anasayfa</a>
+      <a href="/menus.html" class="text-cream" data-i18n="nav_menus">Menüler</a>
+      <a href="/#reserve" class="hover:text-cream" data-i18n="nav_reserve">Rezervasyon</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <div class="hidden sm:flex items-center gap-1">
+        <button class="lang-btn" data-lang="tr" aria-pressed="true">TR</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <a href="/#reserve" class="btn-primary inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-widest" data-i18n="nav_cta">
+        Rezervasyon
+      </a>
+    </div>
+  </div>
+  <div class="sm:hidden flex items-center justify-center gap-1 pb-2">
+    <button class="lang-btn" data-lang="tr" aria-pressed="true">TR</button>
+    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    <button class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+  </div>
+</header>
+
+<!-- ───── HERO ───── -->
+<section class="relative min-h-[100svh] grain overflow-hidden pt-28 pb-20">
+  <div class="absolute inset-0 pointer-events-none hidden md:block" aria-hidden="true">
+    <div class="plate" style="top: 7%; left: 6%; width: 230px; height: 230px;">
+      <img src="/brand_assets/breakfast.jpg" alt="" onerror="this.src='https://placehold.co/600x600/15342B/D9923B?text=Kalimera'" />
+    </div>
+    <div class="plate" style="top: 9%; right: 7%; width: 250px; height: 250px;">
+      <img src="/brand_assets/turkish-spread.jpeg" alt="" onerror="this.src='https://placehold.co/600x600/15342B/D9923B?text=Kalimera'" />
+    </div>
+    <div class="plate" style="top: 56%; left: 50%; transform: translateX(-50%); width: 120px; height: 120px;">
+      <img src="/brand_assets/breakfast.jpg" alt="" onerror="this.src='https://placehold.co/400x400/15342B/D9923B?text=Kalimera'" />
+    </div>
+  </div>
+
+  <div class="relative max-w-3xl mx-auto px-5 lg:px-8 text-center pt-16 md:pt-24">
+    <div class="diamond mb-6 justify-center">◆</div>
+
+    <h1 class="font-display italic font-light text-6xl md:text-7xl lg:text-[88px] text-sun leading-[1]">
+      Breakfast
+    </h1>
+
+    <p class="mt-7 text-[11px] md:text-xs uppercase tracking-[0.4em] text-cream/65" data-i18n="hero_sub" data-i18n-html="1">
+      Geleneksel Türk Kahvaltısı
+      <span class="text-sun mx-2">·</span>
+      Traditional Turkish Breakfast Spread
+    </p>
+
+    <div class="mt-8 diamond justify-center">◆</div>
+  </div>
+</section>
+
+<!-- ───── MENU SECTIONS ───── -->
+<section class="relative grain pb-32">
+
+  <div class="absolute inset-0 pointer-events-none hidden lg:block" aria-hidden="true">
+    <div class="plate" style="top: 6%; right: 4%; width: 180px; height: 180px;">
+      <img src="/brand_assets/turkish-spread.jpeg" alt="" onerror="this.src='https://placehold.co/500x500/15342B/D9923B?text=Kalimera'" />
+    </div>
+    <div class="plate" style="top: 38%; left: 3%; width: 180px; height: 180px;">
+      <img src="/brand_assets/breakfast.jpg" alt="" onerror="this.src='https://placehold.co/500x500/15342B/D9923B?text=Kalimera'" />
+    </div>
+    <div class="plate" style="top: 70%; right: 4%; width: 200px; height: 200px;">
+      <img src="/brand_assets/turkish-spread.jpeg" alt="" onerror="this.src='https://placehold.co/500x500/15342B/D9923B?text=Kalimera'" />
+    </div>
+  </div>
+
+  <div class="relative max-w-2xl mx-auto px-5">
+
+    <!-- ─── SOFRA (2-column grid) ─── -->
+    <div class="reveal">
+      <div class="sec-rule mb-10" data-i18n="sec_spread">Sofra · The Spread</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+        <div class="menu-line">
+          <div class="name" data-i18n="d1_n">Sucuklu Yumurta</div>
+          <div class="desc" data-i18n="d1_d">Taze sucuk ile sahanda ya da istenen şekilde pişirilmiş köy yumurtası.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d2_n">Patates Kızartması</div>
+          <div class="desc" data-i18n="d2_d">Çıtır altın sarısı patates kızartması, taze yağda hazırlanmış.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d3_n">Beyaz Peynirli Sigara Böreği</div>
+          <div class="desc" data-i18n="d3_d">Beyaz peynir ve taze maydanozla doldurulmuş, çıtır yufkaya sarılmış.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d4_n">Şarküteri Tabağı</div>
+          <div class="desc" data-i18n="d4_d">Domates, salatalık, roka, maydanoz ve limon dilimleriyle servis.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d5_n">Dört Çeşit Peynir</div>
+          <div class="desc" data-i18n="d5_d">Beyaz peynir, Ezine peyniri, eski kaşar, köy peyniri ve bergama tulum.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d6_n">Yeşil ve Siyah Zeytin</div>
+          <div class="desc" data-i18n="d6_d">Zeytinyağı ve kekikle marine edilmiş yerli bahçe zeytinleri.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d7_n">Üç Çeşit Reçel · Tahin · Pekmez · Bal</div>
+          <div class="desc" data-i18n="d7_d">Ev yapımı çilek, kayısı ve incir reçeli; tahin, üzüm pekmezi ve çiçek balı.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d8_n">Kaymak ve Yoğurt</div>
+          <div class="desc" data-i18n="d8_d">Taze kaymak ve köy sütünden hazırlanmış tam yağlı süzme yoğurt.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d9_n">Mevsim Meyveleri</div>
+          <div class="desc" data-i18n="d9_d">Günlük taze mevsim meyveleri; karpuz, kavun, şeftali ve üzüm.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d10_n">Mevsim Ekmeği ve Simit</div>
+          <div class="desc" data-i18n="d10_d">Fırından çıkmış taze ekmek çeşitleri; simit, kepekli ve beyaz ekmek.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d11_n">Portakal Suyu</div>
+          <div class="desc" data-i18n="d11_d">Taze sıkılmış portakal suyu, katkısız ve soğuk servis.</div>
+        </div>
+        <div class="menu-line">
+          <div class="name" data-i18n="d12_n">Kahve ve Çay</div>
+          <div class="desc" data-i18n="d12_d">Türk kahvesi, filtre kahve veya nescafé — taze demleme çay eşliğinde.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PRICE ─── -->
+    <div class="mt-24 text-center reveal">
+      <div class="sec-rule mb-8" data-i18n="sec_price">Kişi Başı Fiyat · Price Per Person</div>
+      <div class="font-display italic text-7xl md:text-8xl text-sun leading-none">20<span class="text-5xl md:text-6xl align-top ml-1">£</span></div>
+      <p class="mt-7 text-xs italic text-cream/55 max-w-md mx-auto" data-i18n="price_caption" data-i18n-html="1">
+        Kahvaltı spreadi en az 2 kişi için sunulur
+        <span class="text-sun mx-2">·</span>
+        Breakfast spread served for minimum 2 guests
+      </p>
+    </div>
+
+    <!-- ─── CTA ─── -->
+    <div class="mt-20 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+      <a id="menu-reserve-wa" target="_blank" rel="noopener" href="https://wa.me/905397430781" class="btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold">
+        <span id="menu-reserve-label" data-menu="Breakfast">Bu Menüyü Rezerve Et</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="/menus.html" class="btn-ghost inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold" data-i18n="cta_other">
+        Diğer Menüler
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer class="border-t border-cream/10 py-10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-cream/50">
+    <div>© <span id="yr"></span> Kalimera Kitchen · Kalkan / Antalya</div>
+    <div class="flex gap-5">
+      <a href="/" class="hover:text-cream transition" data-i18n="ftr_home">Anasayfa</a>
+      <a href="/menus.html" class="hover:text-cream transition" data-i18n="ftr_menus">Tüm Menüler</a>
+      <a href="/#reserve" class="hover:text-cream transition" data-i18n="ftr_contact">İletişim</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }}), { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  setTimeout(() => document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in')), 600);
+</script>
+
+<script>
+  // ─── Menu Reserve CTA (WhatsApp) ───
+  function updateMenuReserveCta() {
+    const labelEl = document.getElementById('menu-reserve-label');
+    const linkEl  = document.getElementById('menu-reserve-wa');
+    if (!labelEl || !linkEl) return;
+    const MENU = labelEl.dataset.menu || '';
+    const TEXTS = {
+      tr: { label: 'Bu Menüyü Rezerve Et',   msg: 'Merhaba, Kalimera Kitchen — ' + MENU + ' menüsünü rezerve etmek istiyorum. Detaylar için dönebilir misiniz?' },
+      en: { label: 'Reserve This Menu',      msg: 'Hello, Kalimera Kitchen — I would like to reserve the ' + MENU + ' menu. Could you get back to me with details?' },
+      ru: { label: 'Забронировать это меню', msg: 'Здравствуйте, Kalimera Kitchen — я хотел(а) бы забронировать меню ' + MENU + '. Не могли бы вы связаться со мной?' },
+    };
+    let l = 'tr';
+    try { const s = localStorage.getItem('kkLang'); if (s && TEXTS[s]) l = s; } catch(e){}
+    const t = TEXTS[l];
+    linkEl.href = 'https://wa.me/905397430781?text=' + encodeURIComponent(t.msg);
+    labelEl.textContent = t.label;
+  }
+
+  // ─── I18N ───
+  const I18N = {
+    tr: {
+      nav_home:'Anasayfa', nav_menus:'Menüler', nav_reserve:'Rezervasyon', nav_cta:'Rezervasyon',
+      hero_sub:'Geleneksel Türk Kahvaltısı <span class="text-sun mx-2">·</span> Traditional Turkish Breakfast Spread',
+      sec_spread:'Sofra · The Spread',
+      sec_price:'Kişi Başı Fiyat · Price Per Person',
+      d1_n:'Sucuklu Yumurta', d1_d:'Taze sucuk ile sahanda ya da istenen şekilde pişirilmiş köy yumurtası.',
+      d2_n:'Patates Kızartması', d2_d:'Çıtır altın sarısı patates kızartması, taze yağda hazırlanmış.',
+      d3_n:'Beyaz Peynirli Sigara Böreği', d3_d:'Beyaz peynir ve taze maydanozla doldurulmuş, çıtır yufkaya sarılmış.',
+      d4_n:'Şarküteri Tabağı', d4_d:'Domates, salatalık, roka, maydanoz ve limon dilimleriyle servis.',
+      d5_n:'Dört Çeşit Peynir', d5_d:'Beyaz peynir, Ezine peyniri, eski kaşar, köy peyniri ve bergama tulum.',
+      d6_n:'Yeşil ve Siyah Zeytin', d6_d:'Zeytinyağı ve kekikle marine edilmiş yerli bahçe zeytinleri.',
+      d7_n:'Üç Çeşit Reçel · Tahin · Pekmez · Bal', d7_d:'Ev yapımı çilek, kayısı ve incir reçeli; tahin, üzüm pekmezi ve çiçek balı.',
+      d8_n:'Kaymak ve Yoğurt', d8_d:'Taze kaymak ve köy sütünden hazırlanmış tam yağlı süzme yoğurt.',
+      d9_n:'Mevsim Meyveleri', d9_d:'Günlük taze mevsim meyveleri; karpuz, kavun, şeftali ve üzüm.',
+      d10_n:'Mevsim Ekmeği ve Simit', d10_d:'Fırından çıkmış taze ekmek çeşitleri; simit, kepekli ve beyaz ekmek.',
+      d11_n:'Portakal Suyu', d11_d:'Taze sıkılmış portakal suyu, katkısız ve soğuk servis.',
+      d12_n:'Kahve ve Çay', d12_d:'Türk kahvesi, filtre kahve veya nescafé — taze demleme çay eşliğinde.',
+      price_caption:'Kahvaltı spreadi en az 2 kişi için sunulur <span class="text-sun mx-2">·</span> Breakfast spread served for minimum 2 guests',
+      cta_other:'Diğer Menüler',
+      ftr_home:'Anasayfa', ftr_menus:'Tüm Menüler', ftr_contact:'İletişim',
+    },
+    en: {
+      nav_home:'Home', nav_menus:'Menus', nav_reserve:'Reservation', nav_cta:'Reserve',
+      hero_sub:'Traditional Turkish Breakfast Spread <span class="text-sun mx-2">·</span> Geleneksel Türk Kahvaltısı',
+      sec_spread:'The Spread · Sofra',
+      sec_price:'Price Per Person',
+      d1_n:'Eggs with Sucuk', d1_d:'Village eggs cooked sunny-side-up or to taste with fresh Turkish sucuk sausage.',
+      d2_n:'Golden Fried Potatoes', d2_d:'Crispy golden fried potatoes, fresh from the pan.',
+      d3_n:'Sigara Böreği with Feta', d3_d:'Crispy phyllo rolls stuffed with white feta cheese and fresh parsley.',
+      d4_n:'Charcuterie Plate', d4_d:'Served with tomato, cucumber, rocket, parsley and lemon wedges.',
+      d5_n:'Four Cheeses', d5_d:'White feta, Ezine cheese, aged kaşar, village cheese and Bergama tulum.',
+      d6_n:'Green & Black Olives', d6_d:'Local garden olives marinated with olive oil and thyme.',
+      d7_n:'Three Jams · Tahini · Pekmez · Honey', d7_d:'House-made strawberry, apricot and fig jams; tahini, grape molasses and flower honey.',
+      d8_n:'Kaymak & Yoghurt', d8_d:'Fresh kaymak (clotted cream) and full-fat strained yoghurt from village milk.',
+      d9_n:'Seasonal Fruits', d9_d:'Fresh daily fruits — watermelon, melon, peach and grapes.',
+      d10_n:'Seasonal Bread & Simit', d10_d:'Fresh-baked bread varieties — simit, wholewheat and white.',
+      d11_n:'Orange Juice', d11_d:'Freshly squeezed orange juice, additive-free and chilled.',
+      d12_n:'Coffee & Tea', d12_d:'Turkish coffee, filter coffee or Nescafé — with freshly brewed black tea.',
+      price_caption:'Breakfast spread served for minimum 2 guests <span class="text-sun mx-2">·</span> Kahvaltı spreadi en az 2 kişi için sunulur',
+      cta_other:'Other Menus',
+      ftr_home:'Home', ftr_menus:'All Menus', ftr_contact:'Contact',
+    },
+    ru: {
+      nav_home:'Главная', nav_menus:'Меню', nav_reserve:'Бронь', nav_cta:'Бронь',
+      hero_sub:'Традиционный турецкий завтрак <span class="text-sun mx-2">·</span> Traditional Turkish Breakfast',
+      sec_spread:'Стол · Sofra',
+      sec_price:'Цена за персону',
+      d1_n:'Яичница с суджуком (Sucuklu Yumurta)', d1_d:'Деревенские яйца со свежим суджуком, глазунья или по вашему вкусу.',
+      d2_n:'Жареный картофель', d2_d:'Хрустящий золотистый картофель фри на свежем масле.',
+      d3_n:'Сигара бёреги с фетой', d3_d:'Хрустящие трубочки из теста фило с белым сыром и петрушкой.',
+      d4_n:'Овощное ассорти', d4_d:'Помидоры, огурцы, руккола, петрушка и дольки лимона.',
+      d5_n:'Четыре вида сыра', d5_d:'Белый сыр, сыр Эзине, выдержанный кашар, деревенский сыр и тулум из Бергамы.',
+      d6_n:'Зелёные и чёрные оливки', d6_d:'Местные садовые оливки в маринаде из оливкового масла и тимьяна.',
+      d7_n:'Три варенья · Тахини · Пекмез · Мёд', d7_d:'Домашнее варенье из клубники, абрикоса и инжира; тахини, виноградный пекмез и цветочный мёд.',
+      d8_n:'Каймак и йогурт', d8_d:'Свежий каймак (густые сливки) и жирный греческий йогурт из деревенского молока.',
+      d9_n:'Сезонные фрукты', d9_d:'Ежедневные свежие фрукты — арбуз, дыня, персик и виноград.',
+      d10_n:'Сезонный хлеб и симит', d10_d:'Свежевыпеченный хлеб — симит, цельнозерновой и белый.',
+      d11_n:'Апельсиновый сок', d11_d:'Свежевыжатый апельсиновый сок, без добавок, охлаждённый.',
+      d12_n:'Кофе и чай', d12_d:'Турецкий кофе, фильтр-кофе или Nescafé — со свежезаваренным чёрным чаем.',
+      price_caption:'Завтрак подаётся минимум на 2 персоны <span class="text-sun mx-2">·</span> Breakfast spread served for minimum 2 guests',
+      cta_other:'Другие меню',
+      ftr_home:'Главная', ftr_menus:'Все меню', ftr_contact:'Контакты',
+    }
+  };
+
+  function applyLang(l) {
+    if (!I18N[l]) l = 'tr';
+    document.documentElement.lang = l;
+    try { localStorage.setItem('kkLang', l); } catch(e) {}
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.dataset.i18n;
+      const v = I18N[l][k];
+      if (v == null) return;
+      if (el.dataset.i18nHtml === '1') el.innerHTML = v;
+      else el.textContent = v;
+    });
+    document.querySelectorAll('.lang-btn[data-lang]').forEach(b => {
+      b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false');
+    });
+    updateMenuReserveCta();
+  }
+  document.querySelectorAll('.lang-btn[data-lang]').forEach(b => {
+    b.addEventListener('click', () => applyLang(b.dataset.lang));
+  });
+  try {
+    const saved = localStorage.getItem('kkLang');
+    if (saved && I18N[saved]) applyLang(saved);
+    else updateMenuReserveCta();
+  } catch(e) { updateMenuReserveCta(); }
+</script>
+</body>
+</html>
