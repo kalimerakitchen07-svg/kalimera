@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nurdan Değirmenci — Kalimera Kitchen · Şef & Kurucu</title>
+  <meta name="description" content="Nurdan Değirmenci — Kalimera Kitchen kurucusu ve baş şefi. Beykent Üniversitesi Mutfak Sanatları mezunu, 15+ yıl deneyim. Hilton Hotel, havalimanı catering, Türk Evi Kalkan ve özel villa & yat catering hizmetleri." />
+  <link rel="canonical" href="https://kalimerakitchen.com/nurdan.html" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://kalimerakitchen.com/nurdan.html" />
+  <meta property="og:title" content="Nurdan Değirmenci — Şef & Kurucu · Kalimera Kitchen" />
+  <meta property="og:description" content="Beykent Üniversitesi Mutfak Sanatları mezunu. Hilton ve havalimanı catering'inde başlayan, Kalkan'da Kalimera Kitchen ile devam eden 15 yıllık şef hikâyesi." />
+  <meta property="og:image" content="https://kalimerakitchen.com/brand_assets/nurdan.jpg" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/jpeg" href="/brand_assets/kalimera-logo.jpeg" />
+  <link rel="apple-touch-icon" href="/brand_assets/kalimera-logo.jpeg" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Nurdan Değirmenci","jobTitle":"Şef & Kurucu","worksFor":{"@type":"Organization","name":"Kalimera Kitchen","url":"https://kalimerakitchen.com"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Beykent Üniversitesi","department":"Mutfak Sanatları"},"address":{"@type":"PostalAddress","addressLocality":"Kalkan","addressRegion":"Antalya","addressCountry":"TR"},"image":"https://kalimerakitchen.com/brand_assets/nurdan.jpg","knowsLanguage":["tr","en"]}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { forest:'#15342B', forest2:'#1A3D33', forest3:'#22483D', cream:'#F2EBDA', ivory:'#FAF6EE', sand:'#E5D9BE', terra:'#C5582B', sun:'#D9923B', stone:'#5C5648' },
+        fontFamily: { display:['"Cormorant Garamond"','serif'], body:['Inter','system-ui','sans-serif'], script:['Caveat','cursive'] }
+      }}
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color:#F2EBDA; background:#15342B; line-height:1.65; }
+    h1,h2,h3,h4 { font-family:'Cormorant Garamond', serif; letter-spacing:-0.005em; }
+
+    .forest-bg {
+      background-color:#15342B;
+      background-image:
+        radial-gradient(at 12% 14%, rgba(34,72,61,0.85) 0px, transparent 45%),
+        radial-gradient(at 88% 20%, rgba(217,146,59,0.07) 0px, transparent 50%),
+        radial-gradient(at 50% 78%, rgba(26,61,51,0.9) 0px, transparent 60%),
+        radial-gradient(at 8% 95%, rgba(34,72,61,0.7) 0px, transparent 55%);
+    }
+    .grain::before {
+      content:""; position:absolute; inset:0; pointer-events:none; opacity:0.4;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.07 0 0 0 0 0.06 0 0 0 0.32 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      mix-blend-mode: overlay;
+    }
+
+    .nav-blur { background: rgba(21,52,43,0.78); backdrop-filter: saturate(140%) blur(10px); border-bottom: 1px solid rgba(242,235,218,0.07); }
+    .btn-primary { background: linear-gradient(180deg, #D9923B, #C97D27); color:#15342B; box-shadow: 0 1px 0 rgba(255,255,255,.4) inset, 0 10px 26px -10px rgba(217,146,59,.55), 0 22px 48px -22px rgba(0,0,0,.6); transition: transform 220ms cubic-bezier(0.2,0.8,0.2,1); }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-ghost { border:1px solid rgba(242,235,218,.25); color:#F2EBDA; transition: background 220ms ease, border-color 220ms ease; }
+    .btn-ghost:hover { background: rgba(242,235,218,.08); border-color: rgba(242,235,218,.5); }
+    a:focus-visible, button:focus-visible { outline: 2px solid #D9923B; outline-offset: 3px; border-radius: 4px; }
+
+    /* Portrait card */
+    .portrait {
+      position: relative; aspect-ratio: 3/4; overflow: hidden; border-radius: 16px;
+      background: linear-gradient(180deg, #22483D 0%, #15342B 100%);
+      box-shadow: 0 30px 60px -10px rgba(0,0,0,.55), 0 70px 120px -20px rgba(0,0,0,.6), 0 0 0 1px rgba(245,235,220,.08);
+    }
+    .portrait img { width:100%; height:100%; object-fit: cover; display:block; }
+    .portrait .ring { content:""; position:absolute; inset:0; border-radius: 16px; pointer-events:none; box-shadow: inset 0 1px 0 rgba(255,255,255,.07); }
+    .portrait .placeholder {
+      position: absolute; inset: 0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap: 0.75rem;
+      color: rgba(242,235,218,.55); text-align: center; padding: 2rem;
+    }
+    .portrait .placeholder svg { width: 56px; height: 56px; opacity:.4; }
+    .portrait .placeholder-label { font-family:'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; }
+    .portrait .placeholder-sub { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; opacity: 0.55; }
+
+    /* Pills / badges */
+    .pill { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.8rem; border-radius: 9999px; border: 1px solid rgba(217,146,59,.3); background: rgba(217,146,59,.08); color:#D9923B; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; }
+    .pill-ghost { background: transparent; color: rgba(242,235,218,.65); border-color: rgba(242,235,218,.15); }
+
+    /* Section divider */
+    .sec-rule { display:flex; align-items:center; gap: 1.25rem; color: rgba(242,235,218,.55); font-size: 11px; letter-spacing: 0.42em; text-transform: uppercase; }
+    .sec-rule::before, .sec-rule::after { content:""; height:1px; flex:1; background: linear-gradient(90deg, transparent, rgba(217,146,59,.35), transparent); }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 1.75rem; }
+    .timeline::before { content:""; position:absolute; left: 0.55rem; top: 0.5rem; bottom: 0.5rem; width: 1px; background: linear-gradient(180deg, transparent, rgba(217,146,59,.35), transparent); }
+    .t-item { position: relative; padding-bottom: 1.75rem; }
+    .t-item:last-child { padding-bottom: 0; }
+    .t-item::before { content:""; position: absolute; left: -1.5rem; top: 0.5rem; width: 11px; height: 11px; border-radius: 9999px; background: #D9923B; box-shadow: 0 0 0 4px rgba(217,146,59,.15); }
+    .t-year { font-family: 'Caveat', cursive; color: #D9923B; font-size: 1.15rem; line-height: 1; margin-bottom: 0.3rem; }
+    .t-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: #F2EBDA; line-height: 1.25; }
+    .t-desc { font-size: 0.88rem; color: rgba(242,235,218,.65); margin-top: 0.3rem; font-style: italic; }
+
+    /* Stat card */
+    .stat { padding: 1.5rem 1.25rem; border-radius: 14px; background: linear-gradient(180deg, rgba(34,72,61,.55), rgba(15,40,32,.55)); border: 1px solid rgba(242,235,218,.08); text-align: center; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2.5rem; color: #D9923B; line-height: 1; }
+    .stat-label { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(242,235,218,.55); margin-top: 0.5rem; }
+
+    /* Spec card */
+    .spec-card { padding: 1.1rem 1.25rem; border-radius: 12px; background: rgba(26,61,51,.55); border: 1px solid rgba(242,235,218,.08); transition: border-color 220ms ease, transform 220ms ease; }
+    .spec-card:hover { border-color: rgba(217,146,59,.35); transform: translateY(-1px); }
+    .spec-card .ico { width: 36px; height: 36px; border-radius: 8px; background: rgba(217,146,59,.12); display:flex; align-items:center; justify-content:center; color:#D9923B; margin-bottom: 0.75rem; }
+    .spec-card h4 { font-size: 1.1rem; color: #F2EBDA; line-height: 1.3; margin-bottom: 0.25rem; }
+    .spec-card p { font-size: 0.82rem; color: rgba(242,235,218,.55); line-height: 1.5; }
+
+    .diamond { display:inline-flex; align-items:center; gap: 0.6rem; color: #D9923B; font-size: 10px; }
+    .diamond::before, .diamond::after { content:""; width: 28px; height: 1px; background: rgba(217,146,59,.45); }
+
+    .lang-btn { font-size:10px; letter-spacing:.18em; padding:6px 10px; border-radius:9999px; border:1px solid rgba(242,235,218,.18); color:rgba(242,235,218,.7); text-transform:uppercase; cursor:pointer; background:transparent; transition: all .2s ease; }
+    .lang-btn:hover { color:#F2EBDA; border-color:rgba(217,146,59,.6); }
+    .lang-btn[aria-pressed="true"] { background:#D9923B; color:#15342B; border-color:#D9923B; }
+
+    /* Print/PDF (B2B applications) */
+    @media print {
+      @page { size: A4 portrait; margin: 12mm; }
+      body { background: #fff !important; color: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      header, footer, .no-print { display: none !important; }
+      h1, h2, h3, h4, .t-title, .stat-num, .t-year, .pill, .sec-rule { color: #15342B !important; }
+      .grain::before, .forest-bg { background: #fff !important; background-image: none !important; }
+      .portrait { background: #f2ebda !important; box-shadow: none !important; }
+      .stat, .spec-card, .timeline { background: transparent !important; border-color: #d9d9d9 !important; color: #1a1a1a !important; }
+      p, .t-desc, .stat-label, .spec-card p { color: #444 !important; }
+    }
+  </style>
+</head>
+
+<body class="forest-bg">
+
+<!-- ───── NAV ───── -->
+<header class="nav-blur fixed top-0 inset-x-0 z-50 no-print">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group">
+      <img src="/brand_assets/kalimera-logo.jpeg" alt="Kalimera Kitchen" class="h-11 w-auto rounded-md" />
+      <span class="leading-tight">
+        <span class="block font-display text-lg font-semibold text-cream">Kalimera Kitchen</span>
+        <span class="block text-[10px] uppercase tracking-[0.28em] text-cream/55">Kalkan · Antalya</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-[0.2em] text-cream/70">
+      <a href="/" class="hover:text-cream" data-i18n="nav_home">Anasayfa</a>
+      <a href="/menus.html" class="hover:text-cream" data-i18n="nav_menus">Menüler</a>
+      <a href="/nurdan.html" class="text-cream" data-i18n="nav_chef">Şef</a>
+      <a href="/#reserve" class="hover:text-cream" data-i18n="nav_reserve">Rezervasyon</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <div class="hidden sm:flex items-center gap-1">
+        <button class="lang-btn" data-lang="tr" aria-pressed="true">TR</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="#contact" class="btn-primary inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-widest" data-i18n="nav_cta">
+        İletişim
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ───── HERO ───── -->
+<section class="relative pt-28 pb-12 md:pt-32 md:pb-20 grain overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-[380px_1fr] xl:grid-cols-[440px_1fr] gap-10 lg:gap-16 items-center">
+
+    <!-- Portrait -->
+    <div class="portrait order-2 lg:order-1 max-w-sm mx-auto lg:max-w-none w-full">
+      <img id="portrait-img" src="/brand_assets/nurdan.jpg" alt="Nurdan Değirmenci"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="placeholder" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="9" r="3.5"/><path d="M5 20c1.5-3.5 4.5-5 7-5s5.5 1.5 7 5"/></svg>
+        <div class="placeholder-label">Nurdan Değirmenci</div>
+        <div class="placeholder-sub">Portrait Coming Soon</div>
+      </div>
+      <div class="ring"></div>
+    </div>
+
+    <!-- Bio header -->
+    <div class="order-1 lg:order-2 text-center lg:text-left">
+      <div class="diamond mb-5 justify-center lg:justify-start">◆</div>
+      <div class="flex flex-wrap gap-2 mb-5 justify-center lg:justify-start">
+        <span class="pill" data-i18n="badge_role">Şef & Kurucu</span>
+        <span class="pill pill-ghost" data-i18n="badge_loc">Kalkan · Antalya</span>
+        <span class="pill pill-ghost" data-i18n="badge_years">15+ Yıl Deneyim</span>
+      </div>
+      <h1 class="font-display italic text-5xl md:text-6xl lg:text-7xl text-cream leading-[1]">
+        Nurdan <span class="text-sun">Değirmenci</span>
+      </h1>
+      <p class="mt-5 text-sm md:text-base text-cream/70 max-w-xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_lead">
+        Beykent Üniversitesi Mutfak Sanatları mezunu, Hilton Hotel ve havalimanı catering'inde profesyonelleşmiş; bugün Kalkan'da Kalimera Kitchen'ın baş şefi ve kurucusu olarak villa ve yat misafirlerine Akdeniz mutfağı sunan bir gastronomi tutkunu.
+      </p>
+      <div class="mt-7 flex flex-wrap items-center gap-3 justify-center lg:justify-start">
+        <a href="#contact" class="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-widest" data-i18n="cta_contact">
+          İletişim & İş Birliği
+        </a>
+        <a href="/menus.html" class="btn-ghost inline-flex items-center gap-2 rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-widest" data-i18n="cta_menus">
+          Menülere Göz At
+        </a>
+        <button onclick="window.print()" class="btn-ghost no-print inline-flex items-center gap-2 rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-widest" data-i18n="cta_pdf">
+          PDF Olarak Kaydet
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ───── STATS ───── -->
+<section class="relative pb-10 grain">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
+    <div class="stat">
+      <div class="stat-num">15+</div>
+      <div class="stat-label" data-i18n="stat_1">Yıl Profesyonel Deneyim</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">800+</div>
+      <div class="stat-label" data-i18n="stat_2">Mutlu Davet</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">40+</div>
+      <div class="stat-label" data-i18n="stat_3">Villa Ortağı</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4</div>
+      <div class="stat-label" data-i18n="stat_4">Yıl Kalkan</div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── BIO ───── -->
+<section class="relative py-16 md:py-24 grain">
+  <div class="max-w-3xl mx-auto px-5 lg:px-8">
+    <div class="sec-rule mb-10" data-i18n="sec_bio">Hikâye · Story</div>
+
+    <div class="space-y-6 text-cream/80 text-[15px] md:text-base leading-relaxed">
+      <p data-i18n="bio_p1">
+        <span class="font-display italic text-sun text-2xl float-left mr-2 leading-none mt-1">B</span>eykent Üniversitesi'nde Mutfak Sanatları eğitimi aldım ve son 15 yılı yiyecek sektöründe tutku ve keyifle geçirdim.
+      </p>
+      <p data-i18n="bio_p2">
+        Profesyonel deneyimim Hilton Hotel ve havalimanı catering'inde çalışmayı kapsıyor; bu süreçte kalite, detay ve tutarlılığın değerini öğrendim.
+      </p>
+      <p data-i18n="bio_p3">
+        Yolculuğum beni sonunda Kalkan'a getirdi; doğaya duyduğum derin sevgi ve zanaatımla daha kişisel bir bağ kurma isteğiyle. Bu kadar güzel, doğal bir ortamda yemek pişirmek son derece tatmin ediciydi — ama beni en çok heyecanlandıran, Türk mutfağının zenginliğini başkalarıyla paylaşma fırsatıydı.
+      </p>
+      <p data-i18n="bio_p4">
+        Kalkan'da Türk Evi'nde özel akşam yemekleri düzenlemeye başladım; bu, bu sevimli kıyı kasabasında profesyonel yolculuğumun başlangıcı oldu. Son dört yılda Kalkan hem evim hem de mutfağımın kalbi haline geldi.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── TIMELINE ───── -->
+<section class="relative py-16 md:py-20 grain" style="background: linear-gradient(180deg, rgba(26,61,51,.4), transparent);">
+  <div class="max-w-3xl mx-auto px-5 lg:px-8">
+    <div class="sec-rule mb-10" data-i18n="sec_journey">Yolculuk · Career</div>
+
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-year">Eğitim</div>
+        <div class="t-title" data-i18n="t1_t">Beykent Üniversitesi · Mutfak Sanatları</div>
+        <div class="t-desc" data-i18n="t1_d">İstanbul'da gastronomi disiplininin temellerini ve klasik Türk-Akdeniz mutfağının ustalığını edindim.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">İlk Adımlar</div>
+        <div class="t-title" data-i18n="t2_t">Hilton Hotel · Otel Mutfağı</div>
+        <div class="t-desc" data-i18n="t2_d">Uluslararası standartlarda otel mutfağında kalite, hijyen ve sunum disiplinini öğrendim.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Ölçek</div>
+        <div class="t-title" data-i18n="t3_t">Havalimanı Catering · Operasyon</div>
+        <div class="t-desc" data-i18n="t3_d">Yüksek hacimli, tutarlı kalite gerektiren havalimanı catering operasyonlarında detay ve süreklilik kültürünü içselleştirdim.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Kalkan</div>
+        <div class="t-title" data-i18n="t4_t">Türk Evi Kalkan · Özel Akşam Yemekleri</div>
+        <div class="t-desc" data-i18n="t4_d">Kalkan'da Türk Evi'nde özel akşam yemekleri organizasyonu — bu kıyı kasabasındaki profesyonel yolculuğumun başlangıcı.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Bugün</div>
+        <div class="t-title" data-i18n="t5_t">Kalimera Kitchen · Şef & Kurucu</div>
+        <div class="t-desc" data-i18n="t5_d">Villa, yat ve özel davetler için Akdeniz odaklı butik catering atölyesi. Son 4 yıldır Kalkan, mutfağımın kalbi.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── SPECIALTIES ───── -->
+<section class="relative py-16 md:py-20 grain">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="sec-rule mb-10 max-w-3xl mx-auto" data-i18n="sec_spec">Uzmanlık · Specialties</div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+      <div class="spec-card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12s3-7 9-7 9 7 9 7-3 7-9 7-9-7-9-7z"/><circle cx="12" cy="12" r="2.5"/></svg></div>
+        <h4 data-i18n="sp1_t">Villa Şefi</h4>
+        <p data-i18n="sp1_d">Tatil süresince tam zamanlı şef hizmeti — kahvaltıdan akşam yemeğine, pazardan tabağa.</p>
+      </div>
+      <div class="spec-card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 16h20l-2 4H4z"/><path d="M5 16V8a7 7 0 0114 0v8"/></svg></div>
+        <h4 data-i18n="sp2_t">Yat Catering</h4>
+        <p data-i18n="sp2_d">Günlük teknede soğuk meze, ızgara ve taze meyve servisi; minimum yer, maksimum lezzet.</p>
+      </div>
+      <div class="spec-card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 7l9-4 9 4M5 9v9a2 2 0 002 2h10a2 2 0 002-2V9"/></svg></div>
+        <h4 data-i18n="sp3_t">Düğün & Nişan</h4>
+        <p data-i18n="sp3_d">50–250 kişilik açık alan organizasyonları, şef istasyonları, canlı mutfak ve özel sunum.</p>
+      </div>
+      <div class="spec-card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v6H4z"/><path d="M4 14h16v6H4z"/></svg></div>
+        <h4 data-i18n="sp4_t">Özel Davet</h4>
+        <p data-i18n="sp4_d">8–30 kişilik mahrem akşam yemekleri, mum ışığı sunumu, şarap eşleştirme dahil.</p>
+      </div>
+      <div class="spec-card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+        <h4 data-i18n="sp5_t">Akdeniz & Türk</h4>
+        <p data-i18n="sp5_d">Egenin sade rafineliği ile Anadolu'nun zengin tatlarını harmanlayan özgün menüler.</p>
+      </div>
+      <div class="spec-card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7 7 .5-5.5 5 2 7L12 17l-6.5 4.5 2-7L2 9.5 9 9z"/></svg></div>
+        <h4 data-i18n="sp6_t">Uçtan Uca Servis</h4>
+        <p data-i18n="sp6_d">Pazardan tedarik, kurulum, servis ve temizlik dahil tam paket — siz sadece sofrayı yaşayın.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── MENU & PRICES ───── -->
+<section class="relative py-12 md:py-16 grain">
+  <div class="max-w-3xl mx-auto px-5 lg:px-8">
+    <div class="sec-rule mb-8" data-i18n="sec_menu">Menüler & Fiyatlar · Menus & Prices</div>
+
+    <div class="divide-y divide-cream/10 border-y border-cream/10">
+      <a href="/menu/turkish-night.html" class="flex items-baseline justify-between py-3.5 group">
+        <span class="font-display text-xl md:text-2xl text-cream group-hover:text-sun transition">Turkish Night</span>
+        <span class="font-display italic text-sun text-xl md:text-2xl">55£</span>
+      </a>
+      <a href="/menu/mediterranean-night.html" class="flex items-baseline justify-between py-3.5 group">
+        <span class="font-display text-xl md:text-2xl text-cream group-hover:text-sun transition">Mediterranean Night</span>
+        <span class="font-display italic text-sun text-xl md:text-2xl">50£</span>
+      </a>
+      <a href="/menu/fish-bbq.html" class="flex items-baseline justify-between py-3.5 group">
+        <span class="font-display text-xl md:text-2xl text-cream group-hover:text-sun transition">Fish BBQ</span>
+        <span class="font-display italic text-sun text-xl md:text-2xl">45£</span>
+      </a>
+      <a href="/menu/bbq-menu.html" class="flex items-baseline justify-between py-3.5 group">
+        <span class="font-display text-xl md:text-2xl text-cream group-hover:text-sun transition">BBQ Menu</span>
+        <span class="font-display italic text-sun text-xl md:text-2xl">45£</span>
+      </a>
+      <a href="/menu/chicken-bbq.html" class="flex items-baseline justify-between py-3.5 group">
+        <span class="font-display text-xl md:text-2xl text-cream group-hover:text-sun transition">Chicken BBQ</span>
+        <span class="font-display italic text-sun text-xl md:text-2xl">35£</span>
+      </a>
+      <a href="/menu/breakfast.html" class="flex items-baseline justify-between py-3.5 group">
+        <span class="font-display text-xl md:text-2xl text-cream group-hover:text-sun transition">Breakfast</span>
+        <span class="font-display italic text-sun text-xl md:text-2xl">25£</span>
+      </a>
+    </div>
+
+    <p class="mt-4 text-[11px] italic text-cream/55 text-center" data-i18n="menu_min10">
+      Fiyatlar kişi başı, 10+ misafir davetler için · Daha küçük gruplar 90£/kişi
+    </p>
+  </div>
+</section>
+
+<!-- ───── CREDENTIALS ───── -->
+<section class="relative py-12 md:py-16 grain" style="background: linear-gradient(180deg, transparent, rgba(26,61,51,.35));">
+  <div class="max-w-5xl mx-auto px-5 lg:px-8">
+    <div class="sec-rule mb-8" data-i18n="sec_cred">Künye · Credentials</div>
+
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-3 text-sm">
+      <div class="flex items-start gap-3 py-2 border-b border-cream/8">
+        <span class="text-sun mt-0.5">◆</span>
+        <div>
+          <div class="text-cream/55 text-[10px] uppercase tracking-[0.22em] mb-0.5" data-i18n="cr1_l">Eğitim</div>
+          <div class="text-cream" data-i18n="cr1_v">Beykent Üniversitesi — Mutfak Sanatları</div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3 py-2 border-b border-cream/8">
+        <span class="text-sun mt-0.5">◆</span>
+        <div>
+          <div class="text-cream/55 text-[10px] uppercase tracking-[0.22em] mb-0.5" data-i18n="cr2_l">Toplam Deneyim</div>
+          <div class="text-cream" data-i18n="cr2_v">15+ yıl, yiyecek & gastronomi sektörü</div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3 py-2 border-b border-cream/8">
+        <span class="text-sun mt-0.5">◆</span>
+        <div>
+          <div class="text-cream/55 text-[10px] uppercase tracking-[0.22em] mb-0.5" data-i18n="cr3_l">Otel Mutfağı</div>
+          <div class="text-cream" data-i18n="cr3_v">Hilton Hotel · uluslararası standartlar</div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3 py-2 border-b border-cream/8">
+        <span class="text-sun mt-0.5">◆</span>
+        <div>
+          <div class="text-cream/55 text-[10px] uppercase tracking-[0.22em] mb-0.5" data-i18n="cr4_l">Catering Ölçeği</div>
+          <div class="text-cream" data-i18n="cr4_v">Havalimanı catering operasyonları</div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3 py-2 border-b border-cream/8">
+        <span class="text-sun mt-0.5">◆</span>
+        <div>
+          <div class="text-cream/55 text-[10px] uppercase tracking-[0.22em] mb-0.5" data-i18n="cr5_l">Kalkan Tecrübesi</div>
+          <div class="text-cream" data-i18n="cr5_v">4 yıl yerleşik · Türk Evi & Kalimera Kitchen</div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3 py-2 border-b border-cream/8">
+        <span class="text-sun mt-0.5">◆</span>
+        <div>
+          <div class="text-cream/55 text-[10px] uppercase tracking-[0.22em] mb-0.5" data-i18n="cr6_l">Hizmet Bölgesi</div>
+          <div class="text-cream" data-i18n="cr6_v">Kalkan · Kaş · Patara · Antalya</div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3 py-2 border-b border-cream/8">
+        <span class="text-sun mt-0.5">◆</span>
+        <div>
+          <div class="text-cream/55 text-[10px] uppercase tracking-[0.22em] mb-0.5" data-i18n="cr7_l">Mutfak Stili</div>
+          <div class="text-cream" data-i18n="cr7_v">Ege · Akdeniz · Anadolu</div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3 py-2 border-b border-cream/8">
+        <span class="text-sun mt-0.5">◆</span>
+        <div>
+          <div class="text-cream/55 text-[10px] uppercase tracking-[0.22em] mb-0.5" data-i18n="cr8_l">Diller</div>
+          <div class="text-cream" data-i18n="cr8_v">Türkçe · English</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CONTACT ───── -->
+<section id="contact" class="relative py-16 md:py-24 grain">
+  <div class="max-w-3xl mx-auto px-5 lg:px-8 text-center">
+    <div class="diamond mb-6 justify-center">◆</div>
+    <h2 class="font-display italic text-4xl md:text-5xl text-sun leading-[1]" data-i18n="contact_title">İş Birliği & İletişim</h2>
+    <p class="mt-5 text-cream/70 max-w-xl mx-auto" data-i18n="contact_lead">
+      Villa kiralama platformu, tur operatörü veya organizasyon ortağıysanız — Nurdan ile doğrudan iletişime geçin.
+    </p>
+
+    <div class="mt-8 grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
+      <a href="https://wa.me/905397430781" target="_blank" rel="noopener" class="spec-card hover:border-sun/50 block">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg></div>
+        <h4>WhatsApp</h4>
+        <p>+90 539 743 07 81</p>
+      </a>
+      <a href="mailto:hello@kalimerakitchen.com" class="spec-card hover:border-sun/50 block">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <h4>E-posta</h4>
+        <p>hello@kalimerakitchen.com</p>
+      </a>
+      <a href="https://instagram.com/kalimerakitchen" target="_blank" rel="noopener" class="spec-card hover:border-sun/50 block">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
+        <h4>Instagram</h4>
+        <p>@kalimerakitchen</p>
+      </a>
+    </div>
+
+    <p class="mt-10 text-[11px] uppercase tracking-[0.3em] text-cream/45" data-i18n="contact_loc">
+      Kalkan · Kaş · Patara · Antalya
+    </p>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer class="border-t border-cream/10 py-10 no-print">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-cream/50">
+    <div>© <span id="yr"></span> Kalimera Kitchen · Kalkan / Antalya</div>
+    <div class="flex gap-5">
+      <a href="/" class="hover:text-cream transition" data-i18n="ftr_home">Anasayfa</a>
+      <a href="/menus.html" class="hover:text-cream transition" data-i18n="ftr_menus">Menüler</a>
+      <a href="/#reserve" class="hover:text-cream transition" data-i18n="ftr_contact">İletişim</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const I18N = {
+    tr: {
+      nav_home:'Anasayfa', nav_menus:'Menüler', nav_chef:'Şef', nav_reserve:'Rezervasyon', nav_cta:'İletişim',
+      badge_role:'Şef & Kurucu', badge_loc:'Kalkan · Antalya', badge_years:'15+ Yıl Deneyim',
+      hero_lead:"Beykent Üniversitesi Mutfak Sanatları mezunu, Hilton Hotel ve havalimanı catering'inde profesyonelleşmiş; bugün Kalkan'da Kalimera Kitchen'ın baş şefi ve kurucusu olarak villa ve yat misafirlerine Akdeniz mutfağı sunan bir gastronomi tutkunu.",
+      cta_contact:'İletişim & İş Birliği', cta_menus:'Menülere Göz At', cta_pdf:'PDF Olarak Kaydet',
+      stat_1:'Yıl Profesyonel Deneyim', stat_2:'Mutlu Davet', stat_3:'Villa Ortağı', stat_4:'Yıl Kalkan',
+      sec_bio:'Hikâye · Story',
+      bio_p1:"Beykent Üniversitesi'nde Mutfak Sanatları eğitimi aldım ve son 15 yılı yiyecek sektöründe tutku ve keyifle geçirdim.",
+      bio_p2:"Profesyonel deneyimim Hilton Hotel ve havalimanı catering'inde çalışmayı kapsıyor; bu süreçte kalite, detay ve tutarlılığın değerini öğrendim.",
+      bio_p3:"Yolculuğum beni sonunda Kalkan'a getirdi; doğaya duyduğum derin sevgi ve zanaatımla daha kişisel bir bağ kurma isteğiyle. Bu kadar güzel, doğal bir ortamda yemek pişirmek son derece tatmin ediciydi — ama beni en çok heyecanlandıran, Türk mutfağının zenginliğini başkalarıyla paylaşma fırsatıydı.",
+      bio_p4:"Kalkan'da Türk Evi'nde özel akşam yemekleri düzenlemeye başladım; bu, bu sevimli kıyı kasabasında profesyonel yolculuğumun başlangıcı oldu. Son dört yılda Kalkan hem evim hem de mutfağımın kalbi haline geldi.",
+      sec_journey:'Yolculuk · Career',
+      t1_t:'Beykent Üniversitesi · Mutfak Sanatları',
+      t1_d:"İstanbul'da gastronomi disiplininin temellerini ve klasik Türk-Akdeniz mutfağının ustalığını edindim.",
+      t2_t:'Hilton Hotel · Otel Mutfağı',
+      t2_d:'Uluslararası standartlarda otel mutfağında kalite, hijyen ve sunum disiplinini öğrendim.',
+      t3_t:'Havalimanı Catering · Operasyon',
+      t3_d:'Yüksek hacimli, tutarlı kalite gerektiren havalimanı catering operasyonlarında detay ve süreklilik kültürünü içselleştirdim.',
+      t4_t:'Türk Evi Kalkan · Özel Akşam Yemekleri',
+      t4_d:"Kalkan'da Türk Evi'nde özel akşam yemekleri organizasyonu — bu kıyı kasabasındaki profesyonel yolculuğumun başlangıcı.",
+      t5_t:'Kalimera Kitchen · Şef & Kurucu',
+      t5_d:'Villa, yat ve özel davetler için Akdeniz odaklı butik catering atölyesi. Son 4 yıldır Kalkan, mutfağımın kalbi.',
+      sec_spec:'Uzmanlık · Specialties',
+      sp1_t:'Villa Şefi', sp1_d:'Tatil süresince tam zamanlı şef hizmeti — kahvaltıdan akşam yemeğine, pazardan tabağa.',
+      sp2_t:'Yat Catering', sp2_d:'Günlük teknede soğuk meze, ızgara ve taze meyve servisi; minimum yer, maksimum lezzet.',
+      sp3_t:'Düğün & Nişan', sp3_d:'50–250 kişilik açık alan organizasyonları, şef istasyonları, canlı mutfak ve özel sunum.',
+      sp4_t:'Özel Davet', sp4_d:'8–30 kişilik mahrem akşam yemekleri, mum ışığı sunumu, şarap eşleştirme dahil.',
+      sp5_t:'Akdeniz & Türk', sp5_d:"Egenin sade rafineliği ile Anadolu'nun zengin tatlarını harmanlayan özgün menüler.",
+      sp6_t:'Uçtan Uca Servis', sp6_d:'Pazardan tedarik, kurulum, servis ve temizlik dahil tam paket — siz sadece sofrayı yaşayın.',
+      sec_menu:'Menüler & Fiyatlar · Menus & Prices',
+      menu_min10:'Fiyatlar kişi başı, 10+ misafir davetler için · Daha küçük gruplar 90£/kişi',
+      sec_cred:'Künye · Credentials',
+      cr1_l:'Eğitim', cr1_v:'Beykent Üniversitesi — Mutfak Sanatları',
+      cr2_l:'Toplam Deneyim', cr2_v:'15+ yıl, yiyecek & gastronomi sektörü',
+      cr3_l:'Otel Mutfağı', cr3_v:'Hilton Hotel · uluslararası standartlar',
+      cr4_l:'Catering Ölçeği', cr4_v:'Havalimanı catering operasyonları',
+      cr5_l:'Kalkan Tecrübesi', cr5_v:'4 yıl yerleşik · Türk Evi & Kalimera Kitchen',
+      cr6_l:'Hizmet Bölgesi', cr6_v:'Kalkan · Kaş · Patara · Antalya',
+      cr7_l:'Mutfak Stili', cr7_v:'Ege · Akdeniz · Anadolu',
+      cr8_l:'Diller', cr8_v:'Türkçe · English',
+      contact_title:'İş Birliği & İletişim',
+      contact_lead:'Villa kiralama platformu, tur operatörü veya organizasyon ortağıysanız — Nurdan ile doğrudan iletişime geçin.',
+      contact_loc:'Kalkan · Kaş · Patara · Antalya',
+      ftr_home:'Anasayfa', ftr_menus:'Menüler', ftr_contact:'İletişim',
+    },
+    en: {
+      nav_home:'Home', nav_menus:'Menus', nav_chef:'Chef', nav_reserve:'Reservation', nav_cta:'Contact',
+      badge_role:'Chef & Founder', badge_loc:'Kalkan · Antalya', badge_years:'15+ Years Experience',
+      hero_lead:"Culinary Arts graduate of Beykent University, professionally trained at Hilton Hotel and airport catering. Today, as head chef and founder of Kalimera Kitchen in Kalkan, she brings Mediterranean cuisine to villa and yacht guests with a true gastronomic passion.",
+      cta_contact:'Contact & Partnership', cta_menus:'Browse Menus', cta_pdf:'Save as PDF',
+      stat_1:'Years Professional', stat_2:'Happy Events', stat_3:'Villa Partners', stat_4:'Years in Kalkan',
+      sec_bio:'Story · Hikâye',
+      bio_p1:"I studied Culinary Arts at Beykent University and have spent the last 15 years in the food industry with passion and joy.",
+      bio_p2:"My professional experience includes Hilton Hotel and airport catering, where I learned the value of quality, attention to detail and consistency.",
+      bio_p3:"My journey eventually brought me to Kalkan, drawn by my deep love of nature and the desire for a more personal connection with my craft. Cooking in such a beautiful, natural setting was incredibly fulfilling — but what excited me most was the opportunity to share the richness of Turkish cuisine with others.",
+      bio_p4:"I began hosting private dinners at Türk Evi in Kalkan — the beginning of my professional journey in this charming coastal town. Over the last four years, Kalkan has become both my home and the heart of my kitchen.",
+      sec_journey:'Career · Yolculuk',
+      t1_t:'Beykent University · Culinary Arts',
+      t1_d:'Gained the fundamentals of gastronomy and the craft of classical Turkish-Mediterranean cuisine in Istanbul.',
+      t2_t:'Hilton Hotel · Hotel Kitchen',
+      t2_d:'Learned international hotel-kitchen standards of quality, hygiene and presentation discipline.',
+      t3_t:'Airport Catering · Operations',
+      t3_d:'Internalised the culture of detail and continuity required in high-volume, consistent-quality airport catering operations.',
+      t4_t:'Türk Evi Kalkan · Private Dinners',
+      t4_d:'Hosting private dinners at Türk Evi in Kalkan — the beginning of my professional journey in this coastal town.',
+      t5_t:'Kalimera Kitchen · Chef & Founder',
+      t5_d:'A Mediterranean-focused boutique catering atelier for villas, yachts and private events. For four years, Kalkan has been the heart of my kitchen.',
+      sec_spec:'Specialties · Uzmanlık',
+      sp1_t:'Villa Chef', sp1_d:'Full-time chef service throughout your stay — from breakfast to dinner, market to plate.',
+      sp2_t:'Yacht Catering', sp2_d:'Cold mezzes, grills and fresh fruit on day cruises; minimum footprint, maximum flavour.',
+      sp3_t:'Wedding & Engagement', sp3_d:'Outdoor events of 50–250 guests, chef stations, live kitchen and bespoke presentation.',
+      sp4_t:'Private Dinner', sp4_d:'Intimate dinners of 8–30 guests, candlelit setting, wine pairing included.',
+      sp5_t:'Mediterranean & Turkish', sp5_d:"Original menus blending the clean refinement of the Aegean with the rich flavours of Anatolia.",
+      sp6_t:'End-to-End Service', sp6_d:'Sourcing from the market, set-up, service and clean-up — you simply enjoy the table.',
+      sec_menu:'Menus & Prices · Menüler',
+      menu_min10:'Per person, for parties of 10+ · £90 per person for smaller gatherings',
+      sec_cred:'Credentials · Künye',
+      cr1_l:'Education', cr1_v:'Beykent University — Culinary Arts',
+      cr2_l:'Total Experience', cr2_v:'15+ years, food & gastronomy sector',
+      cr3_l:'Hotel Kitchen', cr3_v:'Hilton Hotel · international standards',
+      cr4_l:'Catering Scale', cr4_v:'Airport catering operations',
+      cr5_l:'Kalkan Tenure', cr5_v:'4 years resident · Türk Evi & Kalimera Kitchen',
+      cr6_l:'Service Area', cr6_v:'Kalkan · Kaş · Patara · Antalya',
+      cr7_l:'Culinary Style', cr7_v:'Aegean · Mediterranean · Anatolian',
+      cr8_l:'Languages', cr8_v:'Turkish · English',
+      contact_title:'Partnership & Contact',
+      contact_lead:'If you are a villa rental platform, tour operator or event partner — get in touch with Nurdan directly.',
+      contact_loc:'Kalkan · Kaş · Patara · Antalya',
+      ftr_home:'Home', ftr_menus:'Menus', ftr_contact:'Contact',
+    },
+  };
+
+  function applyLang(l) {
+    if (!I18N[l]) l = 'tr';
+    document.documentElement.lang = l;
+    try { localStorage.setItem('kkLang', l); } catch(e) {}
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const v = I18N[l][el.dataset.i18n];
+      if (v != null) el.textContent = v;
+    });
+    document.querySelectorAll('.lang-btn[data-lang]').forEach(b => {
+      b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('.lang-btn[data-lang]').forEach(b => {
+    b.addEventListener('click', () => applyLang(b.dataset.lang));
+  });
+  try {
+    const saved = localStorage.getItem('kkLang');
+    if (saved && I18N[saved]) applyLang(saved);
+  } catch(e) {}
+</script>
+
+</body>
+</html>

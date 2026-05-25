@@ -9,7 +9,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://kalimerakitchen.com/menu/breakfast.html" />
   <meta property="og:title" content="Breakfast — Kalimera Kitchen" />
-  <meta property="og:description" content="Geleneksel Türk kahvaltı menüsü — Kalkan / Antalya catering. 20€/kişi." />
+  <meta property="og:description" content="Geleneksel Türk kahvaltı menüsü — Kalkan / Antalya catering. 25€/kişi (min. 10 kişi)." />
   <meta property="og:image" content="https://kalimerakitchen.com/brand_assets/breakfast.jpg" />
   <meta property="og:locale" content="tr_TR" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -155,10 +155,49 @@
     .lang-btn { font-size:10px; letter-spacing:.18em; padding:6px 10px; border-radius:9999px; border:1px solid rgba(242,235,218,.18); color:rgba(242,235,218,.7); text-transform:uppercase; cursor:pointer; background:transparent; transition: all .2s ease; }
     .lang-btn:hover { color:#F2EBDA; border-color:rgba(217,146,59,.6); }
     .lang-btn[aria-pressed="true"] { background:#D9923B; color:#15342B; border-color:#D9923B; }
+
+    /* ─── A4 COMPACT MODE ─── */
+    .menu-a4 { line-height: 1.4; }
+    .menu-a4 .plate { display: none !important; }
+    .menu-a4 section[class*="min-h-"] { min-height: auto !important; padding-top: 5rem !important; padding-bottom: 0.5rem !important; }
+    .menu-a4 .pt-28 { padding-top: 4.5rem !important; }
+    .menu-a4 .pb-32 { padding-bottom: 1.5rem !important; }
+    .menu-a4 .pb-20 { padding-bottom: 0.5rem !important; }
+    .menu-a4 .pt-16, .menu-a4 .md\:pt-24 { padding-top: 0 !important; }
+    .menu-a4 .mt-20 { margin-top: 1rem !important; }
+    .menu-a4 .mt-24 { margin-top: 1.25rem !important; }
+    .menu-a4 .mt-8 { margin-top: 0.65rem !important; }
+    .menu-a4 .mt-7 { margin-top: 0.4rem !important; }
+    .menu-a4 .mb-10 { margin-bottom: 0.65rem !important; }
+    .menu-a4 .mb-8 { margin-bottom: 0.55rem !important; }
+    .menu-a4 .mb-6 { margin-bottom: 0.4rem !important; }
+    .menu-a4 h1.font-display { font-size: 2.5rem !important; line-height: 1 !important; }
+    @media (min-width: 768px) { .menu-a4 h1.font-display { font-size: 3rem !important; } }
+    .menu-a4 .menu-line .name { font-size: 0.98rem !important; line-height: 1.25 !important; }
+    .menu-a4 .menu-line .desc { font-size: 0.74rem !important; margin-top: 0.12rem !important; line-height: 1.35 !important; max-width: none !important; }
+    .menu-a4 .max-w-2xl, .menu-a4 .max-w-3xl { max-width: 820px !important; }
+    .menu-a4 .space-y-7 { column-count: 2; column-gap: 2rem; }
+    .menu-a4 .space-y-7 > * + * { margin-top: 0 !important; }
+    .menu-a4 .space-y-7 > .menu-line { break-inside: avoid; -webkit-column-break-inside: avoid; page-break-inside: avoid; margin-bottom: 0.55rem; display: block; }
+    .menu-a4 .grid.md\:grid-cols-2 { gap: 0.5rem 1.5rem !important; }
+    .menu-a4 .text-7xl, .menu-a4 .md\:text-8xl { font-size: 2.25rem !important; }
+    .menu-a4 .text-5xl.md\:text-6xl { font-size: 1.3rem !important; }
+    .menu-a4 .sec-rule { font-size: 10px !important; }
+    .menu-a4 .btn-primary, .menu-a4 .btn-ghost { padding: 0.55rem 1.5rem !important; font-size: 0.78rem !important; }
+
+    /* Print A4 */
+    @media print {
+      @page { size: A4 portrait; margin: 10mm; }
+      body { background: #15342B !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      header, footer { display: none !important; }
+      .menu-a4 section[class*="min-h-"] { padding-top: 0.5rem !important; }
+      .menu-a4 .mt-20.flex { display: none !important; }
+      .menu-a4 .grain::before { display: none !important; }
+    }
   </style>
 </head>
 
-<body class="forest-bg">
+<body class="forest-bg menu-a4">
 
 <!-- ───── NAV ───── -->
 <header class="nav-blur fixed top-0 inset-x-0 z-50">
@@ -299,12 +338,17 @@
     <!-- ─── PRICE ─── -->
     <div class="mt-24 text-center reveal">
       <div class="sec-rule mb-8" data-i18n="sec_price">Kişi Başı Fiyat · Price Per Person</div>
-      <div class="font-display italic text-7xl md:text-8xl text-sun leading-none">20<span class="text-5xl md:text-6xl align-top ml-1">£</span></div>
+      <div class="font-display italic text-7xl md:text-8xl text-sun leading-none">25<span class="text-5xl md:text-6xl align-top ml-1">£</span></div>
       <p class="mt-7 text-xs italic text-cream/55 max-w-md mx-auto" data-i18n="price_caption" data-i18n-html="1">
         Kahvaltı spreadi en az 2 kişi için sunulur
         <span class="text-sun mx-2">·</span>
         Breakfast spread served for minimum 2 guests
       </p>
+    </div>
+
+    <!-- ─── MIN. 10 NOTE ─── -->
+    <div class="text-center max-w-md mx-auto mt-4 reveal">
+      <p class="text-[11px] italic text-sun/75 leading-relaxed" data-i18n="price_min10">Belirtilen fiyatlar 10 ve üzeri davetler için geçerlidir; daha küçük, daha mahrem gruplarda butik hizmet bedeli kişi başı 90£'dur.</p>
     </div>
 
     <!-- ─── CTA ─── -->
@@ -379,6 +423,7 @@
       d11_n:'Portakal Suyu', d11_d:'Taze sıkılmış portakal suyu, katkısız ve soğuk servis.',
       d12_n:'Kahve ve Çay', d12_d:'Türk kahvesi, filtre kahve veya nescafé — taze demleme çay eşliğinde.',
       price_caption:'Kahvaltı spreadi en az 2 kişi için sunulur <span class="text-sun mx-2">·</span> Breakfast spread served for minimum 2 guests',
+      price_min10:"Belirtilen fiyatlar 10 ve üzeri davetler için geçerlidir; daha küçük, daha mahrem gruplarda butik hizmet bedeli kişi başı 90£'dur.",
       cta_other:'Diğer Menüler',
       ftr_home:'Anasayfa', ftr_menus:'Tüm Menüler', ftr_contact:'İletişim',
     },
@@ -400,6 +445,7 @@
       d11_n:'Orange Juice', d11_d:'Freshly squeezed orange juice, additive-free and chilled.',
       d12_n:'Coffee & Tea', d12_d:'Turkish coffee, filter coffee or Nescafé — with freshly brewed black tea.',
       price_caption:'Breakfast spread served for minimum 2 guests <span class="text-sun mx-2">·</span> Kahvaltı spreadi en az 2 kişi için sunulur',
+      price_min10:'Listed prices apply to gatherings of 10 or more guests; for smaller, more intimate parties our boutique service rate is £90 per person.',
       cta_other:'Other Menus',
       ftr_home:'Home', ftr_menus:'All Menus', ftr_contact:'Contact',
     },
@@ -421,6 +467,7 @@
       d11_n:'Апельсиновый сок', d11_d:'Свежевыжатый апельсиновый сок, без добавок, охлаждённый.',
       d12_n:'Кофе и чай', d12_d:'Турецкий кофе, фильтр-кофе или Nescafé — со свежезаваренным чёрным чаем.',
       price_caption:'Завтрак подаётся минимум на 2 персоны <span class="text-sun mx-2">·</span> Breakfast spread served for minimum 2 guests',
+      price_min10:'Указанные цены действуют для групп от 10 гостей; для более камерных мероприятий стоимость нашего бутик-сервиса составляет 90£ с персоны.',
       cta_other:'Другие меню',
       ftr_home:'Главная', ftr_menus:'Все меню', ftr_contact:'Контакты',
     }
