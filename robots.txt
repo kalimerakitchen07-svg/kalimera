@@ -4,4 +4,4 @@ Disallow: /temporary screenshots/
 Disallow: /.omc/
 Disallow: /.recon/
 
-Sitemap: https://kalimerakitchen.com/sitemap.xml
+Sitemap: https://www.kalimerakitchen.com/sitemap.xml
