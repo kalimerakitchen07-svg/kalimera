@@ -132,6 +132,18 @@
         "name": "Kalimera Kitchen",
         "founder": { "@id": "https://www.kalimerakitchen.com/nurdan#person" },
         "areaServed": "Kalkan, Kaş, Patara, Antalya, Türkiye"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.kalimerakitchen.com/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Hangi bölgelere hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Kalkan, Kaş, Patara, Kalamar Koyu, Kaputaş ve Antalya genelinde villa, yat ve özel davet catering hizmeti veriyoruz. Ekibimiz ekipmanıyla doğrudan sizin lokasyonunuza gelir." } },
+          { "@type": "Question", "name": "Fiyatlarınız ne kadar?", "acceptedAnswer": { "@type": "Answer", "text": "Menüye göre kişi başı £25 (Türk kahvaltısı) ile £55 (Turkish Night) arasında değişir. Fiyatlar 10 ve üzeri misafir için geçerlidir; daha küçük, butik davetlerde kişi başı £90'dır. Size özel menü için fiyat teklifi çıkarıyoruz." } },
+          { "@type": "Question", "name": "Minimum kaç kişi için rezervasyon alıyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Özel akşam yemekleri 8–30 kişi, düğün ve nişan organizasyonları 50–250 kişi arasındadır. Villa şefi hizmetinde aile ölçeğinde küçük gruplara da esnek şekilde hizmet veriyoruz." } },
+          { "@type": "Question", "name": "Yemekleri villada veya teknede mi pişiriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Mobil mutfağımız ve şef ekibimizle doğrudan villanızda, teknenizde veya etkinlik alanınızda pişiriyoruz. Pazar alışverişinden kurulumun ardından bulaşığa kadar uçtan uca hizmet sunuyoruz." } },
+          { "@type": "Question", "name": "Vejetaryen, vegan veya alerji menüleri yapıyor musunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Kesinlikle. Menülerimiz diyetinize, alerjilerinize ve tercihlerinize göre tamamen kişiye özel tasarlanır. Vejetaryen, vegan ve glütensiz seçenekler mevcuttur." } },
+          { "@type": "Question", "name": "Nasıl rezervasyon yapabilirim?", "acceptedAnswer": { "@type": "Answer", "text": "WhatsApp'tan (+90 539 743 07 81) yazabilir ya da sitedeki rezervasyon formunu doldurabilirsiniz. Tarih, kişi sayısı ve lokasyonu iletmeniz yeterli; 24 saat içinde size özel menü ve fiyat teklifiyle dönüş yapıyoruz. Rezervasyonlar 7 gün 24 saat alınır." } }
+        ]
       }
     ]
   }
@@ -375,6 +387,7 @@
       <a href="#menu"    class="hover:text-deep transition" data-i18n="nav_menu">Menü</a>
       <a href="#catering" class="hover:text-deep transition" data-i18n="nav_catering">Catering</a>
       <a href="#refs"    class="hover:text-deep transition" data-i18n="nav_refs">Referanslar</a>
+      <a href="#faq"     class="hover:text-deep transition" data-i18n="nav_faq">SSS</a>
       <a href="#contact" class="hover:text-deep transition" data-i18n="nav_contact">İletişim</a>
     </nav>
 
@@ -833,6 +846,60 @@
   </div>
 </section>
 
+<!-- ═════════════════════ FAQ ═════════════════════ -->
+<section id="faq" class="relative py-24 md:py-32 bg-ivory">
+  <div class="relative max-w-3xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="text-xs uppercase tracking-[0.4em] text-terra font-semibold" data-i18n="faq_kicker">Sıkça Sorulanlar</span>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-deep mt-3" data-i18n="faq_title">Merak edilenler</h2>
+    </div>
+    <div class="mt-12 divide-y divide-sand reveal">
+      <details class="group py-5">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 font-display text-xl md:text-2xl text-deep list-none [&::-webkit-details-marker]:hidden">
+          <span data-i18n="faq_q1">Hangi bölgelere hizmet veriyorsunuz?</span>
+          <span class="shrink-0 text-terra text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-3 text-stone leading-relaxed" data-i18n="faq_a1">Kalkan, Kaş, Patara, Kalamar Koyu, Kaputaş ve Antalya genelinde villa, yat ve özel davet catering hizmeti veriyoruz. Ekibimiz ekipmanıyla doğrudan sizin lokasyonunuza gelir.</p>
+      </details>
+      <details class="group py-5">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 font-display text-xl md:text-2xl text-deep list-none [&::-webkit-details-marker]:hidden">
+          <span data-i18n="faq_q2">Fiyatlarınız ne kadar?</span>
+          <span class="shrink-0 text-terra text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-3 text-stone leading-relaxed" data-i18n="faq_a2">Menüye göre kişi başı £25 (Türk kahvaltısı) ile £55 (Turkish Night) arasında değişir. Fiyatlar 10 ve üzeri misafir için geçerlidir; daha küçük, butik davetlerde kişi başı £90'dır. Size özel menü için fiyat teklifi çıkarıyoruz.</p>
+      </details>
+      <details class="group py-5">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 font-display text-xl md:text-2xl text-deep list-none [&::-webkit-details-marker]:hidden">
+          <span data-i18n="faq_q3">Minimum kaç kişi için rezervasyon alıyorsunuz?</span>
+          <span class="shrink-0 text-terra text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-3 text-stone leading-relaxed" data-i18n="faq_a3">Özel akşam yemekleri 8–30 kişi, düğün ve nişan organizasyonları 50–250 kişi arasındadır. Villa şefi hizmetinde aile ölçeğinde küçük gruplara da esnek şekilde hizmet veriyoruz.</p>
+      </details>
+      <details class="group py-5">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 font-display text-xl md:text-2xl text-deep list-none [&::-webkit-details-marker]:hidden">
+          <span data-i18n="faq_q4">Yemekleri villada veya teknede mi pişiriyorsunuz?</span>
+          <span class="shrink-0 text-terra text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-3 text-stone leading-relaxed" data-i18n="faq_a4">Evet. Mobil mutfağımız ve şef ekibimizle doğrudan villanızda, teknenizde veya etkinlik alanınızda pişiriyoruz. Pazar alışverişinden kurulumun ardından bulaşığa kadar uçtan uca hizmet sunuyoruz.</p>
+      </details>
+      <details class="group py-5">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 font-display text-xl md:text-2xl text-deep list-none [&::-webkit-details-marker]:hidden">
+          <span data-i18n="faq_q5">Vejetaryen, vegan veya alerji menüleri yapıyor musunuz?</span>
+          <span class="shrink-0 text-terra text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-3 text-stone leading-relaxed" data-i18n="faq_a5">Kesinlikle. Menülerimiz diyetinize, alerjilerinize ve tercihlerinize göre tamamen kişiye özel tasarlanır. Vejetaryen, vegan ve glütensiz seçenekler mevcuttur.</p>
+      </details>
+      <details class="group py-5">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 font-display text-xl md:text-2xl text-deep list-none [&::-webkit-details-marker]:hidden">
+          <span data-i18n="faq_q6">Nasıl rezervasyon yapabilirim?</span>
+          <span class="shrink-0 text-terra text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-3 text-stone leading-relaxed" data-i18n="faq_a6">WhatsApp'tan (+90 539 743 07 81) yazabilir ya da sitedeki rezervasyon formunu doldurabilirsiniz. Tarih, kişi sayısı ve lokasyonu iletmeniz yeterli; 24 saat içinde size özel menü ve fiyat teklifiyle dönüş yapıyoruz. Rezervasyonlar 7 gün 24 saat alınır.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ═════════════════════ RESERVATION ═════════════════════ -->
 <section id="reserve" class="relative py-24 md:py-32 bg-cream">
   <div class="absolute inset-0 grain pointer-events-none"></div>
@@ -1009,7 +1076,7 @@
   /* ── i18n ── */
   const I18N = {
     tr: {
-      nav_about:'Hikayemiz', nav_menu:'Menü', nav_catering:'Catering', nav_refs:'Referanslar', nav_contact:'İletişim', nav_cta:'Rezervasyon',
+      nav_about:'Hikayemiz', nav_menu:'Menü', nav_catering:'Catering', nav_refs:'Referanslar', nav_faq:'SSS', nav_contact:'İletişim', nav_cta:'Rezervasyon',
       hero_kicker:'Kalkan / Antalya · Catering Atölyesi',
       hero_title_1:"Akdeniz'in en taze", hero_title_2:'günaydın', hero_title_3:'tabağı, sofranızda.',
       hero_sub:'Villanızda, teknenizde ya da özel davetinizde — Kalkan kıyısının zeytinyağıyla, sabah pazarından gelen sebzelerle ve ev yapımı tariflerle hazırlanan Akdeniz mutfağı.',
@@ -1047,6 +1114,19 @@
       ref1_p:'"Villamızda 15 kişilik aile yemeği için Kalimera ekibini çağırdık. Mezelerin tazeliği ve şefin sıcaklığı bizi büyüledi. Bir hafta boyunca her gün geldiler — her öğün başka bir keşif."',
       ref2_p:'"50 kişilik nişan organizasyonumuzda her detay düşünülmüştü. Sunum, lezzet, servis... Konuklarımız hâlâ köfte ve kalamar tariflerini soruyor. Kesinlikle tekrar."',
       ref3_p:'"Bir hafta boyunca tekne kiraladık ve Kalimera her gün farklı bir menü hazırladı. Ahtapot karpaçço ve limon-sarımsaklı karidesler unutulmazdı. Şiddetle tavsiye."',
+      faq_kicker:'Sıkça Sorulanlar', faq_title:'Merak edilenler',
+      faq_q1:'Hangi bölgelere hizmet veriyorsunuz?',
+      faq_a1:'Kalkan, Kaş, Patara, Kalamar Koyu, Kaputaş ve Antalya genelinde villa, yat ve özel davet catering hizmeti veriyoruz. Ekibimiz ekipmanıyla doğrudan sizin lokasyonunuza gelir.',
+      faq_q2:'Fiyatlarınız ne kadar?',
+      faq_a2:'Menüye göre kişi başı £25 (Türk kahvaltısı) ile £55 (Turkish Night) arasında değişir. Fiyatlar 10 ve üzeri misafir için geçerlidir; daha küçük, butik davetlerde kişi başı £90\'dır. Size özel menü için fiyat teklifi çıkarıyoruz.',
+      faq_q3:'Minimum kaç kişi için rezervasyon alıyorsunuz?',
+      faq_a3:'Özel akşam yemekleri 8–30 kişi, düğün ve nişan organizasyonları 50–250 kişi arasındadır. Villa şefi hizmetinde aile ölçeğinde küçük gruplara da esnek şekilde hizmet veriyoruz.',
+      faq_q4:'Yemekleri villada veya teknede mi pişiriyorsunuz?',
+      faq_a4:'Evet. Mobil mutfağımız ve şef ekibimizle doğrudan villanızda, teknenizde veya etkinlik alanınızda pişiriyoruz. Pazar alışverişinden kurulumun ardından bulaşığa kadar uçtan uca hizmet sunuyoruz.',
+      faq_q5:'Vejetaryen, vegan veya alerji menüleri yapıyor musunuz?',
+      faq_a5:'Kesinlikle. Menülerimiz diyetinize, alerjilerinize ve tercihlerinize göre tamamen kişiye özel tasarlanır. Vejetaryen, vegan ve glütensiz seçenekler mevcuttur.',
+      faq_q6:'Nasıl rezervasyon yapabilirim?',
+      faq_a6:'WhatsApp\'tan (+90 539 743 07 81) yazabilir ya da sitedeki rezervasyon formunu doldurabilirsiniz. Tarih, kişi sayısı ve lokasyonu iletmeniz yeterli; 24 saat içinde size özel menü ve fiyat teklifiyle dönüş yapıyoruz. Rezervasyonlar 7 gün 24 saat alınır.',
       rsv_kicker:'Rezervasyon', rsv_title:'Sofranızı planlayalım.',
       rsv_sub:'Formu doldurun — 24 saat içinde size özel menü ve fiyat teklifiyle dönüş yapalım.',
       f_name:'Ad Soyad', f_phone:'Telefon', f_email:'E-posta', f_date:'Tarih', f_people:'Kişi Sayısı', f_type:'Etkinlik Türü',
@@ -1080,7 +1160,7 @@
       ftr_rights:'Tüm hakları saklıdır.', ftr_priv:'Gizlilik', ftr_terms:'Kullanım Koşulları',
     },
     en: {
-      nav_about:'Story', nav_menu:'Menu', nav_catering:'Catering', nav_refs:'References', nav_contact:'Contact', nav_cta:'Reserve',
+      nav_about:'Story', nav_menu:'Menu', nav_catering:'Catering', nav_refs:'References', nav_faq:'FAQ', nav_contact:'Contact', nav_cta:'Reserve',
       hero_kicker:'Kalkan / Antalya · Catering Atelier',
       hero_title_1:"The Mediterranean's freshest", hero_title_2:'good morning', hero_title_3:'plate, on your table.',
       hero_sub:'In your villa, on your boat, or at your private event — Mediterranean cuisine prepared with Kalkan coast olive oil, morning-market vegetables, and home recipes.',
@@ -1118,6 +1198,19 @@
       ref1_p:'"We invited the Kalimera team for a 15-person family dinner at our villa. The freshness of the meze and the warmth of the chef won us over. They came every day for a week — every meal another discovery."',
       ref2_p:'"Every detail of our 50-person engagement was thought through. Presentation, taste, service... Our guests still ask about the köfte and calamari. Definitely again."',
       ref3_p:'"We chartered a yacht for a week and Kalimera prepared a different menu every day. Octopus carpaccio and lemon-garlic prawns were unforgettable. Highly recommend."',
+      faq_kicker:'FAQ', faq_title:'Good to know',
+      faq_q1:'Which areas do you serve?',
+      faq_a1:'We provide villa, yacht and private-event catering across Kalkan, Kaş, Patara, Kalamar Bay, Kaputaş and the wider Antalya region. Our team comes directly to your location with all equipment.',
+      faq_q2:'How much does it cost?',
+      faq_a2:'Depending on the menu, it ranges from £25 per person (Turkish breakfast) to £55 (Turkish Night). Prices apply to gatherings of 10 or more; for smaller, intimate parties our boutique service is £90 per person. We prepare a tailored quote for your event.',
+      faq_q3:'Is there a minimum number of guests?',
+      faq_a3:'Private dinners are for 8–30 guests and weddings/engagements for 50–250. With our villa-chef service we also cater flexibly to smaller, family-sized groups.',
+      faq_q4:'Do you cook at the villa or on the boat?',
+      faq_a4:'Yes. With our mobile kitchen and chef team we cook right at your villa, yacht or event venue. We offer end-to-end service — from market shopping to setup and the washing-up.',
+      faq_q5:'Do you offer vegetarian, vegan or allergy menus?',
+      faq_a5:'Absolutely. Our menus are fully bespoke, designed around your diet, allergies and preferences. Vegetarian, vegan and gluten-free options are available.',
+      faq_q6:'How do I make a reservation?',
+      faq_a6:'Message us on WhatsApp (+90 539 743 07 81) or fill in the reservation form on the site. Just share your date, guest count and location — we\'ll come back within 24 hours with a custom menu and quote. Reservations are accepted 24/7.',
       rsv_kicker:'Reservation', rsv_title:"Let's plan your table.",
       rsv_sub:'Fill in the form — within 24 hours we\'ll come back with a custom menu and quote.',
       f_name:'Full Name', f_phone:'Phone', f_email:'Email', f_date:'Date', f_people:'Guests', f_type:'Event Type',
@@ -1151,7 +1244,7 @@
       ftr_rights:'All rights reserved.', ftr_priv:'Privacy', ftr_terms:'Terms',
     },
     ru: {
-      nav_about:'История', nav_menu:'Меню', nav_catering:'Кейтеринг', nav_refs:'Отзывы', nav_contact:'Контакты', nav_cta:'Бронь',
+      nav_about:'История', nav_menu:'Меню', nav_catering:'Кейтеринг', nav_refs:'Отзывы', nav_faq:'Вопросы', nav_contact:'Контакты', nav_cta:'Бронь',
       hero_kicker:'Калкан / Анталия · Кейтеринг-ателье',
       hero_title_1:'Самая свежая', hero_title_2:'доброе утро', hero_title_3:'тарелка Средиземноморья.',
       hero_sub:'В вашей вилле, на яхте или на частном мероприятии — средиземноморская кухня с оливковым маслом побережья Калкана, овощами с утреннего рынка и домашними рецептами.',
@@ -1189,6 +1282,19 @@
       ref1_p:'"Мы пригласили команду Kalimera на семейный ужин на 15 человек. Свежесть мезе и теплота шефа покорили нас. Они приходили каждый день неделю — каждое блюдо открытие."',
       ref2_p:'"Каждая деталь нашей помолвки на 50 человек была продумана. Подача, вкус, сервис... Гости до сих пор спрашивают рецепт кёфте. Однозначно ещё."',
       ref3_p:'"Мы зафрахтовали яхту на неделю, и Kalimera готовил разное меню каждый день. Карпаччо из осьминога и креветки в лимоне — незабываемо. Очень рекомендуем."',
+      faq_kicker:'Вопросы', faq_title:'Что важно знать',
+      faq_q1:'В каких районах вы работаете?',
+      faq_a1:'Мы предоставляем кейтеринг для вилл, яхт и частных мероприятий в Калкане, Каше, Патаре, бухте Каламар, Капуташе и по всему региону Анталии. Наша команда приезжает к вам со всем оборудованием.',
+      faq_q2:'Сколько это стоит?',
+      faq_a2:'В зависимости от меню — от £25 на человека (турецкий завтрак) до £55 (Turkish Night). Цены действуют для групп от 10 человек; для небольших камерных мероприятий бутик-сервис стоит £90 на человека. Мы готовим индивидуальное предложение для вашего события.',
+      faq_q3:'Есть ли минимальное число гостей?',
+      faq_a3:'Частные ужины — на 8–30 гостей, свадьбы и помолвки — на 50–250. В рамках услуги «шеф на вилле» мы также гибко обслуживаем небольшие, семейные группы.',
+      faq_q4:'Вы готовите на вилле или на яхте?',
+      faq_a4:'Да. С нашей мобильной кухней и командой шефов мы готовим прямо на вашей вилле, яхте или площадке мероприятия. Мы предлагаем сервис «под ключ» — от закупки продуктов до сервировки и уборки.',
+      faq_q5:'Есть ли вегетарианские, веганские меню или меню для аллергиков?',
+      faq_a5:'Безусловно. Наши меню полностью индивидуальны и составляются с учётом вашей диеты, аллергий и предпочтений. Доступны вегетарианские, веганские и безглютеновые варианты.',
+      faq_q6:'Как сделать бронирование?',
+      faq_a6:'Напишите нам в WhatsApp (+90 539 743 07 81) или заполните форму бронирования на сайте. Просто укажите дату, число гостей и локацию — мы ответим в течение 24 часов с индивидуальным меню и предложением. Бронирование принимается круглосуточно.',
       rsv_kicker:'Бронирование', rsv_title:'Спланируем ваш стол.',
       rsv_sub:'Заполните форму — в течение 24 часов вернёмся с меню и расчётом.',
       f_name:'ФИО', f_phone:'Телефон', f_email:'E-mail', f_date:'Дата', f_people:'Гостей', f_type:'Тип мероприятия',
