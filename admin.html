@@ -178,10 +178,10 @@ tailwind.config = {
                 <input id="cDish" type="number" step="50" class="field mt-1" oninput="saveParams();calcQuote()"></label>
               <label class="block"><span class="text-xs text-cream/60">İndirim %</span>
                 <input id="cDisc" type="number" step="1" min="0" max="100" class="field mt-1" oninput="saveParams();calcQuote()"></label>
-              <label class="flex items-center gap-2 text-cream/70 text-sm mt-6"><input id="cDishOn" type="checkbox" onchange="calcQuote()" class="accent-sun"> Bulaşık dahil et</label>
+              <label class="flex items-center gap-2 text-cream/70 text-sm mt-6"><input id="cDishOn" type="checkbox" onchange="saveParams();calcQuote()" class="accent-sun"> Bulaşık dahil et</label>
             </div>
             <div class="flex flex-wrap gap-3 items-center mt-4 text-sm">
-              <label class="flex items-center gap-2 text-cream/70"><input id="cSmall" type="checkbox" onchange="calcQuote()" class="accent-sun"> &lt;10 kişi butik ek ücreti</label>
+              <label class="flex items-center gap-2 text-cream/70"><input id="cSmall" type="checkbox" onchange="saveParams();calcQuote()" class="accent-sun"> &lt;10 kişi butik ek ücreti</label>
               <button onclick="resetParams()" class="btn-g px-3 py-1.5 text-xs ml-auto">Varsayılana dön</button>
             </div>
           </div>
