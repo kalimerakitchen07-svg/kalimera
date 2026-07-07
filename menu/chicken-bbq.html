@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/brand_assets/favicon-192.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/apple-touch-icon.png" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Menu","name":"Chicken BBQ","inLanguage":"tr-TR","provider":{"@type":"Restaurant","name":"Kalimera Kitchen","address":{"@type":"PostalAddress","addressLocality":"Kalkan","addressRegion":"Antalya","addressCountry":"TR"},"telephone":"+905397430781","url":"https://kalimerakitchen.com"}}
+  {"@context":"https://schema.org","@type":"Menu","name":"Chicken BBQ","inLanguage":"tr-TR","url":"https://www.kalimerakitchen.com/menu/chicken-bbq","provider":{"@type":["Restaurant","CateringService"],"name":"Kalimera Kitchen","telephone":"+905397430781","url":"https://www.kalimerakitchen.com","servesCuisine":["Turkish","Barbecue","Grill"],"areaServed":["Kalkan","Kaş","Patara","Antalya"],"address":{"@type":"PostalAddress","addressLocality":"Kalkan","addressRegion":"Antalya","addressCountry":"TR"}},"offers":{"@type":"Offer","price":"35","priceCurrency":"GBP","description":"Kişi başı · min. 10 misafir / per person, minimum 10 guests","eligibleQuantity":{"@type":"QuantitativeValue","minValue":10,"unitText":"guests"}},"hasMenuSection":[{"@type":"MenuSection","name":"Izgara Tavuk","hasMenuItem":[{"@type":"MenuItem","name":"Özel Marineli Tavuk But Fileto","nutrition":{"@type":"NutritionInformation","calories":"425 kcal"}},{"@type":"MenuItem","name":"Marineli Tavuk Kanatları","nutrition":{"@type":"NutritionInformation","calories":"381 kcal"}},{"@type":"MenuItem","name":"Renkli Biberli Tavuk Şiş","nutrition":{"@type":"NutritionInformation","calories":"297 kcal"}}]},{"@type":"MenuSection","name":"Meze","hasMenuItem":[{"@type":"MenuItem","name":"Mücver","nutrition":{"@type":"NutritionInformation","calories":"183 kcal"}},{"@type":"MenuItem","name":"Babagannuş","nutrition":{"@type":"NutritionInformation","calories":"140 kcal"}}]},{"@type":"MenuSection","name":"Sos","hasMenuItem":[{"@type":"MenuItem","name":"Peri Peri Sos","nutrition":{"@type":"NutritionInformation","calories":"55 kcal"}},{"@type":"MenuItem","name":"Taze Otlu Sarımsaklı Sos","nutrition":{"@type":"NutritionInformation","calories":"30 kcal"}},{"@type":"MenuItem","name":"Barbekü Sosu (ev yapımı)","nutrition":{"@type":"NutritionInformation","calories":"56 kcal"}}]},{"@type":"MenuSection","name":"Salata","hasMenuItem":[{"@type":"MenuItem","name":"Avokado Soslu Yeşil Salata","nutrition":{"@type":"NutritionInformation","calories":"176 kcal"}}]},{"@type":"MenuSection","name":"Ekmek","hasMenuItem":[{"@type":"MenuItem","name":"Türk Ekmekleri","nutrition":{"@type":"NutritionInformation","calories":"155 kcal"}}]}]}
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -527,5 +527,7 @@
     else updateMenuReserveCta();
   } catch(e) { updateMenuReserveCta(); }
 </script>
+  <script src="/data/menu-data.js"></script>
+  <script src="/data/menu-enhance.js"></script>
 </body>
 </html>

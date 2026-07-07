@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/brand_assets/favicon-192.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/apple-touch-icon.png" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Menu","name":"Breakfast","inLanguage":"tr-TR","provider":{"@type":"Restaurant","name":"Kalimera Kitchen","address":{"@type":"PostalAddress","addressLocality":"Kalkan","addressRegion":"Antalya","addressCountry":"TR"},"telephone":"+905397430781","url":"https://kalimerakitchen.com"}}
+  {"@context":"https://schema.org","@type":"Menu","name":"Breakfast","inLanguage":"tr-TR","url":"https://www.kalimerakitchen.com/menu/breakfast","provider":{"@type":["Restaurant","CateringService"],"name":"Kalimera Kitchen","telephone":"+905397430781","url":"https://www.kalimerakitchen.com","servesCuisine":["Turkish","Breakfast","Mediterranean"],"areaServed":["Kalkan","Kaş","Patara","Antalya"],"address":{"@type":"PostalAddress","addressLocality":"Kalkan","addressRegion":"Antalya","addressCountry":"TR"}},"offers":{"@type":"Offer","price":"25","priceCurrency":"GBP","description":"Kişi başı · min. 10 misafir / per person, minimum 10 guests","eligibleQuantity":{"@type":"QuantitativeValue","minValue":10,"unitText":"guests"}},"hasMenuSection":[{"@type":"MenuSection","name":"Sıcak","hasMenuItem":[{"@type":"MenuItem","name":"Sucuklu Yumurta","nutrition":{"@type":"NutritionInformation","calories":"344 kcal"}},{"@type":"MenuItem","name":"Patates Kızartması","nutrition":{"@type":"NutritionInformation","calories":"210 kcal"}},{"@type":"MenuItem","name":"Beyaz Peynirli Sigara Böreği","nutrition":{"@type":"NutritionInformation","calories":"304 kcal"}}]},{"@type":"MenuSection","name":"Sofra","hasMenuItem":[{"@type":"MenuItem","name":"Şarküteri Tabağı (sebze)","nutrition":{"@type":"NutritionInformation","calories":"19 kcal"}},{"@type":"MenuItem","name":"Dört Çeşit Peynir","nutrition":{"@type":"NutritionInformation","calories":"194 kcal"}},{"@type":"MenuItem","name":"Yeşil ve Siyah Zeytin","nutrition":{"@type":"NutritionInformation","calories":"57 kcal"}},{"@type":"MenuItem","name":"Reçel · Tahin · Pekmez · Bal","nutrition":{"@type":"NutritionInformation","calories":"329 kcal"}},{"@type":"MenuItem","name":"Kaymak ve Yoğurt","nutrition":{"@type":"NutritionInformation","calories":"147 kcal"}},{"@type":"MenuItem","name":"Mevsim Meyveleri","nutrition":{"@type":"NutritionInformation","calories":"82 kcal"}}]},{"@type":"MenuSection","name":"Ekmek","hasMenuItem":[{"@type":"MenuItem","name":"Mevsim Ekmeği ve Simit","nutrition":{"@type":"NutritionInformation","calories":"460 kcal"}}]},{"@type":"MenuSection","name":"İçecek","hasMenuItem":[{"@type":"MenuItem","name":"Portakal Suyu (taze sıkma)","nutrition":{"@type":"NutritionInformation","calories":"94 kcal"}},{"@type":"MenuItem","name":"Kahve ve Çay","nutrition":{"@type":"NutritionInformation","calories":"20 kcal"}}]}]}
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -507,5 +507,7 @@
     else updateMenuReserveCta();
   } catch(e) { updateMenuReserveCta(); }
 </script>
+  <script src="/data/menu-data.js"></script>
+  <script src="/data/menu-enhance.js"></script>
 </body>
 </html>
