@@ -282,6 +282,7 @@ tailwind.config = {
 </div>
 
 <script src="data/menu-data.js"></script>
+<script src="data/menu-render.js"></script>
 <script>
 /* ═══════════ CONFIG ═══════════ */
 const PW_HASH = 'b31f229da0eac49fb46b5342630fb311063cd20786672c91addffc8fbdfb6409'; // sha256("kalimera2026")
@@ -431,14 +432,14 @@ function calcQuote(){
 }
 
 /* ═══════════ PDF SAVE (robust blob download + print fallback) ═══════════ */
-async function pdfSave(el, filename){
+async function pdfSave(el, filename, bg){
   // CDN blocked → native print fallback
   if(typeof html2pdf==='undefined'){ printFallback(el); return; }
   const wrap=document.createElement('div'); wrap.style.cssText='position:fixed;left:-99999px;top:0';
   wrap.appendChild(el); document.body.appendChild(wrap);
   try{
     const blob = await html2pdf().set({margin:0,image:{type:'jpeg',quality:.95},
-      html2canvas:{scale:2,backgroundColor:'#FBF7EE',useCORS:true,logging:false},
+      html2canvas:{scale:2,backgroundColor:bg||'#FBF7EE',useCORS:true,logging:false},
       jsPDF:{unit:'pt',format:'a4'}}).from(el).outputPdf('blob');
     const pdfBlob = blob.type==='application/pdf' ? blob : new Blob([blob],{type:'application/pdf'});
     const url = URL.createObjectURL(pdfBlob);
@@ -544,16 +545,15 @@ function menuPdfHtml(slug,lang,showPrice){
 }
 function renderMenuDoc(slug,lang,showPrice){
   const el=document.createElement('div');
-  el.style.cssText='width:794px;min-height:1096px;box-sizing:border-box;padding:44px 54px;background:#15342B;color:#F2EBDA;font-family:Inter,Arial,sans-serif';
+  el.style.cssText='width:794px;background:#15342B';
   const langs = lang==='all'?['tr','en','ru']:[lang];
-  el.innerHTML=langs.map((l,i)=>`<div style="${i>0?'page-break-before:always;padding-top:20px':''}">${menuPdfHtml(slug,l,showPrice)}</div>`).join('');
-  el.innerHTML+=`<div style="margin-top:28px;text-align:center;font-size:10px;color:rgba(242,235,218,.5);border-top:1px solid rgba(217,146,59,.3);padding-top:14px">Şef Nurdan Değirmenci · +90 539 743 07 81 · kalimerakitchen.com</div>`;
+  el.innerHTML=langs.map(l=>KalimeraMenu.render(DATA.menus[slug],l,{showPrice})).join('');
   return el;
 }
 function downloadMenuPdf(){
   const slug=pdfMenu.value, lang=pdfLang.value, showPrice=pdfPrice.checked;
   const el=renderMenuDoc(slug,lang,showPrice);
-  pdfSave(el, `Kalimera-${slug}-${lang}.pdf`);
+  pdfSave(el, `Kalimera-${slug}-${lang}.pdf`, '#15342B');
 }
 
 /* ═══════════ SEO ═══════════ */

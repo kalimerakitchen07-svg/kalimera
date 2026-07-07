@@ -101,28 +101,40 @@ const CHEF_PICKS = [
   menus['chefs-table'] = { name: "Chef's Table", slug: 'chefs-table', price_gbp: 90, kcal_total: total, dishes, signature: true };
 }
 
-// ── EN/RU ad + açıklama zenginleştirme (menü sayfası I18N'inden) ──
-function extractLangs(slug, key) {
-  // dN_n / dN_d için [tr, en, ru] sırasıyla değerleri döndür (obje sırası tr,en,ru)
+// ── EN/RU ad + açıklama zenginleştirme (menü sayfası I18N'inden, DİL BLOĞU-bazlı) ──
+// Her dil bloğu (tr/en/ru) ayrı parse edilir → eksik anahtar TR'ye düşer, başka dile DEĞİL.
+function extractI18N(slug) {
+  const res = { tr: {}, en: {}, ru: {} };
   let html;
-  try { html = readFileSync(`menu/${slug}.html`, 'utf8'); } catch (e) { return []; }
-  const re = new RegExp(key + ":\\s*'((?:[^'\\\\]|\\\\.)*)'", 'g');
-  const out = []; let m;
-  while ((m = re.exec(html)) !== null) out.push(m[1].replace(/\\'/g, "'"));
-  return out;
+  try { html = readFileSync(`menu/${slug}.html`, 'utf8'); } catch (e) { return res; }
+  // Yemek çevirileri 'const I18N' objesinde; TEXTS (rezervasyon) bloğunu atla
+  const anchor = html.indexOf('const I18N');
+  if (anchor >= 0) html = html.slice(anchor);
+  for (const lang of ['tr', 'en', 'ru']) {
+    const idx = html.search(new RegExp('(?:^|[\\s,{])' + lang + '\\s*:\\s*\\{'));
+    if (idx < 0) continue;
+    let i = html.indexOf('{', idx), depth = 0, end = -1;
+    for (; i < html.length; i++) { if (html[i] === '{') depth++; else if (html[i] === '}') { depth--; if (depth === 0) { end = i; break; } } }
+    if (end < 0) continue;
+    const block = html.slice(html.indexOf('{', idx) + 1, end);
+    const re = /(\w+):\s*'((?:[^'\\]|\\.)*)'/g; let m;
+    while ((m = re.exec(block)) !== null) res[lang][m[1]] = m[2].replace(/\\'/g, "'");
+  }
+  return res;
 }
 function norm(s) { return (s || '').toLowerCase().replace(/[\s.,·’'"()-]+/g, '').trim(); }
 const TRANS = {};
-// Base menüler: SIRA-bazlı eşleştir (dosya içi sıra = data sırası); TRANS'ı recipe adıyla anahtarla
+// Base menüler: index-bazlı ama her dil kendi bloğundan (eksik → TR fallback)
 for (const slug of Object.keys(slugMap).map(k => slugMap[k])) {
   const m = menus[slug]; if (!m) continue;
+  const t = extractI18N(slug);
   m.dishes.forEach((dish, idx) => {
-    const i = idx + 1;
-    const names = extractLangs(slug, 'd' + i + '_n'); // [tr,en,ru]
-    const descs = extractLangs(slug, 'd' + i + '_d');
+    const k = 'd' + (idx + 1);
+    const trD = t.tr[k + '_d'] || '';
+    const trN = t.tr[k + '_n'] || dish.ad;           // HTML temiz TR adı (recipe notsuz)
     const rec = {
-      ad_en: names[1] || dish.ad, ad_ru: names[2] || dish.ad,
-      desc: descs[0] || '', desc_en: descs[1] || descs[0] || '', desc_ru: descs[2] || descs[0] || '',
+      ad_tr: trN, ad_en: t.en[k + '_n'] || trN, ad_ru: t.ru[k + '_n'] || trN,
+      desc: trD, desc_en: t.en[k + '_d'] || trD, desc_ru: t.ru[k + '_d'] || trD,
     };
     Object.assign(dish, rec);
     TRANS[norm(dish.ad)] = rec; // çapa menü recipe adıyla eşleşsin
@@ -131,8 +143,9 @@ for (const slug of Object.keys(slugMap).map(k => slugMap[k])) {
 // Kalan yemekler (çapa menü dahil): recipe adına göre TRANS'tan çek
 for (const slug of Object.keys(menus)) {
   for (const dish of menus[slug].dishes) {
-    if (dish.ad_en) continue; // base zaten dolduruldu
+    if (dish.ad_en) continue;
     const t = TRANS[norm(dish.ad)];
+    dish.ad_tr = t ? t.ad_tr : dish.ad;
     dish.ad_en = t ? t.ad_en : dish.ad;
     dish.ad_ru = t ? t.ad_ru : dish.ad;
     dish.desc = t ? t.desc : '';

@@ -978,6 +978,7 @@ window.KALIMERA_DATA = {
               "unit": "ml"
             }
           ],
+          "ad_tr": "Özel Soslu Kuzu But",
           "ad_en": "Special-Sauce Lamb Leg (Kuzu But)",
           "ad_ru": "Ягнятина под фирменным соусом (Kuzu But)",
           "desc": "Yavaş fırında pişirilen kuzu but, öz suyuna batan körpe patatesler ve közlenmiş mantarla buluşuyor.",
@@ -1045,6 +1046,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "İç Pilav",
           "ad_en": "İç Pilav (Stuffed Pilaf)",
           "ad_ru": "Плов «Ич Пилав»",
           "desc": "Tereyağında kavrulan bademler, taze otlar ve ılık baharatlarla kabarık pişirilmiş geleneksel pilav.",
@@ -1102,6 +1104,7 @@ window.KALIMERA_DATA = {
               "unit": "demet"
             }
           ],
+          "ad_tr": "Humuslu Karnabahar",
           "ad_en": "Hummus-Glazed Cauliflower",
           "ad_ru": "Цветная капуста с хумусом",
           "desc": "Marine edilip fırında altın rengine kavrulan karnabahar, kadifemsi humus ve taze otlarla servis edilir.",
@@ -1144,6 +1147,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Pembe Domates Sarımsaklı Semizotu",
           "ad_en": "Purslane with Pink Tomato & Garlic",
           "ad_ru": "Портулак с розовым томатом и чесноком",
           "desc": "Sabah pazarından gelen semizotu; olgun pembe domates ve çiğ sarımsağın keskin ferahlığıyla mevsimi taşır.",
@@ -1181,6 +1185,7 @@ window.KALIMERA_DATA = {
               "unit": "demet"
             }
           ],
+          "ad_tr": "Yoğurtlu Fırın Sarımsak",
           "ad_en": "Roasted Garlic with Yoghurt",
           "ad_ru": "Запечённый чеснок с йогуртом",
           "desc": "Fırında saatler boyu yumuşayan sarımsak başları, soğuk yoğurt ve ince dökülen zeytinyağıyla ipeksi bir meze.",
@@ -1228,6 +1233,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Zeytinyağlı Yeşil Elmalı Taze Fasulye",
           "ad_en": "Green Beans with Green Apple in Olive Oil",
           "ad_ru": "Стручковая фасоль с зелёным яблоком",
           "desc": "Kalkan zeytinyağında kısık ateşte pişen taze fasulye, yeşil elmanın hafif ekşisiyle dengelenir.",
@@ -1280,6 +1286,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Tulum Peynirli Karpuz Roka Salatası",
           "ad_en": "Watermelon, Rocket & Tulum Cheese Salad",
           "ad_ru": "Салат с арбузом, рукколой и сыром тулум",
           "desc": "Soğuk karpuzun tatlılığı, ufalanmış tulum peynirine ve taze rokaya limonlu vinaigretle bağlanır.",
@@ -1317,6 +1324,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Dondurmalı Fırın Şeftali Tatlısı",
           "ad_en": "Roasted Peach Dessert with Ice Cream",
           "ad_ru": "Запечённый персик с мороженым",
           "desc": "Fırında karamelize olan şeftali dilimleri, vanilyalı dondurmanın serinliği ve hafif şurupla taçlanır.",
@@ -1387,6 +1395,7 @@ window.KALIMERA_DATA = {
               "unit": "ml"
             }
           ],
+          "ad_tr": "Akdeniz Levreği",
           "ad_en": "Mediterranean Sea Bass (Levrek)",
           "ad_ru": "Средиземноморский сибас (Levrek)",
           "desc": "Sabah teknelerinden levrek fileto Kalkan zeytinyağında pişirilir, dilimlenmiş zeytin ve kiraz domatesle servis edilir.",
@@ -1464,6 +1473,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Hünkar Beğendi",
           "ad_en": "Hünkar Beğendi",
           "ad_ru": "Хюнкяр Беенди (Hünkar Beğendi)",
           "desc": "Yavaş pişen dana sote, közlenmiş patlıcandan yapılma kadifemsi beğendi üzerinde domates sosuyla buluşur.",
@@ -1526,6 +1536,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Adaçaylı Fırın Sebzeler",
           "ad_en": "Sage-Roasted Vegetables",
           "ad_ru": "Овощи с шалфеем из духовки",
           "desc": "Taze adaçayıyla marine edilmiş mevsim sebzeleri fırında yavaşça karamelize olur; kenarları altın rengi, içi özlü.",
@@ -1578,6 +1589,7 @@ window.KALIMERA_DATA = {
               "unit": "demet"
             }
           ],
+          "ad_tr": "Saganaki",
           "ad_en": "Saganaki (Seafood)",
           "ad_ru": "Саганаки (морепродукты)",
           "desc": "Taze karides, kalamar ve midye fırında domates sosunda pişirilir, üzeri erimiş peynirle kapanarak sıcak servis edilir.",
@@ -1630,6 +1642,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Humuslu Karnabahar",
           "ad_en": "Hummus-Glazed Cauliflower",
           "ad_ru": "Цветная капуста с хумусом",
           "desc": "Kalkan zeytinyağıyla marine edilmiş karnabahar fırında kızartılır, kremalı humus ve taze otlarla sofralanır.",
@@ -1677,6 +1690,7 @@ window.KALIMERA_DATA = {
               "unit": "demet"
             }
           ],
+          "ad_tr": "Zeytinyağlı Fırın Dolma Biber",
           "ad_en": "Stuffed Peppers in Olive Oil",
           "ad_ru": "Фаршированный перец в оливковом масле",
           "desc": "Pirinç dolgulu biberler Kalkan zeytinyağıyla fırında yavaşça pişirilir; her lokmada Akdeniz'in sıcaklığı hissedilir.",
@@ -1729,6 +1743,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Peynirli Taze Otlu Çıtır Mücver ve Füme Somon",
           "ad_en": "Cheese & Herb Mücver with Smoked Salmon",
           "ad_ru": "Мюджвер с сыром и копчёным лососем",
           "desc": "Peynir ve taze otlarla yoğrulmuş kabak mücver çıtır kızartılır, ipek dokusuyla füme somon dilimleriyle dengelenir.",
@@ -1766,6 +1781,7 @@ window.KALIMERA_DATA = {
               "unit": "demet"
             }
           ],
+          "ad_tr": "Aşk Mezesi",
           "ad_en": "Aşk Mezesi (Love Meze)",
           "ad_ru": "«Меза любви» (Aşk Mezesi)",
           "desc": "El ile dilimlenen çıtır yeşil elma, taze çilekli yoğurt sosunun tatlı-ekşi sarmalıyla damakta ferahlık bırakır.",
@@ -1813,6 +1829,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Izgara Sebzeler",
           "ad_en": "Grilled Vegetables",
           "ad_ru": "Овощи на гриле",
           "desc": "Kömür ateşinde közlenen kabak, havuç, kırmızı biber ve mor lahana duman kokusu ve çıtır dokusuyla masaya taşınır.",
@@ -1855,6 +1872,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Mevsim Yeşillikleri Salatası",
           "ad_en": "Seasonal Greens Salad",
           "ad_ru": "Салат из сезонной зелени",
           "desc": "Taze mevsim yeşillikleri balkabağı çekirdeği ve kırmızı meyvelerle Kalkan zeytinyağında hafifçe tatlandırılır.",
@@ -1897,6 +1915,7 @@ window.KALIMERA_DATA = {
               "unit": "ml"
             }
           ],
+          "ad_tr": "İncir Çiçeği",
           "ad_en": "Fig Blossom Dessert",
           "ad_ru": "Десерт «Инжирный цвет»",
           "desc": "Fırında yavaşça hazırlanan incir çiçeği tatlısı kadifemsi Baileys kreması ve çıtır badem krokanla zarif bir final sunar.",
@@ -1952,6 +1971,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Özel Marineli Tavuk Pizola",
           "ad_en": "Marinated Chicken Pizola",
           "ad_ru": "Куриная пизола в маринаде",
           "desc": "Mangalda yavaş pişirilen tavuk pizola, özel Akdeniz baharatları ve sarımsaklı marinenin aromasını duman içinde taşır.",
@@ -2004,6 +2024,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Kuzu Şiş",
           "ad_en": "Kuzu Şiş (Lamb Skewers)",
           "ad_ru": "Шашлык из ягнятины (Kuzu Şiş)",
           "desc": "Kömür ateşinde közlenen kuzu şiş, kekik ve sarımsaklı marine ile dışı çıtır, içi pembe ve sulu bir lezzet sunar.",
@@ -2056,6 +2077,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Köfte",
           "ad_en": "Köfte",
           "ad_ru": "Кёфте (Köfte)",
           "desc": "Mangalda közde pişirilen el yoğurulmuş köfte, kimyon ve karabiber harmanıyla dışı kızarmış, içi sulu ve aromatik bir yoğunluk taşır.",
@@ -2098,6 +2120,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Yeşil Elmalı Yoğurtlu Semizotu",
           "ad_en": "Purslane with Green Apple & Yoghurt",
           "ad_ru": "Портулак с зелёным яблоком и йогуртом",
           "desc": "Sabah pazarından gelen semizotu, yeşil elma ve soğuk yoğurtla birleşerek ferahlatıcı, hafif ekşili bir mevsim mezesi sunar.",
@@ -2140,6 +2163,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Humuslu Karnabahar",
           "ad_en": "Hummus-Glazed Cauliflower",
           "ad_ru": "Цветная капуста с хумусом",
           "desc": "Fırında yavaş közlenen karnabahar, kadifemsi humus ve taze kekikle buluşarak derin karamelizasyon notaları sunar.",
@@ -2182,6 +2206,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Havuç Tarator",
           "ad_en": "Carrot Tarator",
           "ad_ru": "Морковный таратор",
           "desc": "Kalkan zeytinyağıyla kıvam kazanan havuç püresi, sarımsak ve dövülmüş ceviz tarator sosuyla buluşarak keskin ve kremsi aromalar taşır.",
@@ -2229,6 +2254,7 @@ window.KALIMERA_DATA = {
               "unit": "ml"
             }
           ],
+          "ad_tr": "Mücver",
           "ad_en": "Mücver (Zucchini Fritters)",
           "ad_ru": "Мюджвер (оладьи из кабачка)",
           "desc": "Sabah pazarından gelen taze kabak ve havuç, dereotu ile yoğrulup zeytinyağında kızartılır; dışı altın çıtır, içi sulu mücver.",
@@ -2271,6 +2297,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Piyaz",
           "ad_en": "Piyaz",
           "ad_ru": "Пияз (Piyaz)",
           "desc": "Kalkan zeytinyağıyla harmanlanan beyaz fasulye, taze soğan ve maydanozla canlı ve tok bir Akdeniz salatası sunar.",
@@ -2308,6 +2335,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Tereyağlı Türk Pilavı",
           "ad_en": "Buttered Turkish Pilaf",
           "ad_ru": "Турецкий плов на сливочном масле",
           "desc": "Tereyağında yavaş kavrulan pirinç, fındıksı aroma ve tane tane dokusuyla Türk sofrasının vazgeçilmez huzur lezzetidir.",
@@ -2345,6 +2373,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Baharatlı Fırın Sebzeler veya Sade Patates",
           "ad_en": "Spiced Roasted Vegetables or Plain Potatoes",
           "ad_ru": "Пряные овощи из духовки или картофель",
           "desc": "Mevsim sebzeleri baharatlı zeytinyağıyla fırında közlenir ya da altın sarısı çıtır kabuklu sade patates olarak sunulur.",
@@ -2382,6 +2411,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Tereyağlı Karides",
           "ad_en": "Buttered Prawns",
           "ad_ru": "Креветки в сливочном масле",
           "desc": "Taze tereyağında kavrulan körpe karides, Kalkan kıyısının tazeliğini limon ve taze otlarla buluşturur.",
@@ -2414,6 +2444,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Mevsim Yeşillikleri Salatası",
           "ad_en": "Seasonal Greens Salad",
           "ad_ru": "Салат из сезонной зелени",
           "desc": "Sabah pazarından gelen taze yeşillikler, sızma zeytinyağı ve limonla hafifçe örtülerek canlı renk ve gevrekliğini korur.",
@@ -2451,11 +2482,12 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
-          "ad_en": "Фирменный десерт шефа",
-          "ad_ru": "Şefin Özel Tatlısı (porsiyon bütçesi)",
+          "ad_tr": "Şefin Özel Tatlısı",
+          "ad_en": "Şefin Özel Tatlısı",
+          "ad_ru": "Фирменный десерт шефа",
           "desc": "Şefin sabah pazarından seçtiği taze malzemelerle her gün yeniden yaratılan ve her seferinde sürpriz sunan özel tatlı.",
-          "desc_en": "Ежедневный авторский десерт от шеф-повара из свежих продуктов.",
-          "desc_ru": "Şefin sabah pazarından seçtiği taze malzemelerle her gün yeniden yaratılan ve her seferinde sürpriz sunan özel tatlı."
+          "desc_en": "Şefin sabah pazarından seçtiği taze malzemelerle her gün yeniden yaratılan ve her seferinde sürpriz sunan özel tatlı.",
+          "desc_ru": "Ежедневный авторский десерт от шеф-повара из свежих продуктов."
         }
       ]
     },
@@ -2511,6 +2543,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Özel Marineli Kemikçiz Tavuk But Fileto",
           "ad_en": "Boneless Chicken Thigh Fillet, Marinated",
           "ad_ru": "Куриное филе бедра в маринаде (без кости)",
           "desc": "Mangalda kömür ateşinde pişirilen, Kalkan zeytinyağı ve özel baharatlarla marine edilmiş sulu kemikçiz but fileto.",
@@ -2558,6 +2591,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Özel Marineli Tavuk Kanatları",
           "ad_en": "Marinated Chicken Wings",
           "ad_ru": "Куриные крылышки в маринаде",
           "desc": "Sarımsak, limon ve gizli baharatlarla uzun süre marine edilmiş kanatlar, mangalda dışı çıtır içi sulu kızarır.",
@@ -2600,6 +2634,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Renkli Biberli Tavuk Şiş",
           "ad_en": "Chicken Shish with Bell Peppers",
           "ad_ru": "Шашлык из курицы с цветным перцем (Tavuk Şiş)",
           "desc": "Renkli biberler ve soğanla dizilmiş tavuk şiş, özel marine sosuyla kömür ateşinde dumanlanarak pişirilir.",
@@ -2652,6 +2687,7 @@ window.KALIMERA_DATA = {
               "unit": "ml"
             }
           ],
+          "ad_tr": "Mücver",
           "ad_en": "Mücver (Zucchini Fritters)",
           "ad_ru": "Мюджвер (оладьи из кабачка)",
           "desc": "Kabak, havuç, patates ve taze otlarla yoğrulan, dışı çıtır altın rengi ev yapımı mücver köfteleri.",
@@ -2694,6 +2730,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Babagannuş",
           "ad_en": "Babaganoush",
           "ad_ru": "Бабагануш",
           "desc": "Közlenmiş patlıcanın duman aromasıyla tahin, sarımsak ve limonun buluştuğu kadife dokulu geleneksel Levant mezesi.",
@@ -2741,6 +2778,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Peri Peri Sos",
           "ad_en": "Peri Peri Sauce",
           "ad_ru": "Соус пери-пери",
           "desc": "Ateşli Afrika biberi, sarımsak ve taze limondan ev yapımı, damakta uzun süre yanan keskin bir acı sos.",
@@ -2778,6 +2816,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Taze Otlu Sarımsaklı Sos",
           "ad_en": "Garlic & Herb Sauce",
           "ad_ru": "Чесночно-травяной соус",
           "desc": "Taze maydanoz, dereotu ve sarımsağın kremamsı beyazlıkta eridiği, ferahlatıcı ev yapımı beyaz sos.",
@@ -2820,6 +2859,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Barbekü Sosu",
           "ad_en": "BBQ Sauce",
           "ad_ru": "Соус барбекю",
           "desc": "Domates, bal ve tütsü baharatlarıyla yavaş pişirilen, dumanı burnunuza kadar gelen ev yapımı barbekü sosu.",
@@ -2857,6 +2897,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Avokado Soslu Yeşil Salata",
           "ad_en": "Green Salad with Avocado Dressing",
           "ad_ru": "Зелёный салат с соусом из авокадо",
           "desc": "Kalkan zeytinyağı ve taze limonun avokadoyla buluştuğu kadife dressing, karışık yeşilliklerle sergilenir.",
@@ -2879,6 +2920,7 @@ window.KALIMERA_DATA = {
               "unit": "adet"
             }
           ],
+          "ad_tr": "Türk Ekmekleri",
           "ad_en": "Turkish Breads",
           "ad_ru": "Турецкий хлеб",
           "desc": "Mangal sofrasını tamamlayan taze lavaş, yumuşacık bazlama ve etişi maşalı geleneksel Türk ekmekleri.",
@@ -2934,6 +2976,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Asma Yaprağında Özel Marineli Levrek",
           "ad_en": "Vine-Leaf Wrapped Sea Bass (Levrek)",
           "ad_ru": "Сибас в виноградных листьях (Levrek)",
           "desc": "Asma yaprağına sarılı Akdeniz levreği, kömür ateşinde yavaşça pişerken duman ve limon kokusu birbirine karışır.",
@@ -2976,6 +3019,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Özel Marineli Somon",
           "ad_en": "Marinated Salmon",
           "ad_ru": "Лосось в маринаде (Somon)",
           "desc": "Limon ve özel baharatlarla marine edilmiş somon fileto, közde çıtır dış kabuğuyla sofranıza gelir.",
@@ -3018,6 +3062,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Adaçaylı Fırın Sebzeler",
           "ad_en": "Sage-Roasted Vegetables",
           "ad_ru": "Овощи с шалфеем из духовки",
           "desc": "Mevsim sebzeleri taze adaçayı ve Kalkan zeytinyağıyla fırına girer, közlenmiş rengi ve derin aromasıyla masaya çıkar.",
@@ -3050,6 +3095,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Izgara Zeytin",
           "ad_en": "Grilled Olives",
           "ad_ru": "Оливки на гриле",
           "desc": "Siyah ve yeşil zeytinler közde kabarınca taze kekik ve biberiye ile buluşur, çıtır kabukla servis edilir.",
@@ -3097,6 +3143,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Humuslu Taze Otlu Karnabahar",
           "ad_en": "Cauliflower with Hummus & Herbs",
           "ad_ru": "Цветная капуста с хумусом и травами",
           "desc": "Marine edilen karnabahar fırında közlenip taze otlarla süslenir, kremsi humusla birlikte kadifemsi bir doku sunar.",
@@ -3134,6 +3181,7 @@ window.KALIMERA_DATA = {
               "unit": "demet"
             }
           ],
+          "ad_tr": "Yeşil Elmalı Çilekli Süzme Yoğurt",
           "ad_en": "Strained Yoghurt with Green Apple & Strawberry",
           "ad_ru": "Греческий йогурт с зелёным яблоком и клубникой",
           "desc": "Kalın süzme yoğurt, limon kabuğu rendesinin ferahlığında yeşil elma dilimleri ve çilek sosuyla taçlanır.",
@@ -3171,6 +3219,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Taze Otlu Sarımsaklı Sos",
           "ad_en": "Garlic & Herb Sauce",
           "ad_ru": "Чесночно-травяной соус",
           "desc": "Taze maydanoz, dereotu ve sarımsakla hazırlanan kremsi sos, bir tutam limonla dengelenerek balığı tamamlar.",
@@ -3203,6 +3252,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Limonlu Tereyağı Sosu",
           "ad_en": "Lemon Butter Sauce",
           "ad_ru": "Лимонно-сливочный соус",
           "desc": "Taze sıkılmış limon suyu ve eritilmiş tereyağı birleşince ızgara balığı giydirecek en kadifemsi sos doğar.",
@@ -3240,11 +3290,12 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Acı Tatlı Özel Sos",
           "ad_en": "Sweet & Spicy Special Sauce",
           "ad_ru": "Кисло-острый фирменный соус",
           "desc": "Şefin özel tarifiyle hazırlanan bu sos, acı ve tatlıyı limon dokunuşuyla dengeleyerek damakta iz bırakır.",
-          "desc_en": "Сбалансированный кисло-острый соус по секретному рецепту шефа.",
-          "desc_ru": "Şefin özel tarifiyle hazırlanan bu sos, acı ve tatlıyı limon dokunuşuyla dengeleyerek damakta iz bırakır."
+          "desc_en": "Şefin özel tarifiyle hazırlanan bu sos, acı ve tatlıyı limon dokunuşuyla dengeleyerek damakta iz bırakır.",
+          "desc_ru": "Сбалансированный кисло-острый соус по секретному рецепту шефа."
         },
         {
           "ad": "Roka Tulum Salatası",
@@ -3277,6 +3328,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Roka Tulum Salatası",
           "ad_en": "Rocket & Tulum Cheese Salad",
           "ad_ru": "Салат с рукколой и сыром тулум",
           "desc": "Tazeliği sabah toplanan rokalar, Kalkan zeytinyağı ve limon sosuyla buluşunca tulum peynirinin yoğun aromasını dengeler.",
@@ -3304,6 +3356,7 @@ window.KALIMERA_DATA = {
               "unit": "adet"
             }
           ],
+          "ad_tr": "Türk Ekmekleri",
           "ad_en": "Turkish Breads",
           "ad_ru": "Турецкий хлеб",
           "desc": "Kömür ateşinde pişen sıcak bazlama, taze lavaş ve ekşi mayalı ekmekle masaya gelen gerçek bir Akdeniz sofrası geleneği.",
@@ -3339,6 +3392,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Sucuklu Yumurta",
           "ad_en": "Eggs with Sucuk",
           "ad_ru": "Яичница с суджуком (Sucuklu Yumurta)",
           "desc": "Bakır sahanda kızaran taze sucuğun yağında köy yumurtası, kahvaltı sofralarının vazgeçilmez lezzeti.",
@@ -3366,6 +3420,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Patates Kızartması",
           "ad_en": "Golden Fried Potatoes",
           "ad_ru": "Жареный картофель",
           "desc": "Taze yağda altın kıvamına kavrulan patates kızartması, dışı çıtır içi yumuşacık, her lokmada doyurucu.",
@@ -3403,6 +3458,7 @@ window.KALIMERA_DATA = {
               "unit": "ml"
             }
           ],
+          "ad_tr": "Beyaz Peynirli Sigara Böreği",
           "ad_en": "Sigara Böreği with Feta",
           "ad_ru": "Сигара бёреги с фетой",
           "desc": "Taze maydanoz ve beyaz peynirle doldurulmuş yufkalar, sıcak yağda kıpkırmızı çıtırlığa kavuşturulmuş.",
@@ -3440,6 +3496,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Şarküteri Tabağı",
           "ad_en": "Charcuterie Plate",
           "ad_ru": "Овощное ассорти",
           "desc": "Sabah pazarından gelen domates, salatalık, roka ve maydanoz; limon dilimleriyle ferahlatıcı bir sofra köşesi.",
@@ -3472,6 +3529,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Dört Çeşit Peynir",
           "ad_en": "Four Cheeses",
           "ad_ru": "Четыре вида сыра",
           "desc": "Beyaz peynir, Ezine peyniri, eski kaşar, köy peyniri ve Bergama tulum — her biri kendine özgü derin bir tat.",
@@ -3504,6 +3562,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Yeşil ve Siyah Zeytin",
           "ad_en": "Green & Black Olives",
           "ad_ru": "Зелёные и чёрные оливки",
           "desc": "Kalkan zeytinyağı ve taze kekikle marine edilmiş yerli bahçe zeytinleri, sabah sofrasının sessiz asili.",
@@ -3546,6 +3605,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Üç Çeşit Reçel · Tahin · Pekmez · Bal",
           "ad_en": "Three Jams · Tahini · Pekmez · Honey",
           "ad_ru": "Три варенья · Тахини · Пекмез · Мёд",
           "desc": "Ev yapımı çilek, kayısı ve incir reçeli; tahin, üzüm pekmezi ve çiçek balı — her lokmada farklı bir tatma anı.",
@@ -3568,6 +3628,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Kaymak ve Yoğurt",
           "ad_en": "Kaymak & Yoghurt",
           "ad_ru": "Каймак и йогурт",
           "desc": "Köy sütünden hazırlanmış kadifemsi kaymak ve taze süzme yoğurt, sofranın en saf ve kremsi doygunluğu.",
@@ -3600,6 +3661,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Mevsim Meyveleri",
           "ad_en": "Seasonal Fruits",
           "ad_ru": "Сезонные фрукты",
           "desc": "Günlük hasattan karpuz, kavun, şeftali ve üzüm; sabah sofrasına serinlik ve tatlılık katan mevsim meyveleri.",
@@ -3622,6 +3684,7 @@ window.KALIMERA_DATA = {
               "unit": "adet"
             }
           ],
+          "ad_tr": "Mevsim Ekmeği ve Simit",
           "ad_en": "Seasonal Bread & Simit",
           "ad_ru": "Сезонный хлеб и симит",
           "desc": "Sabah fırınından çıkmış taze simit, kepekli ve beyaz ekmek — her ısırıkta içten gelen sıcaklık.",
@@ -3639,6 +3702,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Portakal Suyu",
           "ad_en": "Orange Juice",
           "ad_ru": "Апельсиновый сок",
           "desc": "Günlük taze sıkılmış portakal suyu, katkısız ve buz gibi soğuk; sabah sofrasının en ferahlatıcı açılışı.",
@@ -3666,6 +3730,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Kahve ve Çay",
           "ad_en": "Coffee & Tea",
           "ad_ru": "Кофе и чай",
           "desc": "Taze demleme demlikten akan siyah çay, yanında Türk kahvesi, filtre kahve ya da nescafé seçeneğiyle.",
@@ -3721,6 +3786,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Asma Yaprağında Özel Marineli Levrek",
           "ad_en": "Vine-Leaf Wrapped Sea Bass (Levrek)",
           "ad_ru": "Сибас в виноградных листьях (Levrek)",
           "desc": "Asma yaprağına sarılı Akdeniz levreği, kömür ateşinde yavaşça pişerken duman ve limon kokusu birbirine karışır.",
@@ -3798,6 +3864,7 @@ window.KALIMERA_DATA = {
               "unit": "ml"
             }
           ],
+          "ad_tr": "Özel Soslu Kuzu But",
           "ad_en": "Special-Sauce Lamb Leg (Kuzu But)",
           "ad_ru": "Ягнятина под фирменным соусом (Kuzu But)",
           "desc": "Yavaş fırında pişirilen kuzu but, öz suyuna batan körpe patatesler ve közlenmiş mantarla buluşuyor.",
@@ -3875,6 +3942,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Hünkar Beğendi",
           "ad_en": "Hünkar Beğendi",
           "ad_ru": "Хюнкяр Беенди (Hünkar Beğendi)",
           "desc": "Yavaş pişen dana sote, közlenmiş patlıcandan yapılma kadifemsi beğendi üzerinde domates sosuyla buluşur.",
@@ -3927,6 +3995,7 @@ window.KALIMERA_DATA = {
               "unit": "demet"
             }
           ],
+          "ad_tr": "Saganaki",
           "ad_en": "Saganaki (Seafood)",
           "ad_ru": "Саганаки (морепродукты)",
           "desc": "Taze karides, kalamar ve midye fırında domates sosunda pişirilir, üzeri erimiş peynirle kapanarak sıcak servis edilir.",
@@ -3979,6 +4048,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Humuslu Karnabahar",
           "ad_en": "Hummus-Glazed Cauliflower",
           "ad_ru": "Цветная капуста с хумусом",
           "desc": "Fırında yavaş közlenen karnabahar, kadifemsi humus ve taze kekikle buluşarak derin karamelizasyon notaları sunar.",
@@ -4031,6 +4101,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Tulum Peynirli Karpuz Roka Salatası",
           "ad_en": "Watermelon, Rocket & Tulum Cheese Salad",
           "ad_ru": "Салат с арбузом, рукколой и сыром тулум",
           "desc": "Soğuk karpuzun tatlılığı, ufalanmış tulum peynirine ve taze rokaya limonlu vinaigretle bağlanır.",
@@ -4078,6 +4149,7 @@ window.KALIMERA_DATA = {
               "unit": "demet"
             }
           ],
+          "ad_tr": "Zeytinyağlı Fırın Dolma Biber",
           "ad_en": "Stuffed Peppers in Olive Oil",
           "ad_ru": "Фаршированный перец в оливковом масле",
           "desc": "Pirinç dolgulu biberler Kalkan zeytinyağıyla fırında yavaşça pişirilir; her lokmada Akdeniz'in sıcaklığı hissedilir.",
@@ -4120,6 +4192,7 @@ window.KALIMERA_DATA = {
               "unit": "ml"
             }
           ],
+          "ad_tr": "İncir Çiçeği",
           "ad_en": "Fig Blossom Dessert",
           "ad_ru": "Десерт «Инжирный цвет»",
           "desc": "Fırında yavaşça hazırlanan incir çiçeği tatlısı kadifemsi Baileys kreması ve çıtır badem krokanla zarif bir final sunar.",
@@ -4157,6 +4230,7 @@ window.KALIMERA_DATA = {
               "unit": "g"
             }
           ],
+          "ad_tr": "Dondurmalı Fırın Şeftali Tatlısı",
           "ad_en": "Roasted Peach Dessert with Ice Cream",
           "ad_ru": "Запечённый персик с мороженым",
           "desc": "Fırında karamelize olan şeftali dilimleri, vanilyalı dondurmanın serinliği ve hafif şurupla taçlanır.",
