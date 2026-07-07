@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Yönetim Paneli · Kalimera Kitchen</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      forest:'#15342B', forest2:'#1B4133', forest3:'#22483D', deep:'#0F2236',
+      cream:'#F2EBDA', ivory:'#FBF7EE', sun:'#D9923B', terra:'#C5582B', sage:'#7FA07A',
+      line:'rgba(242,235,218,0.12)'
+    },
+    fontFamily: { display:['"Cormorant Garamond"','serif'], body:['Inter','sans-serif'] },
+    boxShadow: { panel:'0 18px 50px -20px rgba(0,0,0,0.55)', soft:'0 8px 30px -12px rgba(217,146,59,0.25)' }
+  }}
+}
+</script>
+<style>
+  body{background:radial-gradient(1200px 600px at 80% -10%,#1B4133 0%,transparent 60%),radial-gradient(900px 500px at -10% 20%,#0F2236 0%,transparent 55%),#122d25;font-family:Inter,sans-serif}
+  .display{font-family:"Cormorant Garamond",serif}
+  .grain{position:fixed;inset:0;pointer-events:none;opacity:.04;z-index:1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .card{background:linear-gradient(180deg,rgba(27,65,51,.9),rgba(18,45,37,.92));border:1px solid var(--tw-line,rgba(242,235,218,.12));border-color:rgba(242,235,218,.12)}
+  .navbtn{transition:all .18s cubic-bezier(.2,.8,.2,1)}
+  .navbtn:hover{transform:translateX(2px)}
+  .navbtn.active{background:linear-gradient(90deg,rgba(217,146,59,.18),rgba(217,146,59,.02));border-left:3px solid #D9923B;color:#F2EBDA}
+  input,select{transition:border-color .15s,box-shadow .15s}
+  input:focus,select:focus{outline:none;border-color:#D9923B;box-shadow:0 0 0 3px rgba(217,146,59,.18)}
+  .field{background:rgba(15,34,27,.6);border:1px solid rgba(242,235,218,.14);color:#F2EBDA;border-radius:.6rem;padding:.55rem .7rem;font-size:.9rem;width:100%}
+  .field::placeholder{color:rgba(242,235,218,.4)}
+  ::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-thumb{background:rgba(217,146,59,.3);border-radius:8px}
+  .tab{display:none}.tab.show{display:block;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .chip{background:rgba(217,146,59,.12);color:#E9B877;border:1px solid rgba(217,146,59,.25);border-radius:999px;padding:.15rem .6rem;font-size:.7rem;font-weight:600}
+  .modelBtn{cursor:pointer}.modelBtn.active{border-color:#D9923B;background:rgba(217,146,59,.14);box-shadow:0 0 0 1px rgba(217,146,59,.4)}
+  .btn-p{background:linear-gradient(180deg,#E4A04C,#C77A2C);color:#221206;font-weight:700;border-radius:.7rem;transition:transform .12s,filter .12s}
+  .btn-p:hover{filter:brightness(1.06);transform:translateY(-1px)}.btn-p:active{transform:translateY(0)}
+  .btn-g{background:rgba(242,235,218,.06);color:#F2EBDA;border:1px solid rgba(242,235,218,.18);border-radius:.7rem;font-weight:600;transition:background .15s}
+  .btn-g:hover{background:rgba(242,235,218,.12)}
+  table.data th{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,235,218,.5);text-align:left;padding:.5rem .6rem;font-weight:600}
+  table.data td{padding:.4rem .6rem;font-size:.85rem;border-top:1px solid rgba(242,235,218,.07)}
+</style>
+</head>
+<body class="text-cream min-h-screen">
+<div class="grain"></div>
+
+<!-- ══ LOGIN GATE ══ -->
+<div id="gate" class="fixed inset-0 z-50 flex items-center justify-center px-6" style="background:radial-gradient(800px 500px at 50% 0%,#1B4133,transparent),#0F2236">
+  <div class="card rounded-2xl shadow-panel w-full max-w-sm p-8 text-center relative z-10">
+    <div class="display italic text-sun text-4xl mb-1">Kalimera</div>
+    <div class="text-xs uppercase tracking-[.25em] text-cream/50 mb-6">Yönetim Paneli</div>
+    <form id="loginForm" class="space-y-3">
+      <input id="pw" type="password" class="field text-center" placeholder="Parola" autocomplete="current-password" />
+      <button class="btn-p w-full py-2.5">Giriş Yap</button>
+    </form>
+    <p id="loginErr" class="text-terra text-xs mt-3 h-4"></p>
+    <p class="text-cream/30 text-[10px] mt-4 leading-relaxed">Bu panel istemci taraflıdır — verileriniz yalnızca bu tarayıcıda saklanır. Gerçek koruma için Vercel parola korumasını da açın.</p>
+  </div>
+</div>
+
+<!-- ══ APP ══ -->
+<div id="app" class="hidden relative z-10">
+<div class="flex min-h-screen">
+  <!-- Sidebar -->
+  <aside class="w-60 shrink-0 border-r border-line bg-forest/40 backdrop-blur hidden md:flex flex-col">
+    <div class="px-6 py-6 border-b border-line">
+      <div class="display italic text-sun text-2xl leading-none">Kalimera</div>
+      <div class="text-[10px] uppercase tracking-[.22em] text-cream/45 mt-1">Kitchen · Admin</div>
+    </div>
+    <nav class="flex-1 py-4 text-sm" id="nav">
+      <button data-tab="dash" class="navbtn active w-full text-left px-6 py-3 text-cream/80 flex items-center gap-3">📊 <span>Genel Bakış</span></button>
+      <button data-tab="quote" class="navbtn w-full text-left px-6 py-3 text-cream/80 flex items-center gap-3">🧮 <span>Teklif Hesaplayıcı</span></button>
+      <button data-tab="ing" class="navbtn w-full text-left px-6 py-3 text-cream/80 flex items-center gap-3">🥕 <span>Malzeme Fiyatları</span></button>
+      <button data-tab="fx" class="navbtn w-full text-left px-6 py-3 text-cream/80 flex items-center gap-3">💱 <span>Güncel Kur</span></button>
+      <button data-tab="menu" class="navbtn w-full text-left px-6 py-3 text-cream/80 flex items-center gap-3">📄 <span>Menü &amp; PDF</span></button>
+      <button data-tab="seo" class="navbtn w-full text-left px-6 py-3 text-cream/80 flex items-center gap-3">🤖 <span>SEO &amp; AI</span></button>
+    </nav>
+    <div class="px-6 py-4 border-t border-line">
+      <a href="/" class="text-cream/50 text-xs hover:text-sun">← Siteye dön</a>
+      <button id="logout" class="block mt-2 text-terra/70 text-xs hover:text-terra">Çıkış yap</button>
+    </div>
+  </aside>
+
+  <!-- Mobile topbar -->
+  <div class="md:hidden fixed top-0 inset-x-0 z-30 flex items-center gap-2 overflow-x-auto bg-forest/90 backdrop-blur border-b border-line px-3 py-2" id="mnav">
+    <button data-tab="dash" class="navbtn active px-3 py-1.5 rounded-full text-xs whitespace-nowrap">Genel</button>
+    <button data-tab="quote" class="navbtn px-3 py-1.5 rounded-full text-xs whitespace-nowrap">Teklif</button>
+    <button data-tab="ing" class="navbtn px-3 py-1.5 rounded-full text-xs whitespace-nowrap">Malzeme</button>
+    <button data-tab="fx" class="navbtn px-3 py-1.5 rounded-full text-xs whitespace-nowrap">Kur</button>
+    <button data-tab="menu" class="navbtn px-3 py-1.5 rounded-full text-xs whitespace-nowrap">Menü/PDF</button>
+    <button data-tab="seo" class="navbtn px-3 py-1.5 rounded-full text-xs whitespace-nowrap">SEO/AI</button>
+  </div>
+
+  <!-- Main -->
+  <main class="flex-1 px-5 md:px-10 py-8 md:py-10 pt-16 md:pt-10 max-w-6xl">
+
+    <!-- ░░ DASHBOARD ░░ -->
+    <section id="tab-dash" class="tab show">
+      <h1 class="display text-4xl md:text-5xl italic">Genel Bakış</h1>
+      <p class="text-cream/55 text-sm mt-1">Kalimera Kitchen işletme kontrol merkezi</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-7" id="dashCards"></div>
+      <div class="grid lg:grid-cols-2 gap-5 mt-6">
+        <div class="card rounded-2xl p-6">
+          <h3 class="display text-2xl italic text-sun">Hızlı İşlemler</h3>
+          <div class="grid grid-cols-2 gap-3 mt-4">
+            <button onclick="go('quote')" class="btn-g py-3 text-sm">🧮 Teklif Hazırla</button>
+            <button onclick="go('menu')" class="btn-g py-3 text-sm">📄 Menü PDF İndir</button>
+            <button onclick="go('ing')" class="btn-g py-3 text-sm">🥕 Fiyat Güncelle</button>
+            <button onclick="go('fx')" class="btn-g py-3 text-sm">💱 Kuru Yenile</button>
+          </div>
+        </div>
+        <div class="card rounded-2xl p-6">
+          <h3 class="display text-2xl italic text-sun">Menü Kâr Marjları</h3>
+          <p class="text-cream/45 text-xs mb-3">Güncel malzeme + kur ile liste fiyatına göre brüt marj</p>
+          <div id="marginList" class="space-y-2 text-sm"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ QUOTE CALCULATOR ░░ -->
+    <section id="tab-quote" class="tab">
+      <h1 class="display text-4xl md:text-5xl italic">Teklif Hesaplayıcı</h1>
+      <p class="text-cream/55 text-sm mt-1">Kaç kişiye, hangi öğünleri, kaç gün vereceğini gir → maliyet ve önerilen teklif fiyatını gör.</p>
+
+      <div class="grid lg:grid-cols-3 gap-5 mt-7">
+        <!-- Inputs -->
+        <div class="lg:col-span-2 space-y-5">
+          <div class="card rounded-2xl p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="display text-2xl italic text-sun">1 · Organizasyon</h3>
+              <span class="chip" id="fxChip">£ = … ₺</span>
+            </div>
+            <div class="mb-4">
+              <span class="text-xs text-cream/60">Hizmet modeli</span>
+              <div class="grid sm:grid-cols-2 gap-2 mt-1" id="modelBtns">
+                <button type="button" data-model="full" class="modelBtn field text-left !py-2.5 active">
+                  <div class="font-semibold text-sm">🍽️ Tam Catering</div><div class="text-[11px] text-cream/50">Malzeme + pişirme + sunum bana ait</div></button>
+                <button type="button" data-model="chef" class="modelBtn field text-left !py-2.5">
+                  <div class="font-semibold text-sm">👨‍🍳 Aşçılık + Sunum</div><div class="text-[11px] text-cream/50">Malzemeyi misafir karşılar, ben pişirir sunarım</div></button>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="block"><span class="text-xs text-cream/60">Misafir sayısı</span>
+                <input id="qGuests" type="number" min="1" value="20" class="field mt-1" oninput="calcQuote()"></label>
+              <label class="block"><span class="text-xs text-cream/60">Gün sayısı</span>
+                <input id="qDays" type="number" min="1" value="1" class="field mt-1" oninput="calcQuote()"></label>
+            </div>
+            <div class="mt-4">
+              <span class="text-xs text-cream/60">Öğünler &amp; menü seçimi</span>
+              <div class="space-y-2 mt-2" id="mealSlots"></div>
+            </div>
+          </div>
+
+          <div class="card rounded-2xl p-6">
+            <h3 class="display text-2xl italic text-sun mb-4">2 · Maliyet Katsayıları</h3>
+            <div class="grid sm:grid-cols-3 gap-4 text-sm">
+              <label class="block"><span class="text-xs text-cream/60">Fire / israf %</span>
+                <input id="cFire" type="number" step="1" class="field mt-1" oninput="saveParams();calcQuote()"></label>
+              <label class="block"><span class="text-xs text-cream/60">İşçilik+servis ₺ / kişi·öğün</span>
+                <input id="cLabor" type="number" step="5" class="field mt-1" oninput="saveParams();calcQuote()"></label>
+              <label class="block"><span class="text-xs text-cream/60">Ulaşım/lojistik ₺ (toplam)</span>
+                <input id="cLogi" type="number" step="50" class="field mt-1" oninput="saveParams();calcQuote()"></label>
+              <label class="block"><span class="text-xs text-cream/60">Genel gider %</span>
+                <input id="cOver" type="number" step="1" class="field mt-1" oninput="saveParams();calcQuote()"></label>
+              <label class="block"><span class="text-xs text-cream/60">Kâr marjı %</span>
+                <input id="cMargin" type="number" step="1" class="field mt-1" oninput="saveParams();calcQuote()"></label>
+              <label class="block"><span class="text-xs text-cream/60">Ekipman/kurulum ₺ (toplam)</span>
+                <input id="cSetup" type="number" step="50" class="field mt-1" oninput="saveParams();calcQuote()"></label>
+              <label class="block"><span class="text-xs text-cream/60">Bulaşık &amp; temizlik ₺ (ekstra)</span>
+                <input id="cDish" type="number" step="50" class="field mt-1" oninput="saveParams();calcQuote()"></label>
+              <label class="flex items-center gap-2 text-cream/70 text-sm mt-6"><input id="cDishOn" type="checkbox" onchange="calcQuote()" class="accent-sun"> Bulaşık dahil et</label>
+            </div>
+            <div class="flex flex-wrap gap-3 items-center mt-4 text-sm">
+              <label class="flex items-center gap-2 text-cream/70"><input id="cSmall" type="checkbox" onchange="calcQuote()" class="accent-sun"> &lt;10 kişi butik ek ücreti</label>
+              <button onclick="resetParams()" class="btn-g px-3 py-1.5 text-xs ml-auto">Varsayılana dön</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div class="space-y-5">
+          <div class="card rounded-2xl p-6 sticky top-6" style="background:linear-gradient(180deg,rgba(217,146,59,.14),rgba(18,45,37,.95))">
+            <div class="text-xs uppercase tracking-widest text-sun/80">Önerilen Teklif</div>
+            <div class="display italic text-5xl text-cream mt-1" id="rOfferTotal">—</div>
+            <div class="text-cream/60 text-sm" id="rOfferPP">kişi başı —</div>
+            <div class="flex gap-2 mt-3 text-xs" id="rOfferAlt"></div>
+            <hr class="border-line my-4">
+            <div class="space-y-1.5 text-sm" id="rBreak"></div>
+            <div class="mt-4 grid grid-cols-2 gap-2">
+              <button onclick="buildQuoteDoc()" class="btn-p py-2.5 text-sm col-span-2">📄 Müşteri Teklifi (PDF)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ INGREDIENTS ░░ -->
+    <section id="tab-ing" class="tab">
+      <div class="flex flex-wrap items-end justify-between gap-3">
+        <div><h1 class="display text-4xl md:text-5xl italic">Malzeme Fiyatları</h1>
+        <p class="text-cream/55 text-sm mt-1">Türkiye toptan tahmini (₺). Güncellediğin fiyatlar teklif hesaplayıcıya anında yansır.</p></div>
+        <div class="flex gap-2">
+          <input id="ingSearch" class="field !w-44" placeholder="Ara…" oninput="renderIng()">
+          <button onclick="exportIng()" class="btn-g px-3 py-2 text-xs">⬇ JSON</button>
+          <button onclick="resetIng()" class="btn-g px-3 py-2 text-xs">Sıfırla</button>
+        </div>
+      </div>
+      <div id="ingWrap" class="mt-6 space-y-6"></div>
+    </section>
+
+    <!-- ░░ FX ░░ -->
+    <section id="tab-fx" class="tab">
+      <h1 class="display text-4xl md:text-5xl italic">Güncel Kur</h1>
+      <p class="text-cream/55 text-sm mt-1">Avrupa Merkez Bankası referans kurları (frankfurter.dev). Teklifler bu kurla £/€/$ gösterilir.</p>
+      <div class="grid sm:grid-cols-3 gap-4 mt-7" id="fxCards"></div>
+      <div class="card rounded-2xl p-6 mt-5 max-w-lg">
+        <div class="flex items-center justify-between">
+          <div><div class="text-sm text-cream/70">Son güncelleme</div><div id="fxDate" class="display italic text-xl text-sun">—</div></div>
+          <button onclick="fetchFx(true)" class="btn-p px-4 py-2 text-sm">↻ Yenile</button>
+        </div>
+        <div class="mt-4 pt-4 border-t border-line">
+          <label class="text-xs text-cream/60">Manuel kur düzelt (₺ / 1£) — API yoksa</label>
+          <div class="flex gap-2 mt-1">
+            <input id="fxManual" type="number" step="0.01" class="field" placeholder="örn. 62.70">
+            <button onclick="setManualFx()" class="btn-g px-4 text-sm">Kaydet</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ MENU & PDF ░░ -->
+    <section id="tab-menu" class="tab">
+      <h1 class="display text-4xl md:text-5xl italic">Menü &amp; PDF</h1>
+      <p class="text-cream/55 text-sm mt-1">Menüleri dil seçenekleriyle PDF olarak indir. Müşteriye göndermek için hazır.</p>
+      <div class="card rounded-2xl p-6 mt-7 max-w-2xl">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <label class="block"><span class="text-xs text-cream/60">Menü</span>
+            <select id="pdfMenu" class="field mt-1"></select></label>
+          <label class="block"><span class="text-xs text-cream/60">Dil</span>
+            <select id="pdfLang" class="field mt-1">
+              <option value="tr">Türkçe</option><option value="en">English</option><option value="ru">Русский</option>
+              <option value="all">Üçü birden (TR·EN·RU)</option>
+            </select></label>
+        </div>
+        <label class="flex items-center gap-2 text-cream/70 text-sm mt-3"><input id="pdfPrice" type="checkbox" checked class="accent-sun"> Fiyatı göster</label>
+        <div class="flex gap-3 mt-4">
+          <button onclick="downloadMenuPdf()" class="btn-p px-5 py-2.5 text-sm">⬇ PDF İndir</button>
+          <a href="/menu-pdf.html" target="_blank" class="btn-g px-5 py-2.5 text-sm">Genel indirme sayfası →</a>
+        </div>
+        <p class="text-cream/40 text-xs mt-3">İpucu: Müşteriye <b class="text-sun">kalimerakitchen.com/menu-pdf.html</b> linkini paylaşabilirsin — herkes kendi dilinde indirir.</p>
+      </div>
+      <div id="pdfStage" class="fixed -left-[9999px] top-0"></div>
+    </section>
+
+    <!-- ░░ SEO & AI ░░ -->
+    <section id="tab-seo" class="tab">
+      <h1 class="display text-4xl md:text-5xl italic">SEO &amp; AI Görünürlük</h1>
+      <p class="text-cream/55 text-sm mt-1">Sitenin arama motorları ve yapay zeka asistanları tarafından önerilme durumu.</p>
+      <div class="grid lg:grid-cols-2 gap-5 mt-7">
+        <div class="card rounded-2xl p-6"><h3 class="display text-2xl italic text-sun mb-3">Kontrol Listesi</h3>
+          <ul class="space-y-2 text-sm" id="seoList"></ul></div>
+        <div class="card rounded-2xl p-6"><h3 class="display text-2xl italic text-sun mb-3">llms.txt</h3>
+          <p class="text-cream/50 text-xs mb-2">Yapay zekaların siteni doğru anlaması için özet dosya. <code class="text-sun">/llms.txt</code></p>
+          <pre id="llmsPreview" class="text-[11px] text-cream/70 bg-forest/40 rounded-lg p-3 overflow-auto max-h-72 whitespace-pre-wrap"></pre>
+          <a href="/llms.txt" target="_blank" class="btn-g inline-block mt-3 px-4 py-2 text-xs">Canlı /llms.txt →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+</div>
+
+<script src="data/menu-data.js"></script>
+<script>
+/* ═══════════ CONFIG ═══════════ */
+const PW_HASH = 'b31f229da0eac49fb46b5342630fb311063cd20786672c91addffc8fbdfb6409'; // sha256("kalimera2026")
+const LS = { params:'kalimera_params', ing:'kalimera_ing_prices', fx:'kalimera_fx', auth:'kalimera_auth' };
+const DEFAULT_PARAMS = { fire:10, labor:80, logi:500, over:15, margin:40, setup:0, dish:400, dishOn:false, small:false };
+let serviceModel = 'full'; // 'full' | 'chef'
+const DATA = window.KALIMERA_DATA || {ingredients:[],menus:{}};
+const MENU_EN = { 'turkish-night':'Turkish Night','mediterranean-night':'Mediterranean Night','bbq-menu':'BBQ Menu','chicken-bbq':'Chicken BBQ','fish-bbq':'Fish BBQ','breakfast':'Turkish Breakfast' };
+const MENU_TR = { 'turkish-night':'Türk Gecesi','mediterranean-night':'Akdeniz Gecesi','bbq-menu':'Mangal Menü','chicken-bbq':'Tavuk Mangal','fish-bbq':'Balık Mangal','breakfast':'Türk Kahvaltısı' };
+
+let FX = { GBP_TRY:62.7, EUR_TRY:53.5, USD_TRY:47, date:'—', source:'varsayılan' };
+let ingPrices = {}; // id -> override price
+let params = {...DEFAULT_PARAMS};
+
+/* ═══════════ AUTH ═══════════ */
+async function sha256(s){ const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)); return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join(''); }
+document.getElementById('loginForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const h = await sha256(document.getElementById('pw').value);
+  if(h===PW_HASH){ sessionStorage.setItem(LS.auth,'1'); openApp(); }
+  else document.getElementById('loginErr').textContent='Hatalı parola.';
+});
+document.getElementById('logout').onclick=()=>{ sessionStorage.removeItem(LS.auth); location.reload(); };
+function openApp(){ document.getElementById('gate').classList.add('hidden'); document.getElementById('app').classList.remove('hidden'); boot(); }
+
+/* ═══════════ NAV ═══════════ */
+function go(t){ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('show')); document.getElementById('tab-'+t).classList.add('show');
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active', b.dataset.tab===t)); window.scrollTo(0,0); }
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>go(b.dataset.tab));
+
+/* ═══════════ HELPERS ═══════════ */
+const fmt = (n,d=0)=> new Intl.NumberFormat('tr-TR',{maximumFractionDigits:d,minimumFractionDigits:d}).format(n);
+const tl = n=>'₺'+fmt(n);
+function ingPrice(id){ const base=(DATA.ingredients.find(i=>i.id===id)||{}).fiyat||0; return ingPrices[id]!=null?ingPrices[id]:base; }
+function menuMaterialTL(slug){ const m=DATA.menus[slug]; if(!m) return 0; let t=0;
+  m.dishes.forEach(d=>d.items.forEach(it=>{ const ing=DATA.ingredients.find(i=>i.id===it.id); if(!ing)return; const f=(ing.birim==='kg'||ing.birim==='lt')?0.001:1; t+=it.qty*f*ingPrice(it.id); })); return t; }
+
+/* ═══════════ FX ═══════════ */
+async function fetchFx(force){
+  try{
+    const r = await fetch('https://api.frankfurter.dev/v1/latest?base=GBP&symbols=TRY,EUR,USD');
+    if(!r.ok) throw 0; const j = await r.json();
+    FX = { GBP_TRY:j.rates.TRY, EUR_TRY:j.rates.TRY/j.rates.EUR, USD_TRY:j.rates.TRY/j.rates.USD, date:j.date, source:'ECB · frankfurter' };
+    localStorage.setItem(LS.fx, JSON.stringify(FX));
+  }catch(e){
+    try{ const r2=await fetch('https://open.er-api.com/v6/latest/GBP'); const j2=await r2.json();
+      FX={ GBP_TRY:j2.rates.TRY, EUR_TRY:j2.rates.TRY/j2.rates.EUR, USD_TRY:j2.rates.TRY/j2.rates.USD, date:(j2.time_last_update_utc||'').slice(0,16), source:'exchangerate-api' };
+      localStorage.setItem(LS.fx, JSON.stringify(FX));
+    }catch(e2){ const c=localStorage.getItem(LS.fx); if(c) FX=JSON.parse(c); }
+  }
+  renderFx(); updateFxChip(); calcQuote(); renderMargins(); renderDash();
+}
+function setManualFx(){ const v=parseFloat(document.getElementById('fxManual').value); if(!v)return;
+  FX={ GBP_TRY:v, EUR_TRY:v/1.17, USD_TRY:v/1.34, date:'manuel', source:'manuel giriş' };
+  localStorage.setItem(LS.fx,JSON.stringify(FX)); renderFx(); updateFxChip(); calcQuote(); renderMargins(); }
+function updateFxChip(){ document.getElementById('fxChip').textContent='£1 = '+fmt(FX.GBP_TRY,2)+' ₺'; }
+function renderFx(){
+  const c=document.getElementById('fxCards');
+  const pairs=[['🇬🇧 İngiliz Sterlini','GBP',FX.GBP_TRY],['🇪🇺 Euro','EUR',FX.EUR_TRY],['🇺🇸 Dolar','USD',FX.USD_TRY]];
+  c.innerHTML=pairs.map(([n,co,v])=>`<div class="card rounded-2xl p-6"><div class="text-sm text-cream/60">${n}</div>
+    <div class="display italic text-4xl text-sun mt-1">${fmt(v,2)} <span class="text-lg text-cream/50">₺</span></div>
+    <div class="text-xs text-cream/40 mt-1">1 ${co} karşılığı</div></div>`).join('');
+  document.getElementById('fxDate').textContent=FX.date+' · '+FX.source;
+}
+
+/* ═══════════ PARAMS ═══════════ */
+function loadParams(){ const s=localStorage.getItem(LS.params); params=s?{...DEFAULT_PARAMS,...JSON.parse(s)}:{...DEFAULT_PARAMS}; fillParams(); }
+function fillParams(){ cFire.value=params.fire;cLabor.value=params.labor;cLogi.value=params.logi;cOver.value=params.over;cMargin.value=params.margin;cSetup.value=params.setup;cDish.value=params.dish;cDishOn.checked=params.dishOn;cSmall.checked=params.small; }
+function saveParams(){ params={fire:+cFire.value||0,labor:+cLabor.value||0,logi:+cLogi.value||0,over:+cOver.value||0,margin:+cMargin.value||0,setup:+cSetup.value||0,dish:+cDish.value||0,dishOn:cDishOn.checked,small:cSmall.checked}; localStorage.setItem(LS.params,JSON.stringify(params)); }
+function resetParams(){ params={...DEFAULT_PARAMS}; localStorage.removeItem(LS.params); fillParams(); calcQuote(); }
+function setModel(m){ serviceModel=m; document.querySelectorAll('.modelBtn').forEach(b=>b.classList.toggle('active',b.dataset.model===m)); calcQuote(); }
+
+/* ═══════════ MEAL SLOTS ═══════════ */
+const SLOTS=[{k:'breakfast',label:'🌅 Kahvaltı',def:'breakfast'},{k:'lunch',label:'🌞 Öğle',def:'chicken-bbq'},{k:'dinner',label:'🌙 Akşam',def:'turkish-night'}];
+function renderMealSlots(){
+  const opts=Object.keys(DATA.menus).map(s=>`<option value="${s}">${MENU_TR[s]||DATA.menus[s].name} · £${DATA.menus[s].price_gbp}</option>`).join('');
+  document.getElementById('mealSlots').innerHTML=SLOTS.map(s=>`
+    <div class="flex items-center gap-3 bg-forest/30 rounded-lg px-3 py-2">
+      <label class="flex items-center gap-2 w-28 shrink-0 text-sm text-cream/80"><input type="checkbox" data-slot="${s.k}" ${s.k==='dinner'?'checked':''} class="accent-sun" onchange="calcQuote()"> ${s.label}</label>
+      <select data-menu="${s.k}" class="field !py-1.5 text-sm" onchange="calcQuote()">${opts}</select>
+    </div>`).join('');
+  SLOTS.forEach(s=>{ const sel=document.querySelector(`[data-menu="${s.k}"]`); if(sel) sel.value=s.def; });
+}
+
+/* ═══════════ QUOTE CALC ═══════════ */
+let lastQuote=null;
+function calcQuote(){
+  const guests=Math.max(1,+qGuests.value||1), days=Math.max(1,+qDays.value||1);
+  const lines=[];
+  SLOTS.forEach(s=>{ const on=document.querySelector(`[data-slot="${s.k}"]`); const mn=document.querySelector(`[data-menu="${s.k}"]`);
+    if(on&&on.checked&&mn){ const slug=mn.value; lines.push({slot:s.label, slug, matPP:menuMaterialTL(slug), gbp:DATA.menus[slug].price_gbp}); } });
+  if(!lines.length){ document.getElementById('rOfferTotal').textContent='—'; document.getElementById('rBreak').innerHTML='<span class="text-cream/40 text-sm">En az bir öğün seç.</span>'; return; }
+
+  const fire=1+params.fire/100, over=1+params.over/100, margin=1+params.margin/100;
+  const meals=lines.length; // öğün çeşidi/gün
+  let matTotal=0;
+  lines.forEach(l=>{ matTotal += l.matPP*fire*guests*days; });
+  const laborTotal = params.labor*guests*days*meals;
+  const dishCost = params.dishOn ? params.dish : 0;
+  const chef = serviceModel==='chef';
+  const matInBase = chef ? 0 : matTotal;           // aşçılık modelinde malzeme misafirden
+  let base = matInBase + laborTotal + params.logi + params.setup + dishCost;
+  if(params.small && guests<10) base *= 1.25;
+  const cost = base*over;
+  const offer = cost*margin;
+  const profit = offer-cost;
+  const perPersonOffer = offer/guests;
+  const listGbp = lines.reduce((a,l)=>a+l.gbp,0)*guests*days;
+  const listTL = listGbp*FX.GBP_TRY;
+
+  lastQuote={guests,days,lines,matTotal,laborTotal,dishCost,cost,offer,profit,perPersonOffer,meals,model:serviceModel};
+
+  document.getElementById('rOfferTotal').textContent=tl(offer);
+  document.getElementById('rOfferPP').textContent='kişi başı '+tl(perPersonOffer)+' · '+days+' gün · '+meals+' öğün · '+(chef?'Aşçılık+Sunum':'Tam Catering');
+  document.getElementById('rOfferAlt').innerHTML=
+    `<span class="chip">£${fmt(offer/FX.GBP_TRY)}</span><span class="chip">€${fmt(offer/FX.EUR_TRY)}</span><span class="chip">$${fmt(offer/FX.USD_TRY)}</span>`;
+  const row=(l,v,cls='')=>`<div class="flex justify-between ${cls}"><span class="text-cream/60">${l}</span><span class="font-semibold">${v}</span></div>`;
+  document.getElementById('rBreak').innerHTML=
+    (chef
+      ? row('Malzeme (misafir karşılıyor)',tl(matTotal),'text-cream/40 text-xs')
+      : row('Malzeme (fire dahil)',tl(matTotal)))+
+    row('İşçilik + sunum',tl(laborTotal))+
+    row('Ulaşım + kurulum',tl(params.logi+params.setup))+
+    (dishCost?row('Bulaşık & temizlik',tl(dishCost)):'')+
+    (params.small&&guests<10?row('Butik ek (&lt;10 kişi)','+%25','text-sun/70 text-xs'):'')+
+    row('Genel gider %'+params.over,tl(cost-base))+
+    row('<b>Maliyet</b>',`<b>${tl(cost)}</b>`,'text-cream')+
+    row('Kâr (%'+params.margin+')',tl(profit),'text-sage')+
+    '<hr class="border-line my-1">'+
+    (chef
+      ? row('Not','Malzeme hariç · sadece hizmet','text-cream/40 text-xs')
+      : row('Liste fiyatı referansı',tl(listTL)+' (£'+fmt(listGbp)+')','text-cream/40 text-xs'));
+}
+
+/* ═══════════ PDF SAVE (robust blob download + print fallback) ═══════════ */
+async function pdfSave(el, filename){
+  // CDN blocked → native print fallback
+  if(typeof html2pdf==='undefined'){ printFallback(el); return; }
+  const wrap=document.createElement('div'); wrap.style.cssText='position:fixed;left:-99999px;top:0';
+  wrap.appendChild(el); document.body.appendChild(wrap);
+  try{
+    const blob = await html2pdf().set({margin:0,image:{type:'jpeg',quality:.95},
+      html2canvas:{scale:2,backgroundColor:'#FBF7EE',useCORS:true,logging:false},
+      jsPDF:{unit:'pt',format:'a4'}}).from(el).outputPdf('blob');
+    const pdfBlob = blob.type==='application/pdf' ? blob : new Blob([blob],{type:'application/pdf'});
+    const url = URL.createObjectURL(pdfBlob);
+    const a = document.createElement('a'); a.href=url; a.download=filename.endsWith('.pdf')?filename:filename+'.pdf';
+    document.body.appendChild(a); a.click();
+    setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); }, 2000);
+  }catch(e){ console.error(e); alert('PDF oluşturulurken sorun oldu, yazdırma penceresi açılıyor.'); printFallback(el); }
+  finally{ setTimeout(()=>wrap.remove(), 100); }
+}
+function printFallback(el){
+  const w=window.open('','_blank');
+  w.document.write('<!DOCTYPE html><html><head><meta charset="utf-8"><title>Kalimera</title><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Inter&display=swap" rel="stylesheet"><style>@page{margin:0}body{margin:0}</style></head><body>'+el.outerHTML+'<script>setTimeout(function(){window.print()},600)<\/script></body></html>');
+  w.document.close();
+}
+
+/* ═══════════ CUSTOMER QUOTE PDF ═══════════ */
+function buildQuoteDoc(){
+  if(!lastQuote){ alert('Önce hesapla.'); return; }
+  const q=lastQuote, d=new Date();
+  const menuRows=q.lines.map(l=>`<tr><td style="padding:6px 0">${l.slot} — ${MENU_TR[l.slug]||l.slug}</td><td style="text-align:right">${q.guests} kişi × ${q.days} gün</td></tr>`).join('');
+  const el=document.createElement('div');
+  el.style.cssText='width:794px;padding:56px 60px;background:#FBF7EE;color:#15342B;font-family:Inter,Arial,sans-serif';
+  el.innerHTML=`
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #D9923B;padding-bottom:18px">
+      <div><div style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:40px;color:#C77A2C;line-height:1">Kalimera Kitchen</div>
+      <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7a8a80">Kalkan · Kaş · Antalya · Catering</div></div>
+      <div style="text-align:right;font-size:12px;color:#556">Teklif No: KK-${d.getFullYear()}${(d.getMonth()+1+'').padStart(2,'0')}${(d.getDate()+'').padStart(2,'0')}<br>Tarih: ${d.toLocaleDateString('tr-TR')}</div>
+    </div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;margin:26px 0 4px">Catering Teklifi</h1>
+    <p style="font-size:13px;color:#445;margin:0 0 20px">${q.guests} misafir · ${q.days} gün · ${q.meals} öğün servisi</p>
+    <table style="width:100%;border-collapse:collapse;font-size:14px;margin-bottom:22px">${menuRows}</table>
+    <div style="background:#15342B;color:#F2EBDA;border-radius:14px;padding:22px 26px;display:flex;justify-content:space-between;align-items:center">
+      <div><div style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#D9923B">Toplam Teklif</div>
+      <div style="font-size:13px;color:#cbd">${fmt(q.perPersonOffer)} ₺ / kişi</div></div>
+      <div style="text-align:right"><div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:40px;color:#F2EBDA">${tl(q.offer)}</div>
+      <div style="font-size:12px;color:#cbd">£${fmt(q.offer/FX.GBP_TRY)} · €${fmt(q.offer/FX.EUR_TRY)}</div></div>
+    </div>
+    <p style="font-size:11px;color:#667;margin-top:16px;line-height:1.7">Fiyata taze malzeme, hazırlık, servis ve kurulum dahildir. Teklif 7 gün geçerlidir. Kur: £1=${fmt(FX.GBP_TRY,2)}₺ (${FX.date}).<br>
+    İçecek, ekstra personel ve özel talepler ayrıca fiyatlandırılır.</p>
+    <div style="margin-top:26px;border-top:1px solid #d8cfb8;padding-top:14px;font-size:12px;color:#445">
+      Şef Nurdan Değirmenci · +90 539 743 07 81 · nurdandrgrmnc@gmail.com · kalimerakitchen.com</div>`;
+  pdfSave(el, `Kalimera-Teklif-${q.guests}kisi.pdf`);
+}
+
+/* ═══════════ INGREDIENTS ═══════════ */
+function loadIng(){ const s=localStorage.getItem(LS.ing); ingPrices=s?JSON.parse(s):{}; }
+function renderIng(){
+  const q=(document.getElementById('ingSearch').value||'').toLowerCase();
+  const cats={}; DATA.ingredients.forEach(i=>{ if(q&&!i.ad.toLowerCase().includes(q))return; (cats[i.kategori]=cats[i.kategori]||[]).push(i); });
+  document.getElementById('ingWrap').innerHTML=Object.keys(cats).map(cat=>`
+    <div class="card rounded-2xl p-5"><h3 class="display text-xl italic text-sun mb-2">${cat}</h3>
+      <table class="data w-full"><thead><tr><th>Malzeme</th><th>Birim</th><th style="width:120px">₺ Fiyat</th></tr></thead><tbody>
+      ${cats[cat].map(i=>{ const ov=ingPrices[i.id]!=null; return `<tr><td>${i.ad}</td><td class="text-cream/45">${i.birim}</td>
+        <td><input type="number" step="1" value="${ingPrice(i.id)}" data-ing="${i.id}" class="field !py-1 !px-2 ${ov?'!border-sun/60':''}" onchange="setIng('${i.id}',this.value)"></td></tr>`; }).join('')}
+      </tbody></table></div>`).join('');
+}
+function setIng(id,v){ v=parseFloat(v); const base=(DATA.ingredients.find(i=>i.id===id)||{}).fiyat;
+  if(isNaN(v)||v===base) delete ingPrices[id]; else ingPrices[id]=v;
+  localStorage.setItem(LS.ing,JSON.stringify(ingPrices)); calcQuote(); renderMargins(); renderDash(); }
+function resetIng(){ if(!confirm('Tüm fiyat değişikliklerin silinsin mi?'))return; ingPrices={}; localStorage.removeItem(LS.ing); renderIng(); calcQuote(); renderMargins(); }
+function exportIng(){ const blob=new Blob([JSON.stringify(ingPrices,null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='kalimera-fiyatlar.json'; a.click(); }
+
+/* ═══════════ MARGINS / DASH ═══════════ */
+function renderMargins(){
+  document.getElementById('marginList').innerHTML=Object.keys(DATA.menus).map(s=>{
+    const m=DATA.menus[s], mat=menuMaterialTL(s), sale=m.price_gbp*FX.GBP_TRY, marg=(sale-mat)/sale*100;
+    const col=marg>60?'text-sage':marg>40?'text-sun':'text-terra';
+    return `<div class="flex items-center justify-between"><span class="text-cream/70">${MENU_TR[s]}</span>
+      <span class="text-cream/40 text-xs">${tl(mat)} → £${m.price_gbp}</span><span class="${col} font-semibold w-14 text-right">%${fmt(marg)}</span></div>`;
+  }).join('');
+}
+function renderDash(){
+  const menuCount=Object.keys(DATA.menus).length, ingCount=DATA.ingredients.length;
+  const avgMarg=Object.keys(DATA.menus).reduce((a,s)=>{const m=DATA.menus[s],mat=menuMaterialTL(s),sale=m.price_gbp*FX.GBP_TRY;return a+(sale-mat)/sale*100;},0)/menuCount;
+  const cards=[['Menü',menuCount,'aktif catering menüsü'],['Malzeme',ingCount,'fiyat takibinde'],['£ / ₺',fmt(FX.GBP_TRY,2),FX.source],['Ort. brüt marj','%'+fmt(avgMarg),'liste fiyatına göre']];
+  document.getElementById('dashCards').innerHTML=cards.map(([t,v,s])=>`<div class="card rounded-2xl p-5">
+    <div class="text-xs uppercase tracking-widest text-cream/45">${t}</div>
+    <div class="display italic text-4xl text-sun mt-1">${v}</div><div class="text-xs text-cream/40 mt-1">${s}</div></div>`).join('');
+  renderMargins();
+}
+
+/* ═══════════ MENU PDF ═══════════ */
+function fillPdfMenu(){ document.getElementById('pdfMenu').innerHTML=Object.keys(DATA.menus).map(s=>`<option value="${s}">${MENU_TR[s]} · ${DATA.menus[s].name}</option>`).join(''); }
+const BOLUM_I18N={ 'Ana Yemek':{tr:'Ana Yemek',en:'Main Course',ru:'Основное блюдо'},'Meze':{tr:'Mezeler',en:'Starters',ru:'Закуски'},'Salata':{tr:'Salata',en:'Salad',ru:'Салат'},'Tatlı':{tr:'Tatlı',en:'Dessert',ru:'Десерт'},'Kahvaltı':{tr:'Kahvaltı',en:'Breakfast',ru:'Завтрак'} };
+function menuPdfHtml(slug,lang,showPrice){
+  const m=DATA.menus[slug]; const title = lang==='tr'?MENU_TR[slug]:m.name;
+  const groups={}; m.dishes.forEach(d=>{(groups[d.bolum]=groups[d.bolum]||[]).push(d.ad);});
+  const secs=Object.keys(groups).map(b=>{ const bl=(BOLUM_I18N[b]||{})[lang]||b;
+    return `<div style="margin-top:22px"><div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#D9923B;border-bottom:1px solid #d8cfb8;padding-bottom:5px;margin-bottom:8px">${bl}</div>
+    ${groups[b].map(n=>`<div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;margin:5px 0">${n}</div>`).join('')}</div>`; }).join('');
+  const priceLbl={tr:'Kişi Başı',en:'Per Person',ru:'На человека'}[lang];
+  return `<div style="padding:14px 0"><div style="text-align:center;border-bottom:2px solid #D9923B;padding-bottom:14px">
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#C77A2C">Kalimera Kitchen</div>
+      <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7a8a80">Kalkan · Kaş · Antalya</div></div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;text-align:center;margin:18px 0 0">${title}</h1>
+    ${showPrice?`<div style="text-align:center;font-size:13px;color:#556;margin-top:4px">${priceLbl}: £${m.price_gbp}</div>`:''}
+    ${secs}</div>`;
+}
+function renderMenuDoc(slug,lang,showPrice){
+  const el=document.createElement('div');
+  el.style.cssText='width:794px;padding:48px 60px;background:#FBF7EE;color:#15342B;font-family:Inter,Arial,sans-serif';
+  const langs = lang==='all'?['tr','en','ru']:[lang];
+  el.innerHTML=langs.map((l,i)=>`<div style="${i>0?'page-break-before:always;padding-top:20px':''}">${menuPdfHtml(slug,l,showPrice)}</div>`).join('');
+  el.innerHTML+=`<div style="margin-top:30px;text-align:center;font-size:11px;color:#667;border-top:1px solid #d8cfb8;padding-top:12px">Şef Nurdan Değirmenci · +90 539 743 07 81 · kalimerakitchen.com</div>`;
+  return el;
+}
+function downloadMenuPdf(){
+  const slug=pdfMenu.value, lang=pdfLang.value, showPrice=pdfPrice.checked;
+  const el=renderMenuDoc(slug,lang,showPrice);
+  pdfSave(el, `Kalimera-${slug}-${lang}.pdf`);
+}
+
+/* ═══════════ SEO ═══════════ */
+function renderSeo(){
+  const checks=[['Başlık &amp; açıklama etiketleri',true],['Open Graph / Twitter kartları',true],['JSON-LD Restaurant + Catering şeması',true],['Coğrafi meta (Kalkan/Kaş/Antalya)',true],['sitemap.xml + robots.txt',true],['Çok dilli hreflang (TR/EN/RU)',true],['llms.txt — AI asistan özeti',true],['JSON-LD Menu + FAQ şeması',true],['AI botlarına açık erişim (GPTBot, ClaudeBot, PerplexityBot)',true]];
+  document.getElementById('seoList').innerHTML=checks.map(([t,ok])=>`<li class="flex items-center gap-2 text-cream/80"><span class="${ok?'text-sage':'text-terra'}">${ok?'✓':'✗'}</span>${t}</li>`).join('');
+  fetch('/llms.txt').then(r=>r.ok?r.text():'').then(t=>{document.getElementById('llmsPreview').textContent=t||'llms.txt bulunamadı — dağıtımdan sonra görünür.';}).catch(()=>{});
+}
+
+/* ═══════════ BOOT ═══════════ */
+function boot(){
+  const s=localStorage.getItem(LS.fx); if(s) FX=JSON.parse(s);
+  loadIng(); loadParams(); renderMealSlots(); fillPdfMenu(); renderIng(); renderFx(); updateFxChip(); renderDash(); renderSeo();
+  document.querySelectorAll('.modelBtn').forEach(b=>b.onclick=()=>setModel(b.dataset.model));
+  calcQuote(); fetchFx();
+}
+
+/* auto-login (must run after all const/state above are initialized) */
+if(sessionStorage.getItem(LS.auth)==='1') openApp();
+</script>
+</body>
+</html>

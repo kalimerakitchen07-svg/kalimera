@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Menü PDF İndir · Kalimera Kitchen | Kalkan Catering Menüleri (TR·EN·RU)</title>
+<meta name="description" content="Kalimera Kitchen catering menülerini Türkçe, İngilizce veya Rusça PDF olarak indirin. Türk Gecesi, Akdeniz, Mangal, Balık ve Türk Kahvaltısı menüleri — Kalkan, Kaş, Antalya villa ve yat servisi." />
+<link rel="canonical" href="https://www.kalimerakitchen.com/menu-pdf.html" />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="Menü PDF İndir · Kalimera Kitchen" />
+<meta property="og:description" content="Catering menülerini TR · EN · RU dillerinde PDF indir." />
+<meta property="og:image" content="https://www.kalimerakitchen.com/brand_assets/hero.jpg" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{forest:'#15342B',forest2:'#1B4133',deep:'#0F2236',cream:'#F2EBDA',sun:'#D9923B',terra:'#C5582B',sage:'#7FA07A'},fontFamily:{display:['"Cormorant Garamond"','serif'],body:['Inter','sans-serif']}}}}
+</script>
+<style>
+  body{background:radial-gradient(1200px 600px at 80% -10%,#1B4133,transparent 60%),#122d25;font-family:Inter,sans-serif}
+  .display{font-family:"Cormorant Garamond",serif}
+  .card{background:linear-gradient(180deg,rgba(27,65,51,.9),rgba(18,45,37,.92));border:1px solid rgba(242,235,218,.12)}
+  .card:hover{border-color:rgba(217,146,59,.4);transform:translateY(-3px)}
+  .card{transition:transform .2s,border-color .2s}
+  .btn-p{background:linear-gradient(180deg,#E4A04C,#C77A2C);color:#221206;font-weight:700;transition:filter .12s,transform .12s}
+  .btn-p:hover{filter:brightness(1.06);transform:translateY(-1px)}
+  .lang{border:1px solid rgba(242,235,218,.2);color:#F2EBDA;border-radius:999px;transition:all .15s}
+  .lang.on{background:#D9923B;color:#221206;border-color:#D9923B;font-weight:700}
+</style>
+</head>
+<body class="text-cream min-h-screen">
+<header class="max-w-5xl mx-auto px-6 pt-10 pb-6 text-center">
+  <a href="/" class="display italic text-sun text-3xl">Kalimera Kitchen</a>
+  <div class="text-[11px] uppercase tracking-[.22em] text-cream/45 mt-1">Kalkan · Kaş · Antalya · Catering</div>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 pb-20">
+  <div class="text-center max-w-2xl mx-auto">
+    <h1 class="display italic text-4xl md:text-5xl">Menü PDF İndir</h1>
+    <p class="text-cream/60 mt-3 text-sm md:text-base">Menülerimizi dilediğiniz dilde PDF olarak indirin, arkadaşlarınızla paylaşın veya davetinizi planlarken kullanın.</p>
+    <div class="flex justify-center gap-2 mt-6" id="langBar">
+      <button data-l="tr" class="lang on px-5 py-2 text-sm">🇹🇷 Türkçe</button>
+      <button data-l="en" class="lang px-5 py-2 text-sm">🇬🇧 English</button>
+      <button data-l="ru" class="lang px-5 py-2 text-sm">🇷🇺 Русский</button>
+    </div>
+  </div>
+
+  <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10"></div>
+
+  <div class="text-center mt-10">
+    <button onclick="downloadAll()" class="btn-p rounded-full px-8 py-3.5 text-sm">⬇ Tüm menüleri tek PDF indir</button>
+    <p class="text-cream/40 text-xs mt-3">Rezervasyon için: <a href="https://wa.me/905397430781" class="text-sun underline">WhatsApp +90 539 743 07 81</a></p>
+    <a href="/" class="inline-block mt-6 text-cream/50 text-sm hover:text-sun">← Ana sayfaya dön</a>
+  </div>
+</main>
+<div id="stage" class="fixed -left-[9999px] top-0"></div>
+
+<script src="data/menu-data.js"></script>
+<script>
+const DATA=window.KALIMERA_DATA||{menus:{}};
+const MENU_TR={'turkish-night':'Türk Gecesi','mediterranean-night':'Akdeniz Gecesi','bbq-menu':'Mangal Menü','chicken-bbq':'Tavuk Mangal','fish-bbq':'Balık Mangal','breakfast':'Türk Kahvaltısı'};
+const NAMES={tr:MENU_TR,en:{'turkish-night':'Turkish Night','mediterranean-night':'Mediterranean Night','bbq-menu':'BBQ Menu','chicken-bbq':'Chicken BBQ','fish-bbq':'Fish BBQ','breakfast':'Turkish Breakfast'},ru:{'turkish-night':'Турецкий вечер','mediterranean-night':'Средиземноморский вечер','bbq-menu':'Барбекю','chicken-bbq':'Курица гриль','fish-bbq':'Рыба гриль','breakfast':'Турецкий завтрак'}};
+const UI={tr:{download:'PDF İndir',per:'Kişi Başı',dishes:'yemek'},en:{download:'Download PDF',per:'Per Person',dishes:'dishes'},ru:{download:'Скачать PDF',per:'На человека',dishes:'блюд'}};
+const BOLUM={'Ana Yemek':{tr:'Ana Yemek',en:'Main Course',ru:'Основное блюдо'},'Meze':{tr:'Mezeler',en:'Starters',ru:'Закуски'},'Salata':{tr:'Salata',en:'Salad',ru:'Салат'},'Tatlı':{tr:'Tatlı',en:'Dessert',ru:'Десерт'},'Kahvaltı':{tr:'Kahvaltı',en:'Breakfast',ru:'Завтрак'}};
+let lang='tr';
+
+function render(){
+  document.getElementById('grid').innerHTML=Object.keys(DATA.menus).map(s=>{
+    const m=DATA.menus[s], n=NAMES[lang][s]||m.name, u=UI[lang];
+    return `<div class="card rounded-2xl p-6 flex flex-col">
+      <div class="text-xs uppercase tracking-widest text-sun/70">£${m.price_gbp} · ${m.dishes.length} ${u.dishes}</div>
+      <h3 class="display italic text-2xl mt-1">${n}</h3>
+      <p class="text-cream/50 text-sm mt-2 flex-1">${m.dishes.slice(0,3).map(d=>d.ad).join(' · ')}…</p>
+      <button onclick="dl('${s}')" class="btn-p rounded-lg py-2.5 text-sm mt-4">⬇ ${u.download}</button>
+    </div>`;
+  }).join('');
+  document.querySelectorAll('#langBar .lang').forEach(b=>b.classList.toggle('on',b.dataset.l===lang));
+}
+document.querySelectorAll('#langBar .lang').forEach(b=>b.onclick=()=>{lang=b.dataset.l;render();});
+
+const TIER={tr:['Hafif','Dengeli','Zengin'],en:['Light','Balanced','Rich'],ru:['Лёгкое','Сбалансир.','Сытное']};
+function tierLbl(k,l){ return TIER[l][k<180?0:k<400?1:2]; }
+function menuHtml(slug,l){
+  const m=DATA.menus[slug], n=NAMES[l][slug]||m.name, u=UI[l];
+  const g={}; m.dishes.forEach(d=>(g[d.bolum]=g[d.bolum]||[]).push(d));
+  const secs=Object.keys(g).map(b=>`<div style="margin-top:22px"><div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#D9923B;border-bottom:1px solid #d8cfb8;padding-bottom:5px;margin-bottom:8px">${(BOLUM[b]||{})[l]||b}</div>
+    ${g[b].map(d=>`<div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin:5px 0">
+      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:19px">${d.ad}</span>
+      <span style="font-size:11px;color:#9a8f78;white-space:nowrap;letter-spacing:.03em">${d.kcal} kcal · ${tierLbl(d.kcal,l)}</span></div>`).join('')}</div>`).join('');
+  return `<div style="padding:14px 0"><div style="text-align:center;border-bottom:2px solid #D9923B;padding-bottom:14px">
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#C77A2C">Kalimera Kitchen</div>
+    <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7a8a80">Kalkan · Kaş · Antalya</div></div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;text-align:center;margin:18px 0 0">${n}</h1>
+    <div style="text-align:center;font-size:13px;color:#556;margin-top:4px">${u.per}: £${m.price_gbp}</div>${secs}
+    <div style="text-align:center;font-size:10px;color:#9a8f78;margin-top:14px;font-style:italic">${{tr:'Kalori değerleri kişi başı yaklaşık porsiyon değerleridir.',en:'Calorie values are approximate per-person portions.',ru:'Калорийность указана приблизительно на порцию.'}[l]}</div></div>`;
+}
+function docEl(inner){
+  const el=document.createElement('div');
+  el.style.cssText='width:794px;padding:48px 60px;background:#FBF7EE;color:#15342B;font-family:Inter,Arial,sans-serif';
+  el.innerHTML=inner+`<div style="margin-top:30px;text-align:center;font-size:11px;color:#667;border-top:1px solid #d8cfb8;padding-top:12px">Şef Nurdan Değirmenci · +90 539 743 07 81 · kalimerakitchen.com</div>`;
+  return el;
+}
+async function pdfSave(el, filename){
+  if(typeof html2pdf==='undefined'){ printFallback(el); return; }
+  const wrap=document.createElement('div'); wrap.style.cssText='position:fixed;left:-99999px;top:0';
+  wrap.appendChild(el); document.body.appendChild(wrap);
+  try{
+    const blob = await html2pdf().set({margin:0,image:{type:'jpeg',quality:.95},
+      html2canvas:{scale:2,backgroundColor:'#FBF7EE',useCORS:true,logging:false},jsPDF:{unit:'pt',format:'a4'}}).from(el).outputPdf('blob');
+    const pdfBlob = blob.type==='application/pdf' ? blob : new Blob([blob],{type:'application/pdf'});
+    const url = URL.createObjectURL(pdfBlob);
+    const a=document.createElement('a'); a.href=url; a.download=filename.endsWith('.pdf')?filename:filename+'.pdf';
+    document.body.appendChild(a); a.click();
+    setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); }, 2000);
+  }catch(e){ console.error(e); alert('PDF oluşturulurken sorun oldu, yazdırma penceresi açılıyor.'); printFallback(el); }
+  finally{ setTimeout(()=>wrap.remove(), 100); }
+}
+function printFallback(el){
+  const w=window.open('','_blank');
+  w.document.write('<!DOCTYPE html><html><head><meta charset="utf-8"><title>Kalimera</title><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Inter&display=swap" rel="stylesheet"><style>@page{margin:0}body{margin:0}</style></head><body>'+el.outerHTML+'<script>setTimeout(function(){window.print()},600)<\/script></body></html>');
+  w.document.close();
+}
+function dl(slug){ pdfSave(docEl(menuHtml(slug,lang)), `Kalimera-${slug}-${lang}.pdf`); }
+function downloadAll(){ const inner=Object.keys(DATA.menus).map((s,i)=>`<div style="${i>0?'page-break-before:always;padding-top:20px':''}">${menuHtml(s,lang)}</div>`).join('');
+  pdfSave(docEl(inner), `Kalimera-Tum-Menuler-${lang}.pdf`); }
+render();
+</script>
+</body>
+</html>
