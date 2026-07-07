@@ -81,24 +81,30 @@ document.querySelectorAll('#langBar .lang').forEach(b=>b.onclick=()=>{lang=b.dat
 
 const TIER={tr:['Hafif','Dengeli','Zengin'],en:['Light','Balanced','Rich'],ru:['Лёгкое','Сбалансир.','Сытное']};
 function tierLbl(k,l){ return TIER[l][k<180?0:k<400?1:2]; }
+function nameL(d,l){ return l==='en'?(d.ad_en||d.ad):l==='ru'?(d.ad_ru||d.ad):d.ad; }
+function descL(d,l){ return l==='en'?(d.desc_en||''):l==='ru'?(d.desc_ru||''):(d.desc||''); }
 function menuHtml(slug,l){
   const m=DATA.menus[slug], n=NAMES[l][slug]||m.name, u=UI[l];
   const g={}; m.dishes.forEach(d=>(g[d.bolum]=g[d.bolum]||[]).push(d));
-  const secs=Object.keys(g).map(b=>`<div style="margin-top:22px"><div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#D9923B;border-bottom:1px solid #d8cfb8;padding-bottom:5px;margin-bottom:8px">${(BOLUM[b]||{})[l]||b}</div>
-    ${g[b].map(d=>`<div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin:5px 0">
-      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:19px">${d.ad}</span>
-      <span style="font-size:11px;color:#9a8f78;white-space:nowrap;letter-spacing:.03em">${d.kcal} kcal · ${tierLbl(d.kcal,l)}</span></div>`).join('')}</div>`).join('');
-  return `<div style="padding:14px 0"><div style="text-align:center;border-bottom:2px solid #D9923B;padding-bottom:14px">
-    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#C77A2C">Kalimera Kitchen</div>
-    <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7a8a80">Kalkan · Kaş · Antalya</div></div>
-    <h1 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;text-align:center;margin:18px 0 0">${n}</h1>
-    <div style="text-align:center;font-size:13px;color:#556;margin-top:4px">${u.per}: £${m.price_gbp}</div>${secs}
-    <div style="text-align:center;font-size:10px;color:#9a8f78;margin-top:14px;font-style:italic">${{tr:'Kalori değerleri kişi başı yaklaşık porsiyon değerleridir.',en:'Calorie values are approximate per-person portions.',ru:'Калорийность указана приблизительно на порцию.'}[l]}</div></div>`;
+  const secs=Object.keys(g).map(b=>`<div style="margin-top:22px">
+    <div style="text-align:center;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#D9923B;margin-bottom:12px">${(BOLUM[b]||{})[l]||b}</div>
+    ${g[b].map(d=>{const desc=descL(d,l);return `<div style="margin:0 0 13px;padding:0 46px;text-align:center">
+      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;color:#F2EBDA;line-height:1.25">${nameL(d,l)}</div>
+      ${desc?`<div style="font-style:italic;font-size:12px;color:rgba(242,235,218,.6);margin-top:3px;line-height:1.45">${desc}</div>`:''}
+      <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(217,146,59,.75);margin-top:4px">${tierLbl(d.kcal,l)} · ${d.kcal} kcal</div>
+    </div>`;}).join('')}</div>`).join('');
+  return `<div style="padding:6px 0">
+    <div style="text-align:center;padding-bottom:16px;border-bottom:1px solid rgba(217,146,59,.35)">
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#D9923B">Kalimera Kitchen</div>
+      <div style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(242,235,218,.5)">Kalkan · Kaş · Antalya</div></div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:32px;text-align:center;color:#F2EBDA;margin:20px 0 2px">${n}</h1>
+    <div style="text-align:center;font-size:12px;letter-spacing:.12em;color:#D9923B">${u.per} · £${m.price_gbp}</div>${secs}
+    <div style="text-align:center;font-size:9px;color:rgba(242,235,218,.4);margin-top:18px;font-style:italic">${{tr:'Kalori değerleri kişi başı yaklaşık porsiyon değerleridir.',en:'Calorie values are approximate per-person portions.',ru:'Калорийность указана приблизительно на порцию.'}[l]}</div></div>`;
 }
 function docEl(inner){
   const el=document.createElement('div');
-  el.style.cssText='width:794px;padding:48px 60px;background:#FBF7EE;color:#15342B;font-family:Inter,Arial,sans-serif';
-  el.innerHTML=inner+`<div style="margin-top:30px;text-align:center;font-size:11px;color:#667;border-top:1px solid #d8cfb8;padding-top:12px">Şef Nurdan Değirmenci · +90 539 743 07 81 · kalimerakitchen.com</div>`;
+  el.style.cssText='width:794px;min-height:1096px;box-sizing:border-box;padding:44px 54px;background:#15342B;color:#F2EBDA;font-family:Inter,Arial,sans-serif';
+  el.innerHTML=inner+`<div style="margin-top:28px;text-align:center;font-size:10px;color:rgba(242,235,218,.5);border-top:1px solid rgba(217,146,59,.3);padding-top:14px">Şef Nurdan Değirmenci · +90 539 743 07 81 · kalimerakitchen.com</div>`;
   return el;
 }
 async function pdfSave(el, filename){
@@ -107,7 +113,7 @@ async function pdfSave(el, filename){
   wrap.appendChild(el); document.body.appendChild(wrap);
   try{
     const blob = await html2pdf().set({margin:0,image:{type:'jpeg',quality:.95},
-      html2canvas:{scale:2,backgroundColor:'#FBF7EE',useCORS:true,logging:false},jsPDF:{unit:'pt',format:'a4'}}).from(el).outputPdf('blob');
+      html2canvas:{scale:2,backgroundColor:'#15342B',useCORS:true,logging:false},jsPDF:{unit:'pt',format:'a4'}}).from(el).outputPdf('blob');
     const pdfBlob = blob.type==='application/pdf' ? blob : new Blob([blob],{type:'application/pdf'});
     const url = URL.createObjectURL(pdfBlob);
     const a=document.createElement('a'); a.href=url; a.download=filename.endsWith('.pdf')?filename:filename+'.pdf';

@@ -176,6 +176,8 @@ tailwind.config = {
                 <input id="cSetup" type="number" step="50" class="field mt-1" oninput="saveParams();calcQuote()"></label>
               <label class="block"><span class="text-xs text-cream/60">Bulaşık &amp; temizlik ₺ (ekstra)</span>
                 <input id="cDish" type="number" step="50" class="field mt-1" oninput="saveParams();calcQuote()"></label>
+              <label class="block"><span class="text-xs text-cream/60">İndirim %</span>
+                <input id="cDisc" type="number" step="1" min="0" max="100" class="field mt-1" oninput="saveParams();calcQuote()"></label>
               <label class="flex items-center gap-2 text-cream/70 text-sm mt-6"><input id="cDishOn" type="checkbox" onchange="calcQuote()" class="accent-sun"> Bulaşık dahil et</label>
             </div>
             <div class="flex flex-wrap gap-3 items-center mt-4 text-sm">
@@ -284,11 +286,17 @@ tailwind.config = {
 /* ═══════════ CONFIG ═══════════ */
 const PW_HASH = 'b31f229da0eac49fb46b5342630fb311063cd20786672c91addffc8fbdfb6409'; // sha256("kalimera2026")
 const LS = { params:'kalimera_params', ing:'kalimera_ing_prices', fx:'kalimera_fx', auth:'kalimera_auth' };
-const DEFAULT_PARAMS = { fire:10, labor:80, logi:500, over:15, margin:40, setup:0, dish:400, dishOn:false, small:false };
+const DEFAULT_PARAMS = { fire:10, labor:80, logi:500, over:15, margin:40, setup:0, dish:400, dishOn:false, small:false, discount:0 };
 let serviceModel = 'full'; // 'full' | 'chef'
 const DATA = window.KALIMERA_DATA || {ingredients:[],menus:{}};
 const MENU_EN = { 'turkish-night':'Turkish Night','mediterranean-night':'Mediterranean Night','bbq-menu':'BBQ Menu','chicken-bbq':'Chicken BBQ','fish-bbq':'Fish BBQ','breakfast':'Turkish Breakfast' };
 const MENU_TR = { 'turkish-night':'Türk Gecesi','mediterranean-night':'Akdeniz Gecesi','bbq-menu':'Mangal Menü','chicken-bbq':'Tavuk Mangal','fish-bbq':'Balık Mangal','breakfast':'Türk Kahvaltısı' };
+const MENU_RU = { 'turkish-night':'Турецкий вечер','mediterranean-night':'Средиземноморский вечер','bbq-menu':'Барбекю','chicken-bbq':'Курица гриль','fish-bbq':'Рыба гриль','breakfast':'Турецкий завтрак','chefs-table':'Стол шефа' };
+const TIER_A = { tr:['Hafif','Dengeli','Zengin'], en:['Light','Balanced','Rich'], ru:['Лёгкое','Сбаланс.','Сытное'] };
+function menuTitle(slug,l){ return l==='tr'?(MENU_TR[slug]||DATA.menus[slug].name):l==='ru'?(MENU_RU[slug]||DATA.menus[slug].name):(MENU_EN[slug]||DATA.menus[slug].name); }
+function dishNameL(d,l){ return l==='en'?(d.ad_en||d.ad):l==='ru'?(d.ad_ru||d.ad):d.ad; }
+function dishDescL(d,l){ return l==='en'?(d.desc_en||''):l==='ru'?(d.desc_ru||''):(d.desc||''); }
+function tierA(k,l){ return TIER_A[l][k<180?0:k<400?1:2]; }
 
 let FX = { GBP_TRY:62.7, EUR_TRY:53.5, USD_TRY:47, date:'—', source:'varsayılan' };
 let ingPrices = {}; // id -> override price
@@ -347,8 +355,8 @@ function renderFx(){
 
 /* ═══════════ PARAMS ═══════════ */
 function loadParams(){ const s=localStorage.getItem(LS.params); params=s?{...DEFAULT_PARAMS,...JSON.parse(s)}:{...DEFAULT_PARAMS}; fillParams(); }
-function fillParams(){ cFire.value=params.fire;cLabor.value=params.labor;cLogi.value=params.logi;cOver.value=params.over;cMargin.value=params.margin;cSetup.value=params.setup;cDish.value=params.dish;cDishOn.checked=params.dishOn;cSmall.checked=params.small; }
-function saveParams(){ params={fire:+cFire.value||0,labor:+cLabor.value||0,logi:+cLogi.value||0,over:+cOver.value||0,margin:+cMargin.value||0,setup:+cSetup.value||0,dish:+cDish.value||0,dishOn:cDishOn.checked,small:cSmall.checked}; localStorage.setItem(LS.params,JSON.stringify(params)); }
+function fillParams(){ cFire.value=params.fire;cLabor.value=params.labor;cLogi.value=params.logi;cOver.value=params.over;cMargin.value=params.margin;cSetup.value=params.setup;cDish.value=params.dish;cDishOn.checked=params.dishOn;cSmall.checked=params.small;cDisc.value=params.discount; }
+function saveParams(){ params={fire:+cFire.value||0,labor:+cLabor.value||0,logi:+cLogi.value||0,over:+cOver.value||0,margin:+cMargin.value||0,setup:+cSetup.value||0,dish:+cDish.value||0,dishOn:cDishOn.checked,small:cSmall.checked,discount:Math.min(100,Math.max(0,+cDisc.value||0))}; localStorage.setItem(LS.params,JSON.stringify(params)); }
 function resetParams(){ params={...DEFAULT_PARAMS}; localStorage.removeItem(LS.params); fillParams(); calcQuote(); }
 function setModel(m){ serviceModel=m; document.querySelectorAll('.modelBtn').forEach(b=>b.classList.toggle('active',b.dataset.model===m)); calcQuote(); }
 
@@ -384,17 +392,23 @@ function calcQuote(){
   let base = matInBase + laborTotal + params.logi + params.setup + dishCost;
   if(params.small && guests<10) base *= 1.25;
   const cost = base*over;
-  const offer = cost*margin;
+  const grossOffer = cost*margin;
+  const disc = (params.discount||0)/100;
+  const discAmount = grossOffer*disc;
+  const offer = grossOffer - discAmount;               // indirimli nihai teklif
   const profit = offer-cost;
   const perPersonOffer = offer/guests;
   const listGbp = lines.reduce((a,l)=>a+l.gbp,0)*guests*days;
   const listTL = listGbp*FX.GBP_TRY;
+  const loss = profit < 0;
 
-  lastQuote={guests,days,lines,matTotal,laborTotal,dishCost,cost,offer,profit,perPersonOffer,meals,model:serviceModel};
+  lastQuote={guests,days,lines,matTotal,laborTotal,dishCost,cost,grossOffer,discount:params.discount,discAmount,offer,profit,perPersonOffer,meals,model:serviceModel};
 
   document.getElementById('rOfferTotal').textContent=tl(offer);
-  document.getElementById('rOfferPP').textContent='kişi başı '+tl(perPersonOffer)+' · '+days+' gün · '+meals+' öğün · '+(chef?'Aşçılık+Sunum':'Tam Catering');
+  document.getElementById('rOfferPP').innerHTML='kişi başı '+tl(perPersonOffer)+' · '+days+' gün · '+meals+' öğün · '+(chef?'Aşçılık+Sunum':'Tam Catering')
+    + (disc>0?` · <span class="text-sun">%${params.discount} indirim</span>`:'');
   document.getElementById('rOfferAlt').innerHTML=
+    (disc>0?`<span class="chip line-through opacity-60">${tl(grossOffer)}</span>`:'')+
     `<span class="chip">£${fmt(offer/FX.GBP_TRY)}</span><span class="chip">€${fmt(offer/FX.EUR_TRY)}</span><span class="chip">$${fmt(offer/FX.USD_TRY)}</span>`;
   const row=(l,v,cls='')=>`<div class="flex justify-between ${cls}"><span class="text-cream/60">${l}</span><span class="font-semibold">${v}</span></div>`;
   document.getElementById('rBreak').innerHTML=
@@ -407,7 +421,9 @@ function calcQuote(){
     (params.small&&guests<10?row('Butik ek (&lt;10 kişi)','+%25','text-sun/70 text-xs'):'')+
     row('Genel gider %'+params.over,tl(cost-base))+
     row('<b>Maliyet</b>',`<b>${tl(cost)}</b>`,'text-cream')+
-    row('Kâr (%'+params.margin+')',tl(profit),'text-sage')+
+    row('Kâr marjı (%'+params.margin+')','+'+tl(grossOffer-cost),'text-cream/60')+
+    (disc>0?row('Liste teklifi',tl(grossOffer))+row('İndirim (%'+params.discount+')','−'+tl(discAmount),'text-terra'):'')+
+    row('Net kâr',(loss?'⚠ ':'')+tl(profit),loss?'text-terra font-bold':'text-sage')+
     '<hr class="border-line my-1">'+
     (chef
       ? row('Not','Malzeme hariç · sadece hizmet','text-cream/40 text-xs')
@@ -454,8 +470,10 @@ function buildQuoteDoc(){
     <h1 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;margin:26px 0 4px">Catering Teklifi</h1>
     <p style="font-size:13px;color:#445;margin:0 0 20px">${q.guests} misafir · ${q.days} gün · ${q.meals} öğün servisi</p>
     <table style="width:100%;border-collapse:collapse;font-size:14px;margin-bottom:22px">${menuRows}</table>
+    ${q.discount>0?`<div style="display:flex;justify-content:space-between;font-size:13px;color:#556;margin-bottom:8px"><span>Liste teklifi</span><span style="text-decoration:line-through">${tl(q.grossOffer)}</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:13px;color:#C5582B;font-weight:600;margin-bottom:14px"><span>Özel indirim (%${q.discount})</span><span>− ${tl(q.discAmount)}</span></div>`:''}
     <div style="background:#15342B;color:#F2EBDA;border-radius:14px;padding:22px 26px;display:flex;justify-content:space-between;align-items:center">
-      <div><div style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#D9923B">Toplam Teklif</div>
+      <div><div style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#D9923B">${q.discount>0?'İndirimli Toplam':'Toplam Teklif'}</div>
       <div style="font-size:13px;color:#cbd">${fmt(q.perPersonOffer)} ₺ / kişi</div></div>
       <div style="text-align:right"><div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:40px;color:#F2EBDA">${tl(q.offer)}</div>
       <div style="font-size:12px;color:#cbd">£${fmt(q.offer/FX.GBP_TRY)} · €${fmt(q.offer/FX.EUR_TRY)}</div></div>
@@ -508,25 +526,28 @@ function renderDash(){
 function fillPdfMenu(){ document.getElementById('pdfMenu').innerHTML=Object.keys(DATA.menus).map(s=>`<option value="${s}">${MENU_TR[s]} · ${DATA.menus[s].name}</option>`).join(''); }
 const BOLUM_I18N={ 'Ana Yemek':{tr:'Ana Yemek',en:'Main Course',ru:'Основное блюдо'},'Meze':{tr:'Mezeler',en:'Starters',ru:'Закуски'},'Salata':{tr:'Salata',en:'Salad',ru:'Салат'},'Tatlı':{tr:'Tatlı',en:'Dessert',ru:'Десерт'},'Kahvaltı':{tr:'Kahvaltı',en:'Breakfast',ru:'Завтрак'} };
 function menuPdfHtml(slug,lang,showPrice){
-  const m=DATA.menus[slug]; const title = lang==='tr'?MENU_TR[slug]:m.name;
-  const groups={}; m.dishes.forEach(d=>{(groups[d.bolum]=groups[d.bolum]||[]).push(d.ad);});
+  const m=DATA.menus[slug]; const title = menuTitle(slug,lang);
+  const groups={}; m.dishes.forEach(d=>{(groups[d.bolum]=groups[d.bolum]||[]).push(d);});
   const secs=Object.keys(groups).map(b=>{ const bl=(BOLUM_I18N[b]||{})[lang]||b;
-    return `<div style="margin-top:22px"><div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#D9923B;border-bottom:1px solid #d8cfb8;padding-bottom:5px;margin-bottom:8px">${bl}</div>
-    ${groups[b].map(n=>`<div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;margin:5px 0">${n}</div>`).join('')}</div>`; }).join('');
+    return `<div style="margin-top:22px"><div style="text-align:center;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#D9923B;margin-bottom:12px">${bl}</div>
+    ${groups[b].map(d=>{const desc=dishDescL(d,lang);return `<div style="margin:0 0 13px;text-align:center">
+      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;color:#F2EBDA;line-height:1.25">${dishNameL(d,lang)}</div>
+      ${desc?`<div style="font-style:italic;font-size:12px;color:rgba(242,235,218,.6);margin-top:3px;line-height:1.45">${desc}</div>`:''}
+      <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(217,146,59,.75);margin-top:4px">${tierA(d.kcal,lang)} · ${d.kcal} kcal</div></div>`;}).join('')}</div>`; }).join('');
   const priceLbl={tr:'Kişi Başı',en:'Per Person',ru:'На человека'}[lang];
-  return `<div style="padding:14px 0"><div style="text-align:center;border-bottom:2px solid #D9923B;padding-bottom:14px">
-      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#C77A2C">Kalimera Kitchen</div>
-      <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7a8a80">Kalkan · Kaş · Antalya</div></div>
-    <h1 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;text-align:center;margin:18px 0 0">${title}</h1>
-    ${showPrice?`<div style="text-align:center;font-size:13px;color:#556;margin-top:4px">${priceLbl}: £${m.price_gbp}</div>`:''}
+  return `<div style="padding:6px 0"><div style="text-align:center;padding-bottom:16px;border-bottom:1px solid rgba(217,146,59,.35)">
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#D9923B">Kalimera Kitchen</div>
+      <div style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(242,235,218,.5)">Kalkan · Kaş · Antalya</div></div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:32px;text-align:center;color:#F2EBDA;margin:20px 0 2px">${title}</h1>
+    ${showPrice?`<div style="text-align:center;font-size:12px;letter-spacing:.12em;color:#D9923B">${priceLbl} · £${m.price_gbp}</div>`:''}
     ${secs}</div>`;
 }
 function renderMenuDoc(slug,lang,showPrice){
   const el=document.createElement('div');
-  el.style.cssText='width:794px;padding:48px 60px;background:#FBF7EE;color:#15342B;font-family:Inter,Arial,sans-serif';
+  el.style.cssText='width:794px;min-height:1096px;box-sizing:border-box;padding:44px 54px;background:#15342B;color:#F2EBDA;font-family:Inter,Arial,sans-serif';
   const langs = lang==='all'?['tr','en','ru']:[lang];
   el.innerHTML=langs.map((l,i)=>`<div style="${i>0?'page-break-before:always;padding-top:20px':''}">${menuPdfHtml(slug,l,showPrice)}</div>`).join('');
-  el.innerHTML+=`<div style="margin-top:30px;text-align:center;font-size:11px;color:#667;border-top:1px solid #d8cfb8;padding-top:12px">Şef Nurdan Değirmenci · +90 539 743 07 81 · kalimerakitchen.com</div>`;
+  el.innerHTML+=`<div style="margin-top:28px;text-align:center;font-size:10px;color:rgba(242,235,218,.5);border-top:1px solid rgba(217,146,59,.3);padding-top:14px">Şef Nurdan Değirmenci · +90 539 743 07 81 · kalimerakitchen.com</div>`;
   return el;
 }
 function downloadMenuPdf(){

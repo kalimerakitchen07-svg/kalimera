@@ -101,6 +101,46 @@ const CHEF_PICKS = [
   menus['chefs-table'] = { name: "Chef's Table", slug: 'chefs-table', price_gbp: 90, kcal_total: total, dishes, signature: true };
 }
 
+// ── EN/RU ad + açıklama zenginleştirme (menü sayfası I18N'inden) ──
+function extractLangs(slug, key) {
+  // dN_n / dN_d için [tr, en, ru] sırasıyla değerleri döndür (obje sırası tr,en,ru)
+  let html;
+  try { html = readFileSync(`menu/${slug}.html`, 'utf8'); } catch (e) { return []; }
+  const re = new RegExp(key + ":\\s*'((?:[^'\\\\]|\\\\.)*)'", 'g');
+  const out = []; let m;
+  while ((m = re.exec(html)) !== null) out.push(m[1].replace(/\\'/g, "'"));
+  return out;
+}
+function norm(s) { return (s || '').toLowerCase().replace(/[\s.,·’'"()-]+/g, '').trim(); }
+const TRANS = {};
+// Base menüler: SIRA-bazlı eşleştir (dosya içi sıra = data sırası); TRANS'ı recipe adıyla anahtarla
+for (const slug of Object.keys(slugMap).map(k => slugMap[k])) {
+  const m = menus[slug]; if (!m) continue;
+  m.dishes.forEach((dish, idx) => {
+    const i = idx + 1;
+    const names = extractLangs(slug, 'd' + i + '_n'); // [tr,en,ru]
+    const descs = extractLangs(slug, 'd' + i + '_d');
+    const rec = {
+      ad_en: names[1] || dish.ad, ad_ru: names[2] || dish.ad,
+      desc: descs[0] || '', desc_en: descs[1] || descs[0] || '', desc_ru: descs[2] || descs[0] || '',
+    };
+    Object.assign(dish, rec);
+    TRANS[norm(dish.ad)] = rec; // çapa menü recipe adıyla eşleşsin
+  });
+}
+// Kalan yemekler (çapa menü dahil): recipe adına göre TRANS'tan çek
+for (const slug of Object.keys(menus)) {
+  for (const dish of menus[slug].dishes) {
+    if (dish.ad_en) continue; // base zaten dolduruldu
+    const t = TRANS[norm(dish.ad)];
+    dish.ad_en = t ? t.ad_en : dish.ad;
+    dish.ad_ru = t ? t.ad_ru : dish.ad;
+    dish.desc = t ? t.desc : '';
+    dish.desc_en = t ? t.desc_en : '';
+    dish.desc_ru = t ? t.desc_ru : '';
+  }
+}
+
 // kcal ekle ingredients'a da (admin görüntüsü için)
 const ingredients = INGREDIENTS.map(i => ({...i, kcal: KCAL[i.id] ?? 0}));
 
