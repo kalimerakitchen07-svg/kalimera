@@ -3348,6 +3348,453 @@ window.KALIMERA_DATA = {
           ]
         }
       ]
+    },
+    "chefs-table": {
+      "name": "Chef's Table",
+      "slug": "chefs-table",
+      "price_gbp": 90,
+      "kcal_total": 3689,
+      "dishes": [
+        {
+          "ad": "Asma Yaprağında Marineli Levrek",
+          "bolum": "Izgara",
+          "kcal": 286,
+          "items": [
+            {
+              "id": "M010",
+              "qty": 180,
+              "unit": "g"
+            },
+            {
+              "id": "M042",
+              "qty": 15,
+              "unit": "g"
+            },
+            {
+              "id": "M074",
+              "qty": 10,
+              "unit": "ml"
+            },
+            {
+              "id": "M043",
+              "qty": 5,
+              "unit": "g"
+            },
+            {
+              "id": "M021",
+              "qty": 3,
+              "unit": "g"
+            },
+            {
+              "id": "M091",
+              "qty": 1,
+              "unit": "g"
+            },
+            {
+              "id": "M093",
+              "qty": 0.5,
+              "unit": "g"
+            }
+          ]
+        },
+        {
+          "ad": "Özel Soslu Kuzu But",
+          "bolum": "Ana Yemek",
+          "kcal": 839,
+          "items": [
+            {
+              "id": "M001",
+              "qty": 200,
+              "unit": "g"
+            },
+            {
+              "id": "M023",
+              "qty": 150,
+              "unit": "g"
+            },
+            {
+              "id": "M030",
+              "qty": 80,
+              "unit": "g"
+            },
+            {
+              "id": "M065",
+              "qty": 15,
+              "unit": "g"
+            },
+            {
+              "id": "M074",
+              "qty": 10,
+              "unit": "ml"
+            },
+            {
+              "id": "M091",
+              "qty": 1,
+              "unit": "g"
+            },
+            {
+              "id": "M092",
+              "qty": 0.5,
+              "unit": "g"
+            },
+            {
+              "id": "M093",
+              "qty": 1,
+              "unit": "g"
+            },
+            {
+              "id": "M094",
+              "qty": 0.5,
+              "unit": "g"
+            },
+            {
+              "id": "M021",
+              "qty": 5,
+              "unit": "g"
+            },
+            {
+              "id": "M084",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "id": "M020",
+              "qty": 30,
+              "unit": "g"
+            },
+            {
+              "id": "M086",
+              "qty": 20,
+              "unit": "ml"
+            }
+          ]
+        },
+        {
+          "ad": "Hünkar Beğendi",
+          "bolum": "Ana Yemek",
+          "kcal": 637,
+          "items": [
+            {
+              "id": "M003",
+              "qty": 120,
+              "unit": "g"
+            },
+            {
+              "id": "M024",
+              "qty": 200,
+              "unit": "g"
+            },
+            {
+              "id": "M016",
+              "qty": 60,
+              "unit": "g"
+            },
+            {
+              "id": "M020",
+              "qty": 30,
+              "unit": "g"
+            },
+            {
+              "id": "M055",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "id": "M061",
+              "qty": 50,
+              "unit": "ml"
+            },
+            {
+              "id": "M070",
+              "qty": 20,
+              "unit": "g"
+            },
+            {
+              "id": "M065",
+              "qty": 15,
+              "unit": "g"
+            },
+            {
+              "id": "M074",
+              "qty": 10,
+              "unit": "ml"
+            },
+            {
+              "id": "M084",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "id": "M021",
+              "qty": 3,
+              "unit": "g"
+            },
+            {
+              "id": "M091",
+              "qty": 1,
+              "unit": "g"
+            },
+            {
+              "id": "M092",
+              "qty": 0.5,
+              "unit": "g"
+            }
+          ]
+        },
+        {
+          "ad": "Saganaki (Deniz Mahsulleri)",
+          "bolum": "Meze",
+          "kcal": 300,
+          "items": [
+            {
+              "id": "M012",
+              "qty": 40,
+              "unit": "g"
+            },
+            {
+              "id": "M013",
+              "qty": 40,
+              "unit": "g"
+            },
+            {
+              "id": "M014",
+              "qty": 30,
+              "unit": "g"
+            },
+            {
+              "id": "M016",
+              "qty": 30,
+              "unit": "g"
+            },
+            {
+              "id": "M070",
+              "qty": 30,
+              "unit": "g"
+            },
+            {
+              "id": "M074",
+              "qty": 10,
+              "unit": "ml"
+            },
+            {
+              "id": "M021",
+              "qty": 3,
+              "unit": "g"
+            },
+            {
+              "id": "M038",
+              "qty": 0.05,
+              "unit": "demet"
+            }
+          ]
+        },
+        {
+          "ad": "Humuslu Karnabahar",
+          "bolum": "Meze",
+          "kcal": 356,
+          "items": [
+            {
+              "id": "M031",
+              "qty": 100,
+              "unit": "g"
+            },
+            {
+              "id": "M053",
+              "qty": 40,
+              "unit": "g"
+            },
+            {
+              "id": "M076",
+              "qty": 15,
+              "unit": "g"
+            },
+            {
+              "id": "M074",
+              "qty": 10,
+              "unit": "ml"
+            },
+            {
+              "id": "M043",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "id": "M021",
+              "qty": 3,
+              "unit": "g"
+            },
+            {
+              "id": "M095",
+              "qty": 0.5,
+              "unit": "g"
+            },
+            {
+              "id": "M091",
+              "qty": 1,
+              "unit": "g"
+            }
+          ]
+        },
+        {
+          "ad": "Tulum Peynirli Karpuz Roka Salatası",
+          "bolum": "Salata",
+          "kcal": 283,
+          "items": [
+            {
+              "id": "M044",
+              "qty": 100,
+              "unit": "g"
+            },
+            {
+              "id": "M035",
+              "qty": 30,
+              "unit": "g"
+            },
+            {
+              "id": "M071",
+              "qty": 40,
+              "unit": "g"
+            },
+            {
+              "id": "M074",
+              "qty": 10,
+              "unit": "ml"
+            },
+            {
+              "id": "M043",
+              "qty": 5,
+              "unit": "g"
+            },
+            {
+              "id": "M091",
+              "qty": 1,
+              "unit": "g"
+            },
+            {
+              "id": "M092",
+              "qty": 0.3,
+              "unit": "g"
+            },
+            {
+              "id": "M077",
+              "qty": 5,
+              "unit": "g"
+            }
+          ]
+        },
+        {
+          "ad": "Zeytinyağlı Fırın Dolma Biber",
+          "bolum": "Meze",
+          "kcal": 266,
+          "items": [
+            {
+              "id": "M027",
+              "qty": 80,
+              "unit": "g"
+            },
+            {
+              "id": "M051",
+              "qty": 30,
+              "unit": "g"
+            },
+            {
+              "id": "M020",
+              "qty": 15,
+              "unit": "g"
+            },
+            {
+              "id": "M016",
+              "qty": 15,
+              "unit": "g"
+            },
+            {
+              "id": "M074",
+              "qty": 15,
+              "unit": "ml"
+            },
+            {
+              "id": "M040",
+              "qty": 0.1,
+              "unit": "demet"
+            },
+            {
+              "id": "M038",
+              "qty": 0.05,
+              "unit": "demet"
+            }
+          ]
+        },
+        {
+          "ad": "İncir Çiçeği Tatlısı",
+          "bolum": "Tatlı",
+          "kcal": 408,
+          "items": [
+            {
+              "id": "M083",
+              "qty": 40,
+              "unit": "g"
+            },
+            {
+              "id": "M060",
+              "qty": 30,
+              "unit": "g"
+            },
+            {
+              "id": "M087",
+              "qty": 15,
+              "unit": "ml"
+            },
+            {
+              "id": "M056",
+              "qty": 15,
+              "unit": "g"
+            },
+            {
+              "id": "M108",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "id": "M066",
+              "qty": 30,
+              "unit": "ml"
+            }
+          ]
+        },
+        {
+          "ad": "Dondurmalı Fırın Şeftali Tatlısı",
+          "bolum": "Tatlı",
+          "kcal": 314,
+          "items": [
+            {
+              "id": "M046",
+              "qty": 150,
+              "unit": "g"
+            },
+            {
+              "id": "M073",
+              "qty": 60,
+              "unit": "g"
+            },
+            {
+              "id": "M108",
+              "qty": 15,
+              "unit": "g"
+            },
+            {
+              "id": "M065",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "id": "M096",
+              "qty": 0.5,
+              "unit": "g"
+            }
+          ]
+        }
+      ],
+      "signature": true
     }
   }
 };

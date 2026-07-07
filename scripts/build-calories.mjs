@@ -73,6 +73,34 @@ for (const [name, m] of Object.entries(MENUS)){
   menus[slug] = { name, slug, price_gbp:PRICE_GBP[slug]??m.fiyat_gbp, kcal_total:total, dishes };
 }
 
+// ── ÇAPA MENÜ: Şefin Sofrası / Chef's Table (£90) ──
+// Mevcut imza yemeklerden derlenmiş tadım menüsü → gerçek reçete + kalori (Nurdan gerçekten sunabilir)
+function findDish(menuName, dishAd) {
+  const m = MENUS[menuName]; if (!m) return null;
+  return m.yemekler.find(y => y.ad === dishAd) || null;
+}
+const CHEF_PICKS = [
+  ['Fish BBQ', 'Asma Yaprağında Marineli Levrek'],
+  ['Turkish Night', 'Özel Soslu Kuzu But'],
+  ['Mediterranean Night', 'Hünkar Beğendi'],
+  ['Mediterranean Night', 'Saganaki (Deniz Mahsulleri)'],
+  ['Mediterranean Night', 'Humuslu Karnabahar'],
+  ['Turkish Night', 'Tulum Peynirli Karpuz Roka Salatası'],
+  ['Mediterranean Night', 'Zeytinyağlı Fırın Dolma Biber'],
+  ['Mediterranean Night', 'İncir Çiçeği Tatlısı'],
+  ['Turkish Night', 'Dondurmalı Fırın Şeftali Tatlısı'],
+];
+{
+  const dishes = []; let total = 0;
+  for (const [mn, dn] of CHEF_PICKS) {
+    const d = findDish(mn, dn);
+    if (!d) { console.log('UYARI çapa yemek bulunamadı:', mn, '/', dn); continue; }
+    const kcal = dishKcal(d); total += kcal;
+    dishes.push({ ad: d.ad, bolum: d.bolum, kcal, items: d.items.map(it => ({ id: it.id, qty: it.qty, unit: it.displayUnit })) });
+  }
+  menus['chefs-table'] = { name: "Chef's Table", slug: 'chefs-table', price_gbp: 90, kcal_total: total, dishes, signature: true };
+}
+
 // kcal ekle ingredients'a da (admin görüntüsü için)
 const ingredients = INGREDIENTS.map(i => ({...i, kcal: KCAL[i.id] ?? 0}));
 

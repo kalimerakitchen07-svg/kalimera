@@ -28,9 +28,12 @@
       + '.kcal-badge .kb-tier{color:rgba(217,146,59,.9);font-weight:600}'
       + '.kcal-badge .kb-kcal{color:rgba(242,235,218,.55)}'
       + '#kk-sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:.6rem;padding:.6rem .8rem;padding-bottom:calc(.6rem + env(safe-area-inset-bottom));background:rgba(21,52,43,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid rgba(242,235,218,.12)}'
-      + '#kk-sticky-wa{flex:1;text-align:center;background:linear-gradient(180deg,#E4A04C,#C77A2C);color:#221206;font-weight:700;border-radius:9999px;padding:.8rem;font-size:.82rem;font-family:Inter,sans-serif;text-decoration:none;box-shadow:0 6px 18px -6px rgba(217,146,59,.5)}'
-      + '#kk-sticky-call{display:grid;place-items:center;min-width:2.9rem;border-radius:9999px;border:1px solid rgba(242,235,218,.22);color:#F2EBDA;text-decoration:none;font-size:1.1rem}'
-      + '@media(max-width:640px){#kk-sticky{display:flex}body{padding-bottom:4.6rem !important}}';
+      + '#kk-sticky-wa{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#E4A04C,#C77A2C);color:#221206;font-weight:700;border-radius:9999px;padding:.8rem;font-size:.82rem;font-family:Inter,sans-serif;text-decoration:none;box-shadow:0 6px 18px -6px rgba(217,146,59,.5);touch-action:manipulation}'
+      + '#kk-sticky-call{display:grid;place-items:center;min-width:48px;min-height:48px;border-radius:9999px;border:1px solid rgba(242,235,218,.22);color:#F2EBDA;text-decoration:none;touch-action:manipulation}'
+      + '#kk-sticky-wa:focus-visible,#kk-sticky-call:focus-visible{outline:2px solid #F2EBDA;outline-offset:2px}'
+      + '#kk-sticky-wa:active{transform:translateY(1px)}'
+      + '@media(max-width:640px){#kk-sticky{display:flex}body{padding-bottom:4.8rem !important}}'
+      + '@media(prefers-reduced-motion:reduce){#kk-sticky-wa,#kk-sticky-call{transition:none}#kk-sticky-wa:active{transform:none}}';
     var s = document.createElement('style'); s.id = 'kk-enh-style'; s.textContent = css; document.head.appendChild(s);
   }
 
@@ -58,7 +61,8 @@
     var bar = document.createElement('div');
     bar.id = 'kk-sticky';
     bar.innerHTML = '<a id="kk-sticky-wa" target="_blank" rel="noopener"></a>'
-      + '<a id="kk-sticky-call" href="tel:+905397430781" aria-label="Ara">☎</a>';
+      + '<a id="kk-sticky-call" href="tel:+905397430781" aria-label="Telefonla ara">'
+      + '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>';
     document.body.appendChild(bar);
     updateSticky();
   }
