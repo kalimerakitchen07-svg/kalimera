@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
 tailwind.config = {
   theme: { extend: {
@@ -552,8 +554,10 @@ function renderMenuDoc(slug,lang,showPrice){
 }
 function downloadMenuPdf(){
   const slug=pdfMenu.value, lang=pdfLang.value, showPrice=pdfPrice.checked;
-  const el=renderMenuDoc(slug,lang,showPrice);
-  pdfSave(el, `Kalimera-${slug}-${lang}.pdf`, '#15342B');
+  const langs = lang==='all'?['tr','en','ru']:[lang];
+  const pagesHtml = langs.map(l=>KalimeraMenu.render(DATA.menus[slug],l,{showPrice})).join('');
+  KalimeraMenu.download(pagesHtml, `Kalimera-${slug}-${lang}.pdf`);
+  return;
 }
 
 /* ═══════════ SEO ═══════════ */

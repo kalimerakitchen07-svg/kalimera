@@ -128,5 +128,39 @@ window.KalimeraMenu = (function () {
     return p1 + p2;
   }
 
-  return { render: render, NAMES: NAMES, menuName: menuName };
+  // Her A4 sayfayı ayrı canvas → jsPDF'e TAM SAYFA bas: garantili N sayfa, sliver/beyaz şerit yok
+  async function download(pagesHtml, filename) {
+    var jsPDFctor = window.jspdf && window.jspdf.jsPDF;
+    var host = document.createElement('div');
+    host.style.cssText = 'position:fixed;left:-99999px;top:0';
+    host.innerHTML = pagesHtml;
+    document.body.appendChild(host);
+    var pages = Array.prototype.slice.call(host.children);
+    try {
+      if (!window.html2canvas || !jsPDFctor) throw new Error('lib yok');
+      var pdf = new jsPDFctor({ unit: 'pt', format: 'a4', compress: true });
+      var W = pdf.internal.pageSize.getWidth(), H = pdf.internal.pageSize.getHeight();
+      for (var i = 0; i < pages.length; i++) {
+        var canvas = await window.html2canvas(pages[i], { scale: 2, backgroundColor: '#15342B', useCORS: true, logging: false });
+        var img = canvas.toDataURL('image/jpeg', 0.92);
+        if (i > 0) pdf.addPage();
+        pdf.addImage(img, 'JPEG', 0, 0, W, H);
+      }
+      host.remove();
+      var blob = pdf.output('blob');
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a'); a.href = url; a.download = filename.slice(-4) === '.pdf' ? filename : filename + '.pdf';
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 2000);
+    } catch (e) {
+      console.error(e); host.remove();
+      // Yedek: html2pdf tek-parça (yine de indirir)
+      if (typeof html2pdf !== 'undefined') {
+        var doc = document.createElement('div'); doc.style.cssText = 'width:794px;background:#15342B'; doc.innerHTML = pagesHtml;
+        html2pdf().set({ margin: 0, image: { type: 'jpeg', quality: .92 }, html2canvas: { scale: 2, backgroundColor: '#15342B', useCORS: true }, jsPDF: { unit: 'pt', format: 'a4' } }).from(doc).save(filename);
+      } else { alert('PDF oluşturulamadı.'); }
+    }
+  }
+
+  return { render: render, download: download, NAMES: NAMES, menuName: menuName };
 })();
