@@ -366,13 +366,22 @@ function setModel(m){ serviceModel=m; document.querySelectorAll('.modelBtn').for
 /* ═══════════ MEAL SLOTS ═══════════ */
 const SLOTS=[{k:'breakfast',label:'🌅 Kahvaltı',def:'breakfast'},{k:'lunch',label:'🌞 Öğle',def:'chicken-bbq'},{k:'dinner',label:'🌙 Akşam',def:'turkish-night'}];
 function renderMealSlots(){
-  const opts=Object.keys(DATA.menus).map(s=>`<option value="${s}">${MENU_TR[s]||DATA.menus[s].name} · £${DATA.menus[s].price_gbp}</option>`).join('');
+  const opts=Object.keys(DATA.menus).map(s=>`<option value="${s}">${MENU_TR[s]||DATA.menus[s].name} · £${DATA.menus[s].price_gbp}</option>`).join('')
+    + `<option value="__custom__">✏️ Özel fiyat…</option>`;
   document.getElementById('mealSlots').innerHTML=SLOTS.map(s=>`
     <div class="flex items-center gap-3 bg-forest/30 rounded-lg px-3 py-2">
       <label class="flex items-center gap-2 w-28 shrink-0 text-sm text-cream/80"><input type="checkbox" data-slot="${s.k}" ${s.k==='dinner'?'checked':''} class="accent-sun" onchange="calcQuote()"> ${s.label}</label>
-      <select data-menu="${s.k}" class="field !py-1.5 text-sm" onchange="calcQuote()">${opts}</select>
+      <select data-menu="${s.k}" class="field !py-1.5 text-sm" onchange="onSlotMenu('${s.k}')">${opts}</select>
+      <input data-custom="${s.k}" type="number" min="0" step="1" placeholder="£/kişi" title="Özel fiyat (£ / kişi)" class="field !py-1.5 text-sm w-24 shrink-0 hidden" oninput="calcQuote()">
     </div>`).join('');
   SLOTS.forEach(s=>{ const sel=document.querySelector(`[data-menu="${s.k}"]`); if(sel) sel.value=s.def; });
+}
+// Öğün menüsü değişince özel fiyat girişini göster/gizle
+function onSlotMenu(k){
+  const sel=document.querySelector(`[data-menu="${k}"]`);
+  const ci=document.querySelector(`[data-custom="${k}"]`);
+  if(ci) ci.classList.toggle('hidden', !sel || sel.value!=='__custom__');
+  calcQuote();
 }
 
 /* ═══════════ QUOTE CALC ═══════════ */
@@ -381,7 +390,10 @@ function calcQuote(){
   const guests=Math.max(1,+qGuests.value||1), days=Math.max(1,+qDays.value||1);
   const lines=[];
   SLOTS.forEach(s=>{ const on=document.querySelector(`[data-slot="${s.k}"]`); const mn=document.querySelector(`[data-menu="${s.k}"]`);
-    if(on&&on.checked&&mn){ const slug=mn.value; lines.push({slot:s.label, slug, matPP:menuMaterialTL(slug), gbp:DATA.menus[slug].price_gbp}); } });
+    if(on&&on.checked&&mn){ const slug=mn.value;
+      if(slug==='__custom__'){ const ci=document.querySelector(`[data-custom="${s.k}"]`); const cp=Math.max(0,+(ci&&ci.value)||0); lines.push({slot:s.label, slug, name:'Özel Menü', matPP:0, gbp:cp}); }
+      else { lines.push({slot:s.label, slug, name:(MENU_TR[slug]||DATA.menus[slug].name), matPP:menuMaterialTL(slug), gbp:DATA.menus[slug].price_gbp}); }
+    } });
   if(!lines.length){ document.getElementById('rOfferTotal').textContent='—'; document.getElementById('rBreak').innerHTML='<span class="text-cream/40 text-sm">En az bir öğün seç.</span>'; return; }
 
   const fire=1+params.fire/100, over=1+params.over/100, margin=1+params.margin/100;
@@ -461,7 +473,7 @@ function printFallback(el){
 function buildQuoteDoc(){
   if(!lastQuote){ alert('Önce hesapla.'); return; }
   const q=lastQuote, d=new Date();
-  const menuRows=q.lines.map(l=>`<tr><td style="padding:6px 0">${l.slot} — ${MENU_TR[l.slug]||l.slug}</td><td style="text-align:right">${q.guests} kişi × ${q.days} gün</td></tr>`).join('');
+  const menuRows=q.lines.map(l=>`<tr><td style="padding:6px 0">${l.slot} — ${l.name||MENU_TR[l.slug]||l.slug}</td><td style="text-align:right">${q.guests} kişi × ${q.days} gün</td></tr>`).join('');
   const el=document.createElement('div');
   el.style.cssText='width:794px;padding:56px 60px;background:#FBF7EE;color:#15342B;font-family:Inter,Arial,sans-serif';
   el.innerHTML=`
