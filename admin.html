@@ -49,6 +49,22 @@ tailwind.config = {
   .btn-g:hover{background:rgba(242,235,218,.12)}
   table.data th{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,235,218,.5);text-align:left;padding:.5rem .6rem;font-weight:600}
   table.data td{padding:.4rem .6rem;font-size:.85rem;border-top:1px solid rgba(242,235,218,.07)}
+  /* ── Dokunma hedefleri ── */
+  input[type=checkbox]{width:1.15rem;height:1.15rem;flex:none;accent-color:#D9923B}
+  /* ── Mobil optimizasyon ── */
+  @media (max-width:640px){
+    .field{font-size:16px;padding:.7rem .8rem}          /* iOS focus zoom'unu önler + daha büyük dokunma */
+    input[type=checkbox]{width:1.4rem;height:1.4rem}
+    .card{padding:1.15rem !important}
+    #tab-quote{padding-bottom:5.75rem}                  /* sabit alt fiyat çubuğuna yer aç */
+    /* Öğün satırları dikey yığılsın — menü adı artık kesilmez */
+    #mealSlots > div{flex-wrap:wrap;gap:.5rem}
+    #mealSlots > div > label{flex:1 1 100%;width:100%}
+    #mealSlots > div > select{flex:1 1 100%;width:100%}
+    #mealSlots > div > input[data-custom]{flex:1 1 100%;width:100%}
+    /* Başlıkları biraz küçült */
+    #tab-quote > h1{font-size:2rem}
+  }
 </style>
 </head>
 <body class="text-cream min-h-screen">
@@ -204,6 +220,17 @@ tailwind.config = {
           </div>
         </div>
       </div>
+
+      <!-- ░░ Mobil sabit fiyat çubuğu (sadece telefonda) ░░ -->
+      <div class="sm:hidden fixed bottom-0 inset-x-0 z-40 px-4 py-2.5 flex items-center gap-3"
+           style="background:linear-gradient(180deg,rgba(18,45,37,.55),rgba(18,45,37,.97));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(217,146,59,.3)">
+        <div class="min-w-0 flex-1">
+          <div class="display italic text-2xl text-cream leading-none" id="mBarPrice">—</div>
+          <div class="text-[10px] text-cream/55 truncate" id="mBarSub">teklif hesaplayıcı</div>
+        </div>
+        <button type="button" onclick="document.getElementById('rOfferTotal').scrollIntoView({behavior:'smooth',block:'center'})" class="btn-g text-xs px-3 py-2.5 shrink-0">Özet ↓</button>
+        <button type="button" onclick="buildQuoteDoc()" class="btn-p text-xs px-3 py-2.5 shrink-0">PDF</button>
+      </div>
     </section>
 
     <!-- ░░ INGREDIENTS ░░ -->
@@ -314,7 +341,8 @@ document.getElementById('loginForm').addEventListener('submit', async e=>{
   else document.getElementById('loginErr').textContent='Hatalı parola.';
 });
 document.getElementById('logout').onclick=()=>{ sessionStorage.removeItem(LS.auth); location.reload(); };
-function openApp(){ document.getElementById('gate').classList.add('hidden'); document.getElementById('app').classList.remove('hidden'); boot(); }
+function openApp(){ document.getElementById('gate').classList.add('hidden'); document.getElementById('app').classList.remove('hidden'); boot(); document.querySelectorAll('input[type=number]').forEach(i=>{ if(!i.getAttribute('inputmode')) i.setAttribute('inputmode','decimal'); }); }
+function setMobileBar(price,sub){ const p=document.getElementById('mBarPrice'); if(!p)return; p.textContent=price; const s=document.getElementById('mBarSub'); if(s)s.textContent=sub; }
 
 /* ═══════════ NAV ═══════════ */
 function go(t){ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('show')); document.getElementById('tab-'+t).classList.add('show');
@@ -394,7 +422,7 @@ function calcQuote(){
       if(slug==='__custom__'){ const ci=document.querySelector(`[data-custom="${s.k}"]`); const cp=Math.max(0,+(ci&&ci.value)||0); lines.push({slot:s.label, slug, name:'Özel Menü', matPP:0, gbp:cp}); }
       else { lines.push({slot:s.label, slug, name:(MENU_TR[slug]||DATA.menus[slug].name), matPP:menuMaterialTL(slug), gbp:DATA.menus[slug].price_gbp}); }
     } });
-  if(!lines.length){ document.getElementById('rOfferTotal').textContent='—'; document.getElementById('rBreak').innerHTML='<span class="text-cream/40 text-sm">En az bir öğün seç.</span>'; return; }
+  if(!lines.length){ document.getElementById('rOfferTotal').textContent='—'; document.getElementById('rBreak').innerHTML='<span class="text-cream/40 text-sm">En az bir öğün seç.</span>'; setMobileBar('—','En az bir öğün seç'); return; }
 
   const fire=1+params.fire/100, over=1+params.over/100, margin=1+params.margin/100;
   const meals=lines.length; // öğün çeşidi/gün
@@ -420,6 +448,7 @@ function calcQuote(){
   lastQuote={guests,days,lines,matTotal,laborTotal,dishCost,cost,grossOffer,discount:params.discount,discAmount,offer,profit,perPersonOffer,meals,model:serviceModel};
 
   document.getElementById('rOfferTotal').textContent=tl(offer);
+  setMobileBar(tl(offer),'kişi başı '+tl(perPersonOffer)+' · '+meals+' öğün · '+days+' gün');
   document.getElementById('rOfferPP').innerHTML='kişi başı '+tl(perPersonOffer)+' · '+days+' gün · '+meals+' öğün · '+(chef?'Aşçılık+Sunum':'Tam Catering')
     + (disc>0?` · <span class="text-sun">%${params.discount} indirim</span>`:'');
   document.getElementById('rOfferAlt').innerHTML=
