@@ -904,7 +904,7 @@ window.KALIMERA_DATA = {
     "turkish-night": {
       "name": "Turkish Night",
       "slug": "turkish-night",
-      "price_gbp": 55,
+      "price_gbp": 70,
       "kcal_total": 2796,
       "dishes": [
         {
@@ -1336,7 +1336,7 @@ window.KALIMERA_DATA = {
     "mediterranean-night": {
       "name": "Mediterranean Night",
       "slug": "mediterranean-night",
-      "price_gbp": 50,
+      "price_gbp": 60,
       "kcal_total": 3256,
       "dishes": [
         {
@@ -1927,7 +1927,7 @@ window.KALIMERA_DATA = {
     "bbq-menu": {
       "name": "BBQ Menu",
       "slug": "bbq-menu",
-      "price_gbp": 45,
+      "price_gbp": 50,
       "kcal_total": 3457,
       "dishes": [
         {
@@ -2494,7 +2494,7 @@ window.KALIMERA_DATA = {
     "chicken-bbq": {
       "name": "Chicken BBQ",
       "slug": "chicken-bbq",
-      "price_gbp": 35,
+      "price_gbp": 45,
       "kcal_total": 1898,
       "dishes": [
         {
@@ -2932,7 +2932,7 @@ window.KALIMERA_DATA = {
     "fish-bbq": {
       "name": "Fish BBQ",
       "slug": "fish-bbq",
-      "price_gbp": 45,
+      "price_gbp": 65,
       "kcal_total": 1958,
       "dishes": [
         {

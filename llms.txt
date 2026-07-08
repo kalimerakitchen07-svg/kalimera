@@ -19,11 +19,11 @@ Kalimera Kitchen is a private-chef and catering atelier based in Kalkan (Kaş di
 
 ## Menüler / Menus (fiyatlar kişi başı / prices per person, 10+ guests)
 
-- **Türk Gecesi / Turkish Night — £40**: Özel soslu kuzu but, iç pilav, humuslu karnabahar, tulum peynirli karpuz roka salatası, dondurmalı şeftali tatlısı. (Special-sauce lamb leg, stuffed pilaf, hummus cauliflower, watermelon-rocket salad, peach dessert.)
-- **Akdeniz Gecesi / Mediterranean Night — £45**: Akdeniz levreği, hünkar beğendi, saganaki deniz mahsulleri, incir çiçeği tatlısı. (Mediterranean sea bass, hünkar beğendi, seafood saganaki, fig-blossom dessert.)
-- **Mangal Menü / BBQ Menu — £35**: Kuzu şiş, köfte, tavuk pizola, 5 meze, tereyağlı Türk pilavı. (Lamb skewers, köfte, chicken, 5 meze, buttered pilaf.)
-- **Tavuk Mangal / Chicken BBQ — £26**: Özel marineli ızgara tavuk, 5 ev yapımı sos, mücver, yeşil salata. (Marinated grilled chicken, 5 homemade sauces, courgette fritters, green salad.)
-- **Balık Mangal / Fish BBQ — £45**: Asma yaprağında levrek, marine somon, roka tulum salatası, taze Türk ekmekleri. (Vine-leaf sea bass, marinated salmon, rocket-tulum salad, fresh Turkish breads.)
+- **Türk Gecesi / Turkish Night — £70**: Özel soslu kuzu but, iç pilav, humuslu karnabahar, tulum peynirli karpuz roka salatası, dondurmalı şeftali tatlısı. (Special-sauce lamb leg, stuffed pilaf, hummus cauliflower, watermelon-rocket salad, peach dessert.)
+- **Akdeniz Gecesi / Mediterranean Night — £60**: Akdeniz levreği, hünkar beğendi, saganaki deniz mahsulleri, incir çiçeği tatlısı. (Mediterranean sea bass, hünkar beğendi, seafood saganaki, fig-blossom dessert.)
+- **Mangal Menü / BBQ Menu — £50**: Kuzu şiş, köfte, tavuk pizola, 5 meze, tereyağlı Türk pilavı. (Lamb skewers, köfte, chicken, 5 meze, buttered pilaf.)
+- **Tavuk Mangal / Chicken BBQ — £45**: Özel marineli ızgara tavuk, 5 ev yapımı sos, mücver, yeşil salata. (Marinated grilled chicken, 5 homemade sauces, courgette fritters, green salad.)
+- **Balık Mangal / Fish BBQ — £65**: Asma yaprağında levrek, marine somon, roka tulum salatası, taze Türk ekmekleri. (Vine-leaf sea bass, marinated salmon, rocket-tulum salad, fresh Turkish breads.)
 - **Türk Kahvaltısı / Turkish Breakfast — £20**: Sucuklu yumurta, 4 peynir, reçel, bal, kaymak, taze meyve. (Sucuk eggs, 4 cheeses, jams, honey, kaymak, fresh fruit.)
 
 Downloadable PDF menus (TR/EN/RU): https://www.kalimerakitchen.com/menu-pdf.html

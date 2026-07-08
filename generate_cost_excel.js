@@ -1292,11 +1292,11 @@ async function buildIntroSheet(ws) {
     [20, '!', 'Yumurta/avokado/lavaş gibi adet bazlı malzemeler ondalık olabilir (örn. 0.3 adet).'],
     [21, '', ''],
     [22, 'MENÜ FİYATLARI VE MALZEME SAYISI', 'header'],
-    [23, '•', `Turkish Night — 40£/kişi  ·  ${countItems('Turkish Night')} farklı malzeme`],
-    [24, '•', `Mediterranean Night — 45£/kişi  ·  ${countItems('Mediterranean Night')} farklı malzeme`],
-    [25, '•', `BBQ Menu — 35£/kişi  ·  ${countItems('BBQ Menu')} farklı malzeme`],
-    [26, '•', `Chicken BBQ — 26£/kişi  ·  ${countItems('Chicken BBQ')} farklı malzeme`],
-    [27, '•', `Fish BBQ — 45£/kişi  ·  ${countItems('Fish BBQ')} farklı malzeme`],
+    [23, '•', `Turkish Night — 70£/kişi  ·  ${countItems('Turkish Night')} farklı malzeme`],
+    [24, '•', `Mediterranean Night — 60£/kişi  ·  ${countItems('Mediterranean Night')} farklı malzeme`],
+    [25, '•', `BBQ Menu — 50£/kişi  ·  ${countItems('BBQ Menu')} farklı malzeme`],
+    [26, '•', `Chicken BBQ — 45£/kişi  ·  ${countItems('Chicken BBQ')} farklı malzeme`],
+    [27, '•', `Fish BBQ — 65£/kişi  ·  ${countItems('Fish BBQ')} farklı malzeme`],
     [28, '•', `Breakfast — 20£/kişi  ·  ${countItems('Breakfast')} farklı malzeme`],
   ];
 
